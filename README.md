@@ -1,2 +1,0 @@
-# newhama
-Created with CodeSandbox

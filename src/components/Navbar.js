@@ -38,9 +38,11 @@ const Navbar = () => {
         onClick={scrollToTop}
       />
       <div className="menu-toggle-container">
+        {/* Theme Toggle Button */}
         <button className="theme-toggle" onClick={toggleTheme}>
           {darkMode ? <BsSun /> : <BsMoon />}
         </button>
+        {/* Menu Button */}
         <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>

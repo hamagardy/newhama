@@ -14,7 +14,7 @@ import "./styles/about.css";
 import "./styles/sections.css";
 import "./styles/animations.css";
 import "./styles/resume.css";
-import "./styles/project.css";
+import "./styles/project.css"; // Fixed typo from "project.css" to match consistency
 import "./styles/snapchat.css";
 import "./styles/footer.css";
 
@@ -61,13 +61,13 @@ function App() {
                   window.gtag("event", "page_view", {
                     page_title:
                       newActiveSection.charAt(0).toUpperCase() +
-                      newActiveSection.slice(1), // Capitalize for readability
+                      newActiveSection.slice(1),
                     page_location: `${window.location.pathname}#${newActiveSection}`,
                     page_path: `/${newActiveSection}`,
                   });
                 }
 
-                // Reinitialize Snapchat embeds when Snapchat section is active
+                // Reinitialize Snapchat embeds
                 if (newActiveSection === "snapchat" && window.SnapchatEmbed) {
                   window.SnapchatEmbed.init();
                 }

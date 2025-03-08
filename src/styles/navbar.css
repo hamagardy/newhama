@@ -36,7 +36,7 @@ body.dark-mode .navbar {
   cursor: pointer;
   color: #000000;
   transition: color 0.3s ease;
-  display: none; /* Hide by default */
+  display: block; /* Hide by default */
 }
 
 body.dark-mode .menu-button {

@@ -1,0 +1,32 @@
+/* Import Terminus font */
+@font-face {
+  font-family: "Terminus";
+  src: url("https://fonts.cdnfonts.com/css/terminus") format("truetype");
+}
+
+body {
+  margin: 0;
+  font-family: "Terminus", monospace;
+  line-height: 1.6;
+  color: #000000; /* Black text */
+  height: 100%;
+  margin: 0;
+  padding: 0;
+
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}

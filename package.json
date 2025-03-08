@@ -1,0 +1,44 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "19.0.0",
+    "react-scripts": "5.0.1",
+    "tailwindcss": "4.0.9",
+    "tailwind-merge": "3.0.2",
+    "@fortawesome/fontawesome-free": "6.7.2",
+    "@fortawesome/free-brands-svg-icons": "latest",
+    "@fortawesome/react-fontawesome": "0.2.2",
+    "@fortawesome/fontawesome-svg-core": "6.7.2",
+    "@fortawesome/free-solid-svg-icons": "6.7.2",
+    "react-icons": "5.5.0",
+    "react-router-dom": "7.2.0",
+    "swiper": "11.2.5",
+    "@jjunyjjuny/react-carousel": "1.1.2",
+    "react-slick": "0.30.3",
+    "slick-carousel": "1.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.0.0",
+    "@types/react-dom": "19.0.0",
+    "loader-utils": "3.2.1",
+    "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "homepage": "https://hamagardy.com"
+}

@@ -105,7 +105,7 @@ function Resume() {
                 <span>Knowledge University, Erbil</span>
               </div>
               <div className="edu-duration">
-                <span>Jan 2022 - Feb 2023</span>
+                <span>Jan 2019 - Feb 2023</span>
               </div>
             </div>
           </div>

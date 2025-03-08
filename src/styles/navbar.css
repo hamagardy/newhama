@@ -28,6 +28,7 @@ body.dark-mode .navbar {
   gap: 1rem;
 }
 
+/* Hide menu button on desktop, show only on mobile */
 .menu-button {
   background: none;
   border: none;
@@ -35,11 +36,18 @@ body.dark-mode .navbar {
   cursor: pointer;
   color: #000000;
   transition: color 0.3s ease;
-  display: none; /* Hidden on desktop by default */
+  display: none; /* Hide by default */
 }
 
 body.dark-mode .menu-button {
   color: #ffffff;
+}
+
+/* Show menu button only on mobile */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block; /* Visible only on mobile */
+  }
 }
 
 .theme-toggle {
@@ -49,7 +57,7 @@ body.dark-mode .menu-button {
   cursor: pointer;
   color: #000000;
   transition: color 0.3s ease;
-  display: block;
+  display: block; /* Always visible on both desktop and mobile */
 }
 
 body.dark-mode .theme-toggle {
@@ -95,7 +103,7 @@ body.dark-mode .nav-links li a:hover {
   }
 
   .menu-button {
-    display: block; /* Show hamburger menu on mobile */
+    display: block; /* Already set above, no change needed */
   }
 
   .theme-toggle {
@@ -104,10 +112,10 @@ body.dark-mode .nav-links li a:hover {
 
   .nav-links {
     position: fixed; /* Full-screen menu */
-    top: 60px; /* Below navbar (adjust based on navbar height) */
+    top: 60px; /* Below navbar */
     left: 0;
     width: 100%; /* Match navbar width */
-    height: calc4(0vh - 20px); /* Full height minus navbar */
+    height: calc(100vh - 60px); /* Full height minus navbar */
     background: #ffffff;
     flex-direction: column;
     justify-content: center; /* Center vertically */
@@ -117,8 +125,7 @@ body.dark-mode .nav-links li a:hover {
     opacity: 0;
     visibility: hidden;
     transform: translateY(-100%); /* Start off-screen */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
-      visibility 0s 0.3s;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s 0.3s;
     z-index: 999; /* Below navbar but above content */
   }
 
@@ -126,8 +133,7 @@ body.dark-mode .nav-links li a:hover {
     opacity: 1;
     visibility: visible;
     transform: translateY(0); /* Slide down into view */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
-      visibility 0s;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s;
   }
 
   .nav-links li a {

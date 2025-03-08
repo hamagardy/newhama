@@ -7,8 +7,8 @@ import {
   faSnapchat,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import me from "../assets/me.png";
-import star from "../assets/star.png";
+import me from "../assets/me.png"; // Ensure this path is correct
+import star from "../assets/star.png"; // Ensure this path is correct
 import "../styles/home.css";
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
         @SharezCompany
       </a>
     </span>,
-    "Official Snap Lens Network Developer⠀",
+    "Official Snap Lens Network Developer⠀", // 3 spaces for alignment
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -71,7 +71,7 @@ const Home = () => {
         </p>
         <p className="home-about">
           I'm a Technologist based in Iraqi Kurdistan, passionate about creating
-          innovative solutions..
+          innovative solutions.
         </p>
         <div className="home-btn">
           <button className="home-contact-btn" onClick={handleContactClick}>

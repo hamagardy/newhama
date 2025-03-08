@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Hama Gardy's Portfolio" />
     <title>Hama Gardy - Portfolio</title>
-    <!-- Preload CSS to prioritize loading -->
-    <link rel="preload" href="%PUBLIC_URL%/static/css/main.[hash].css" as="style" onload="this.rel='stylesheet'" />
-    <!-- Fallback for no-JS scenarios -->
-    <noscript>
-      <link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.[hash].css" />
-    </noscript>
-    <!-- Thilwand CSS (assuming this is a typo for Tailwind; adjust if custom) -->
+    <base href="%PUBLIC_URL%/" />
+    <!-- Ensure correct base path -->
+    <link
+      rel="preload"
+      href="%PUBLIC_URL%/static/css/main.[hash].css"
+      as="style"
+      onload="this.rel='stylesheet'"
+    />
+    <noscript
+      ><link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.[hash].css"
+    /></noscript>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
     />
-    <!-- Fonts -->
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Avenir+Next:wght@500&display=swap"
@@ -29,6 +32,9 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script defer src="%PUBLIC_URL%/static/js/main.[hash].js"></script>
+    <!-- Woopra, Snapchat, GA scripts unchanged -->
+
     <!-- Woopra Code -->
     <script>
       !(function () {

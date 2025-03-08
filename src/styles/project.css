@@ -1,0 +1,304 @@
+/* Increase specificity to prevent overrides */
+section#projects.projects-section {
+  opacity: 0;
+  text-align: left; /* Left-align content like About and Resume */
+  align-items: flex-start;
+}
+
+section#projects.projects-section.visible {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+section#projects.projects-section:not(.visible) {
+  animation: fadeOutLeft 1s ease-in forwards;
+}
+
+.projects-title {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+body.dark-mode .projects-title {
+  color: #ffffff;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Responsive grid */
+  gap: 2rem; /* Space between cards */
+  width: 100%;
+}
+
+.project-card {
+  background-color: #ffffff; /* Light gray background */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column; /* Ensure consistent button positioning */
+}
+
+body.dark-mode .project-card {
+  background-color: #2a2a2a; /* Darker gray for dark mode */
+}
+
+.project-card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+.project-image {
+  width: 100%;
+  height: 200px; /* Fixed height for consistency */
+  object-fit: cover; /* Crop image to fit */
+}
+
+.project-content {
+  padding: 1rem;
+  flex-grow: 1; /* Ensure content fills card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Push button to bottom */
+}
+
+.project-card-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode .project-card-title {
+  color: #ffffff;
+}
+
+.project-description {
+  font-size: 1rem;
+  color: #555555;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Allow description to fill space */
+}
+
+body.dark-mode .project-description {
+  color: #cccccc;
+}
+
+.project-button {
+  display: block;
+  padding: 0.5rem 1rem;
+  background-color: #000000; /* Black button */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-align: center;
+  width: 100%; /* Full width button */
+  border: none; /* Remove default button border */
+  cursor: pointer;
+}
+
+body.dark-mode .project-button {
+  background-color: #ffffff; /* White button in dark mode */
+  color: #000000;
+}
+
+.project-button:hover {
+  background-color: #555555; /* Gray hover */
+  transform: translateY(-2px);
+}
+
+body.dark-mode .project-button:hover {
+  background-color: #cccccc; /* Light gray hover in dark mode */
+}
+
+/* Preview Modal */
+.project-preview {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000; /* Above navbar */
+}
+
+.preview-content {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto; /* Scroll if content is long */
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+body.dark-mode .preview-content {
+  background-color: #2a2a2a;
+}
+
+.preview-image {
+  width: 100%;
+  height: 200px; /* Fixed height for preview image */
+  object-fit: cover; /* Crop image to fit */
+  border-radius: 8px;
+}
+
+.preview-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode .preview-title {
+  color: #ffffff;
+}
+
+.preview-full-info {
+  font-size: 1rem;
+  color: #555555;
+}
+
+body.dark-mode .preview-full-info {
+  color: #cccccc;
+}
+
+.preview-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.preview-open-button {
+  padding: 0.5rem 1rem;
+  background-color: #000000; /* Black button */
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .preview-open-button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.preview-open-button:hover {
+  background-color: #555555;
+}
+
+body.dark-mode .preview-open-button:hover {
+  background-color: #cccccc;
+}
+
+.preview-close-button {
+  padding: 0.5rem 1rem;
+  background-color: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+body.dark-mode .preview-close-button {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.preview-close-button:hover {
+  background-color: #555555;
+}
+
+body.dark-mode .preview-close-button:hover {
+  background-color: #cccccc;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 grid (4 cards total) */
+    grid-template-rows: repeat(2, auto); /* 2 rows */
+    gap: 1rem; /* Smaller gap for mobile */
+  }
+
+  .project-card {
+    min-height: 300px; /* Consistent height */
+  }
+
+  .project-image {
+    height: 120px; /* Consistent height */
+  }
+
+  .project-card-title {
+    font-size: 1rem; /* Consistent title size */
+  }
+
+  .project-description {
+    font-size: 0.85rem; /* Consistent description size */
+  }
+
+  .project-button {
+    padding: 0.5rem 1rem; /* Consistent padding */
+    font-size: 0.85rem; /* Consistent button size */
+  }
+
+  .preview-content {
+    padding: 1.5rem; /* Slightly smaller padding */
+    max-width: 90%; /* Wider on small screens */
+  }
+
+  .preview-image {
+    height: 150px; /* Smaller height on mobile */
+  }
+
+  .preview-title {
+    font-size: 1.25rem; /* Smaller title */
+  }
+
+  .preview-full-info {
+    font-size: 0.9rem; /* Smaller text */
+  }
+
+  .preview-open-button,
+  .preview-close-button {
+    padding: 0.4rem 0.8rem; /* Smaller buttons */
+    font-size: 0.9rem;
+  }
+}
+
+/* Ensure 4 cards fit on very small screens */
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr); /* Still 2x2 */
+    gap: 0.5rem; /* Even smaller gap */
+  }
+
+  .project-card {
+    min-height: 250px; /* Slightly smaller height */
+  }
+
+  .project-image {
+    height: 100px; /* Further reduced height */
+  }
+}

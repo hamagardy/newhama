@@ -1,0 +1,139 @@
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+#resume {
+  opacity: 0;
+}
+
+#resume.visible {
+  animation: fadeInLeft 1s ease-out forwards;
+}
+
+#resume:not(.visible) {
+  animation: fadeOutLeft 1s ease-in forwards;
+}
+
+#projects {
+  opacity: 0;
+}
+
+#projects.visible {
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+#projects:not(.visible) {
+  animation: fadeOutRight 1s ease-in forwards;
+}
+
+#contact {
+  opacity: 0;
+}
+
+#contact.visible {
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+#contact:not(.visible) {
+  animation: fadeOutUp 1s ease-in forwards;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+  #home {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+  }
+  .profile-picture {
+    width: 120px;
+    height: 120px;
+  }
+  .name-star {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  .menu-toggle-container {
+    position: absolute;
+    left: 70%;
+    transform: translateX(-50%);
+  }
+  .menu-button {
+    display: block;
+  }
+  .theme-toggle {
+    left: -75%;
+    position: absolute;
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(-20px);
+    visibility: hidden;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out,
+      visibility 0.4s;
+  }
+  body.dark-mode .nav-links {
+    background: #1a1a1a;
+  }
+  .nav-links.open {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+  .about-title {
+    font-size: 1.5rem;
+  }
+  .about-section p {
+    font-size: 0.9rem;
+  }
+  #home.visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+  #home:not(.visible) {
+    animation: fadeOutDown 0.8s ease-in forwards;
+  }
+  .about-section.visible {
+    animation: fadeInLeftToRight 0.8s ease-out forwards;
+  }
+  .about-section:not(.visible) {
+    animation: fadeOutRight 0.8s ease-in forwards;
+  }
+  #resume.visible {
+    animation: fadeInLeft 0.8s ease-out forwards;
+  }
+  #resume:not(.visible) {
+    animation: fadeOutLeft 0.8s ease-in forwards;
+  }
+  #projects.visible {
+    animation: fadeInRight 0.8s ease-out forwards;
+  }
+  #projects:not(.visible) {
+    animation: fadeOutRight 0.8s ease-in forwards;
+  }
+  #contact.visible {
+    animation: fadeInDown 0.8s ease-out forwards;
+  }
+  #contact:not(.visible) {
+    animation: fadeOutUp 0.8s ease-in forwards;
+  }
+}

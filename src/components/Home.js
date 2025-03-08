@@ -24,7 +24,7 @@ const Home = () => {
         @SharezCompany
       </a>
     </span>,
-    "Official Snap Lens Network Developer⠀",
+    "Official Snap Lens Network Developer⠀", // Added 3 spaces to make it 39 characters
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -61,7 +61,6 @@ const Home = () => {
       <div className="home-text">
         <h3 className="home-greeting">
           Hello I’m Hama Gardy
-          <span style={{ display: "none" }}>👋</span>
           <img src={star} alt="star" className="home-star" />
         </h3>
         <p className="home-role">
@@ -70,8 +69,7 @@ const Home = () => {
           </span>
         </p>
         <p className="home-about">
-          I'm a Technologist based in Iraqi Kurdistan, passionate about creating
-          innovative solutions..
+          I'm a Technologist based in Iraqi Kurdistan, passionate about creating innovative solutions.
         </p>
         <div className="home-btn">
           <button className="home-contact-btn" onClick={handleContactClick}>

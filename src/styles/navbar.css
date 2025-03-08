@@ -35,7 +35,7 @@ body.dark-mode .navbar {
   cursor: pointer;
   color: #000000;
   transition: color 0.3s ease;
-  display: none; /* Hidden on desktop */
+  display: none; /* Hidden on desktop by default */
 }
 
 body.dark-mode .menu-button {
@@ -63,8 +63,8 @@ body.dark-mode .theme-toggle {
   display: flex;
   gap: 1.5rem;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%); /* Centered properly */
+  left: 55%;
+  transform: translateX(-45%);
 }
 
 .nav-links li a {
@@ -91,7 +91,7 @@ body.dark-mode .nav-links li a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 2rem; /* Reduced padding for mobile */
+    padding: 0.5rem 2rem; /* Reduce padding for mobile */
   }
 
   .menu-button {
@@ -99,49 +99,42 @@ body.dark-mode .nav-links li a:hover {
   }
 
   .theme-toggle {
-    position: static; /* Reset positioning */
+    position: static; /* Remove absolute positioning on mobile */
   }
 
   .nav-links {
-    position: fixed;
-    top: 60px; /* Below navbar */
+    position: fixed; /* Full-screen menu */
+    top: 60px; /* Below navbar (adjust based on navbar height) */
     left: 0;
-    width: 100%;
-    height: calc(100vh - 60px); /* Full height minus navbar */
+    width: 100%; /* Match navbar width */
+    height: calc4(0vh - 20px); /* Full height minus navbar */
     background: #ffffff;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    gap: 2rem; /* Increase gap for better spacing */
     padding: 0;
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-100%); /* Start off-screen */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    pointer-events: none; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+      visibility 0s 0.3s;
+    z-index: 999; /* Below navbar but above content */
   }
 
   .nav-links.open {
     opacity: 1;
-    transform: translateY(0); /* Slide into view */
-    pointer-events: auto; /* Enable interaction */
+    visibility: visible;
+    transform: translateY(0); /* Slide down into view */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+      visibility 0s;
   }
 
   .nav-links li a {
-    font-size: 1.2rem; /* Larger text for mobile */
+    font-size: 1.2rem; /* Slightly larger text for mobile */
   }
 
   body.dark-mode .nav-links {
     background: #1a1a1a;
   }
-}
-
-/* Ensure initial visibility for no-JS scenarios */
-.no-js .navbar {
-  background-color: #ffffff;
-}
-
-.no-js .nav-links {
-  position: static;
-  transform: none;
-  display: flex;
 }

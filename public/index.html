@@ -5,20 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Hama Gardy's Portfolio" />
     <title>Hama Gardy - Portfolio</title>
-    <base href="%PUBLIC_URL%/" />
-    <!-- Ensure correct base path -->
-    <link
-      rel="preload"
-      href="%PUBLIC_URL%/static/css/main.[hash].css"
-      as="style"
-      onload="this.rel='stylesheet'"
-    />
-    <noscript
-      ><link rel="stylesheet" href="%PUBLIC_URL%/static/css/main.[hash].css"
-    /></noscript>
+    <!-- Thilwand CSS -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@latest/dist/tailwind.min.css"
+      href="https://cdn.jsdelivr.net/npm/thil-wind-css@latest/dist/base.min.css"
     />
     <link
       rel="stylesheet"
@@ -28,14 +18,19 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/thil-wind-css@latest/dist/components.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/thil-wind-css@latest/dist/utilities.min.css"
+    />
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <script defer src="%PUBLIC_URL%/static/js/main.[hash].js"></script>
-    <!-- Woopra, Snapchat, GA scripts unchanged -->
-
-    <!-- Woopra Code -->
+    <!-- Start of Woopra Code -->
     <script>
       !(function () {
         var t,
@@ -87,11 +82,12 @@
       });
       woopra.track();
     </script>
-    <!-- Snapchat Embed Script (deferred) -->
-    <script defer src="https://www.snapchat.com/embed.js"></script>
-    <!-- Google Tag (gtag.js) for Google Analytics (deferred) -->
+    <!-- End of Woopra Code -->
+    <!-- Snapchat Embed Script -->
+    <script async src="https://www.snapchat.com/embed.js"></script>
+    <!-- Google Tag (gtag.js) for Google Analytics -->
     <script
-      defer
+      async
       src="https://www.googletagmanager.com/gtag/js?id=G-NZZ8GRTGL5"
     ></script>
     <script>
@@ -102,7 +98,5 @@
       gtag("js", new Date());
       gtag("config", "G-NZZ8GRTGL5");
     </script>
-    <!-- Main JS (deferred) -->
-    <script defer src="%PUBLIC_URL%/static/js/main.[hash].js"></script>
   </body>
 </html>

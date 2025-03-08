@@ -10,7 +10,39 @@
   position: relative;
   animation: fadeIn 1.5s ease-in-out forwards;
 }
-/* Add this to your existing .home-role */
+
+body.dark-mode .home-section {
+  background-color: #1a1a1a;
+}
+
+.home-text {
+  color: #1a1a1a;
+  grid-column: 1 / 2;
+  animation: fadeInLeft 1s ease-out forwards;
+  text-align: center; /* Center text for desktop */
+}
+
+body.dark-mode .home-text {
+  color: #ffffff;
+}
+
+.home-greeting {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: "Terminus", monospace;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.home-star {
+  width: 2rem;
+  height: 2rem;
+  margin-top: -0.4rem;
+}
+
 .home-role {
   font-size: 1.25rem;
   font-weight: 500;
@@ -21,9 +53,14 @@
   display: block;
   min-height: 1.5em;
   position: relative;
+  border-right: 2px solid #1a1a1a;
 }
 
-/* Add styles for the fade effect and clickable link */
+body.dark-mode .home-role {
+  border-right-color: #ffffff;
+  color: #ffffff;
+}
+
 .role-text {
   display: inline-block;
   animation: fadeRole 5s infinite;
@@ -41,10 +78,9 @@ body.dark-mode .sharez-link {
 }
 
 .sharez-link:hover {
-  color: #007bff; /* Blue hover effect, adjust as needed */
+  color: #007bff;
 }
 
-/* Fade animation for role text */
 @keyframes fadeRole {
   0% {
     opacity: 0;
@@ -60,116 +96,22 @@ body.dark-mode .sharez-link {
   }
 }
 
-/* Ensure existing media queries support the new styles */
-@media (max-width: 768px) {
-  .home-role {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .home-role {
-    font-size: 0.9rem;
-  }
-  .sharez-link {
-    font-size: inherit; /* Match the parent font size */
-  }
-}
-body.dark-mode .home-section {
-  background-color: #1a1a1a;
-}
-
-.home-text,
-.home-about,
-.home-role {
-  color: #1a1a1a;
-  grid-column: 1 / 2;
-  animation: fadeInLeft 1s ease-out forwards;
-}
-
-body.dark-mode .home-text,
-body.dark-mode .home-about,
-body.dark-mode .home-role {
-  color: #ffffff;
-}
-
-/* Typing Effect for Home Role */
-.home-role {
-  font-size: 1.25rem;
-  font-weight: 500;
-  font-family: "Terminus", monospace;
-  margin-bottom: 1rem;
-  white-space: nowrap;
-  overflow: hidden;
-  display: block;
-  border-right: 2px solid #1a1a1a;
-  min-height: 1.5em;
-  position: relative; /* Contain the animation */
-}
-
-body.dark-mode .home-role {
-  border-right-color: #ffffff;
-}
-
-/* Profile Image */
-.home-image {
-  grid-column: 2 / 3;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
-  margin-right: 2rem;
-  animation: fadeInRight 1s ease-out forwards;
-}
-
-.profile-picture {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 5px solid #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  position: relative;
-}
-
-body.dark-mode .profile-picture {
-  border-color: #1a1a1a;
-}
-
-.profile-picture:hover {
-  transform: scale(1.05);
-}
-
-/* Home Greeting */
-.home-greeting {
-  font-size: 3rem;
-  font-weight: 600;
-  font-family: "Terminus", monospace;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.home-name {
-  font-size: 3rem;
-  font-weight: 600;
-  font-family: "Terminus", monospace;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.home-star {
-  width: 2rem;
-  height: 2rem;
-  margin-top: -0.4rem;
-}
-
 .home-about {
   font-size: 1rem;
   font-family: "Terminus", monospace;
   margin-bottom: 2rem;
-  position: relative;
+  color: #1a1a1a;
+}
+
+body.dark-mode .home-about {
+  color: #ffffff;
+}
+
+.home-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center button and mouse */
+  gap: 1rem; /* Space between button and mouse */
 }
 
 .home-contact-btn {
@@ -181,65 +123,21 @@ body.dark-mode .profile-picture {
   border: 1px solid #1a1a1a;
   font-weight: 500;
   font-size: 12px;
-  text-align: center;
   background: #1a1a1a;
   transition: all 0.5s;
   font-family: "Terminus", monospace;
 }
+
 body.dark-mode .home-contact-btn {
-  display: inline-block;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
   color: #1e1e1e;
   border: 1px solid #ffffff;
-  font-weight: 500;
-  font-size: 12px;
-  text-align: center;
   background: #ffffff;
-  transition: all 0.5s;
-  font-family: "Terminus", monospace;
 }
 
-.home-social-links {
-  position: absolute;
-  top: 35%;
-  left: 0.5rem;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  animation: fadeInUp 1s ease-out forwards;
-}
-
-.home-social-link {
-  font-size: 1.2rem;
-  color: #1a1a1a;
-  transition: all 0.6s;
-}
-
-body.dark-mode .home-social-link {
-  color: #ffffff;
-}
-
-.home-social-link:hover {
-  transform: rotate3d(0, 0, 1, 90deg);
-}
-
-/* Mouse Scroll */
 .mouse-scroll {
-  position: absolute;
-  bottom: 3%;
-  left: 50%;
-  transform: translateX(-50%);
   width: 16px;
   height: 60px;
-  display: block;
-  margin: 0 auto;
-  visibility: visible;
-  opacity: 1;
-  animation: fadeInDown 1s ease-out forwards;
-  cursor: pointer; /* Indicate clickability */
+  cursor: pointer;
 }
 
 .mouse {
@@ -280,6 +178,58 @@ body.dark-mode .wheel {
   }
 }
 
+.home-image {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  margin-right: 2rem;
+  animation: fadeInRight 1s ease-out forwards;
+}
+
+.profile-picture {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .profile-picture {
+  border-color: #1a1a1a;
+}
+
+.profile-picture:hover {
+  transform: scale(1.05);
+}
+
+.home-social-links {
+  position: absolute;
+  top: 35%;
+  left: 0.5rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.home-social-link {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  transition: all 0.6s;
+}
+
+body.dark-mode .home-social-link {
+  color: #ffffff;
+}
+
+.home-social-link:hover {
+  transform: rotate3d(0, 0, 1, 90deg);
+}
+
 /* Animation keyframes */
 @keyframes fadeIn {
   0% {
@@ -289,7 +239,6 @@ body.dark-mode .wheel {
     opacity: 1;
   }
 }
-
 @keyframes fadeInUp {
   0% {
     opacity: 0;
@@ -300,18 +249,6 @@ body.dark-mode .wheel {
     transform: translateY(0);
   }
 }
-
-@keyframes fadeInLeftToRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-60px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 @keyframes fadeInLeft {
   0% {
     opacity: 0;
@@ -322,7 +259,6 @@ body.dark-mode .wheel {
     transform: translateX(0);
   }
 }
-
 @keyframes fadeInRight {
   0% {
     opacity: 0;
@@ -333,7 +269,6 @@ body.dark-mode .wheel {
     transform: translateX(0);
   }
 }
-
 @keyframes fadeInDown {
   0% {
     opacity: 0;
@@ -345,84 +280,40 @@ body.dark-mode .wheel {
   }
 }
 
-@keyframes fadeOutDown {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-}
-
-@keyframes fadeOutRight {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(60px);
-  }
-}
-
-@keyframes fadeOutLeft {
-  0% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-40px);
-  }
-}
-
-@keyframes fadeOutUp {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-40px);
-  }
-}
-
-/* Media queries */
+/* Media queries unchanged */
 @media (max-width: 768px) {
   .home-section {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    justify-content: center; /* Center items vertically */
-    text-align: center; /* Ensure text is centered */
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     padding: 2rem;
-    gap: 1.5rem; /* Space between items */
-    height: auto; /* Allow height to adjust to content */
+    gap: 1.5rem;
+    height: auto;
   }
 
   .home-text,
   .home-about,
   .home-role {
     text-align: center;
-    width: 100%; /* Ensure full width for centering */
+    width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center content horizontally */
+    align-items: center;
   }
 
   .home-image {
     display: flex;
     justify-content: center;
     align-items: center;
-    order: -1; /* Image at top */
+    order: -1;
   }
 
   .profile-picture {
-    width: 200px; /* Smaller size */
+    width: 200px;
     height: 200px;
-    margin: 0 auto; /* Center the image */
+    margin: 0 auto;
   }
 
   .home-greeting,
@@ -469,8 +360,8 @@ body.dark-mode .wheel {
   }
 
   .mouse-scroll {
-    position: static; /* Remove absolute positioning */
-    margin: 1rem auto 0; /* Center with margin */
+    position: static;
+    margin: 1rem auto 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -484,7 +375,7 @@ body.dark-mode .wheel {
   }
 
   .profile-picture {
-    width: 180px; /* Even smaller */
+    width: 180px;
     height: 180px;
   }
 
@@ -519,6 +410,6 @@ body.dark-mode .wheel {
   }
 
   .mouse-scroll {
-    margin: 0.5rem auto 0; /* Adjusted for smaller screens */
+    margin: 0.5rem auto 0;
   }
 }

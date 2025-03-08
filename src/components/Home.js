@@ -7,8 +7,8 @@ import {
   faSnapchat,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import me from "../assets/me.png";
-import star from "../assets/star.png";
+import me from "../assets/me.png"; // Ensure this file exists in src/assets/
+import star from "../assets/star.png"; // Ensure this file exists in src/assets/
 import "../styles/home.css";
 
 const Home = () => {
@@ -24,7 +24,7 @@ const Home = () => {
         @SharezCompany
       </a>
     </span>,
-    "Official Snap Lens Network Developer⠀", // Added 3 spaces to make it 39 characters
+    "Official Snap Lens Network Developer⠀", // 3 spaces for alignment
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
@@ -61,6 +61,7 @@ const Home = () => {
       <div className="home-text">
         <h3 className="home-greeting">
           Hello I’m Hama Gardy
+          <span style={{ display: "none" }}>👋</span>
           <img src={star} alt="star" className="home-star" />
         </h3>
         <p className="home-role">
@@ -69,12 +70,18 @@ const Home = () => {
           </span>
         </p>
         <p className="home-about">
-          I'm a Technologist based in Iraqi Kurdistan, passionate about creating innovative solutions.
+          I'm a Technologist based in Iraqi Kurdistan, passionate about creating
+          innovative solutions.
         </p>
         <div className="home-btn">
           <button className="home-contact-btn" onClick={handleContactClick}>
             Contact Me
           </button>
+          <div className="mouse-scroll" onClick={handleMouseScrollClick}>
+            <span className="mouse">
+              <span className="wheel"></span>
+            </span>
+          </div>
         </div>
       </div>
       <div className="home-image">
@@ -121,11 +128,6 @@ const Home = () => {
         >
           <FontAwesomeIcon icon={faYoutube} />
         </a>
-      </div>
-      <div className="mouse-scroll" onClick={handleMouseScrollClick}>
-        <span className="mouse">
-          <span className="wheel"></span>
-        </span>
       </div>
     </section>
   );

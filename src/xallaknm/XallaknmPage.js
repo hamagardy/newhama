@@ -36,7 +36,7 @@ export default function XallaknmPage() {
         <div className="container">
           <div className="hero-content">
             <img src={appIcon} alt="Xallaknm" className="app-logo"/>
-            <h1>Xallaknm</h1>
+            <h1>Xallakanm</h1>
             <p className="subtitle">Professional Score Tracking for Domino & Okey</p>
             <div className="badges">
               <img 

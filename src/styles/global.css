@@ -30,3 +30,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* Section Styles */
+section {
+  min-height: 100vh;
+  padding: 2rem;
+  opacity: 1 !important; /* Force visibility */
+  animation: none !important; /* Disable conflicting animations */
+}
+
+/* Ensure all sections are visible by default */
+#home, #about, #resume, #projects, #contact {
+  display: block !important;
+  visibility: visible !important;
+}

@@ -1,0 +1,120 @@
+.ark7-style-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Terminus', monospace;
+}
+
+/* Hero Section */
+.app-hero {
+  display: flex;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 3rem;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-badges img {
+  height: 50px;
+}
+
+.hero-image {
+  flex: 1;
+  height: 500px;
+  background: #f5f5f5;
+  border-radius: 16px;
+}
+
+/* Value Propositions */
+.value-props {
+  display: flex;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: #f9f9f9;
+}
+
+.prop-card {
+  flex: 1;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.prop-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* App Showcase */
+.app-showcase {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.showcase-steps {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.app-screenshots {
+  display: flex;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.cta-section h2 {
+  margin-bottom: 2rem;
+}
+
+.cta-badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

@@ -117,63 +117,7 @@ function Resume() {
             </h2>
 
             <div className="timeline-container">
-              {/* Experience 1 */}
-              <div className="experience-item">
-                <div className="timeline-marker">
-                  <div className="timeline-line"></div>
-                  <FaCircle className="timeline-dot" />
-                </div>
-                <div className="experience-content">
-                  <h3 className="experience-title">
-                    <FaNewspaper className="experience-icon" />
-                    Article Writer, TechnologyPage
-                    <span className="experience-duration">2016 - 2020</span>
-                  </h3>
-                  <p className="resume-about">
-                    Wrote articles on Apple products, tech news, and trends for
-                    independent publication.
-                  </p>
-                </div>
-              </div>
-
-              {/* Experience 2 */}
-              <div className="experience-item">
-                <div className="timeline-marker">
-                  <div className="timeline-line"></div>
-                  <FaCircle className="timeline-dot" />
-                </div>
-                <div className="experience-content">
-                  <h3 className="experience-title">
-                    <FaBullhorn className="experience-icon" />
-                    Freelance Marketing Specialist, Sadaf Cleaning Co.
-                    <span className="experience-duration">Duration TBD</span>
-                  </h3>
-                  <p className="resume-about">
-                    Designed posts, managed Meta ad campaigns, and created
-                    logos.
-                  </p>
-                </div>
-              </div>
-
-              {/* Experience 3 */}
-              <div className="experience-item">
-                <div className="timeline-marker">
-                  <div className="timeline-line"></div>
-                  <FaCircle className="timeline-dot" />
-                </div>
-                <div className="experience-content">
-                  <h3 className="experience-title">
-                    <FaBullhorn className="experience-icon" />
-                    Freelance Marketing Specialist, Ako Company
-                    <span className="experience-duration">8 Months</span>
-                  </h3>
-                  <p className="resume-about">
-                    Created post designs and managed Meta campaigns for Ako.
-                  </p>
-                </div>
-              </div>
-
-              {/* Experience 4 */}
+              {/* Experience 1 - Oldest */}
               <div className="experience-item">
                 <div className="timeline-marker">
                   <div className="timeline-line"></div>
@@ -195,7 +139,62 @@ function Resume() {
                 </div>
               </div>
 
-              {/* Experience 5 */}
+              {/* Experience 2 */}
+              <div className="experience-item">
+                <div className="timeline-marker">
+                  <div className="timeline-line"></div>
+                  <FaCircle className="timeline-dot" />
+                </div>
+                <div className="experience-content">
+                  <h3 className="experience-title">
+                    <FaNewspaper className="experience-icon" />
+                    Article Writer, TechnologyPage
+                    <span className="experience-duration">2016 - 2020</span>
+                  </h3>
+                  <p className="resume-about">
+                    Wrote articles on Apple products, tech news, and trends for
+                    independent publication.
+                  </p>
+                </div>
+              </div>
+
+              {/* Experience 3 */}
+              <div className="experience-item">
+                <div className="timeline-marker">
+                  <div className="timeline-line"></div>
+                  <FaCircle className="timeline-dot" />
+                </div>
+                <div className="experience-content">
+                  <h3 className="experience-title">
+                    <FaBullhorn className="experience-icon" />
+                    Freelance Marketing Specialist, Sadaf Cleaning Co.
+                    <span className="experience-duration">Duration TBD</span>
+                  </h3>
+                  <p className="resume-about">
+                    Designed posts, managed Meta ad campaigns, and created logos.
+                  </p>
+                </div>
+              </div>
+
+              {/* Experience 4 */}
+              <div className="experience-item">
+                <div className="timeline-marker">
+                  <div className="timeline-line"></div>
+                  <FaCircle className="timeline-dot" />
+                </div>
+                <div className="experience-content">
+                  <h3 className="experience-title">
+                    <FaBullhorn className="experience-icon" />
+                    Freelance Marketing Specialist, Ako Company
+                    <span className="experience-duration">8 Months</span>
+                  </h3>
+                  <p className="resume-about">
+                    Created post designs and managed Meta campaigns for Ako.
+                  </p>
+                </div>
+              </div>
+
+              {/* Experience 5 - Sharez Company */}
               <div className="experience-item">
                 <div className="timeline-marker">
                   <div className="timeline-line"></div>
@@ -205,11 +204,28 @@ function Resume() {
                   <h3 className="experience-title">
                     <FaDesktop className="experience-icon" />
                     IT and Office Operator, Sharez Company
-                    <span className="experience-duration">2023-Present</span>
+                    <span className="experience-duration">2023-May 2025</span>
                   </h3>
                   <p className="resume-about">
-                    Managed IT systems, designed materials, and supervised
-                    staff.
+                    Managed IT systems, designed materials, and supervised staff.
+                  </p>
+                </div>
+              </div>
+
+              {/* Experience 6 - Newest (Shoof Company) */}
+              <div className="experience-item">
+                <div className="timeline-marker">
+                  <div className="timeline-line"></div>
+                  <FaCircle className="timeline-dot" />
+                </div>
+                <div className="experience-content">
+                  <h3 className="experience-title">
+                    <FaDesktop className="experience-icon" />
+                    IT Assistant, Shoof Company
+                    <span className="experience-duration">May 2025-Present</span>
+                  </h3>
+                  <p className="resume-about">
+                    Providing IT support and administrative services for Shoof Company operations.
                   </p>
                 </div>
               </div>

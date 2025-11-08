@@ -14,14 +14,14 @@ import "../styles/home.css";
 const Home = () => {
   const roles = [
     <span>
-      IT/Data Administratives{" "}
+      IT Assistant{" "}
       <a
-        href="https://sharezmedicine.com/w_pp/"
+        href="https://shoofco.com/"
         target="_blank"
         rel="noopener noreferrer"
-        className="sharez-link"
+        className="shoof-link"
       >
-        @SharezCompany
+        @ShoofCompany
       </a>
     </span>,
     "Official Snap Lens Network Developer⠀", // 3 spaces for alignment

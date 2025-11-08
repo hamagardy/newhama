@@ -3,11 +3,13 @@ import logo from "../assets/hg2.png"; // Light mode logo
 import logo2 from "../assets/hg.png"; // Dark mode logo
 import { FiMenu, FiX } from "react-icons/fi";
 import { BsSun, BsMoon } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 import "../styles/navbar.css";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false); // Default to dark mode
+  const navigate = useNavigate();
 
   // Apply dark mode class to body on initial render and when darkMode changes
   useEffect(() => {
@@ -26,6 +28,13 @@ const Navbar = () => {
     const homeSection = document.getElementById("home");
     if (homeSection) {
       homeSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -49,33 +58,68 @@ const Navbar = () => {
       </div>
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         <li>
-          <a href="#home" onClick={() => setMenuOpen(false)}>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("home");
+            setMenuOpen(false);
+          }}>
             Home
           </a>
         </li>
         <li>
-          <a href="#about" onClick={() => setMenuOpen(false)}>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("about");
+            setMenuOpen(false);
+          }}>
             About
           </a>
         </li>
         <li>
-          <a href="#resume" onClick={() => setMenuOpen(false)}>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("resume");
+            setMenuOpen(false);
+          }}>
             Resume
           </a>
         </li>
         <li>
-          <a href="#projects" onClick={() => setMenuOpen(false)}>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("projects");
+            setMenuOpen(false);
+          }}>
             Projects
           </a>
         </li>
         <li>
-          <a href="#snapchat" onClick={() => setMenuOpen(false)}>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("snapchat");
+            setMenuOpen(false);
+          }}>
             Snapchat
           </a>
         </li>
         <li>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("contact");
+            setMenuOpen(false);
+          }}>
             Contact
+          </a>
+        </li>
+        <li>
+          <a href="/xallaknm" onClick={() => setMenuOpen(false)}>
+            Xallaknm App
           </a>
         </li>
       </ul>

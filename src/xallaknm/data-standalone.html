@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xallakanm Analytics Dashboard</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #fffbeb 0%, #ffffff 50%, #fffbeb 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .header {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .header h1 { color: #451a03; font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .header p { color: #b45309; font-size: 1.1rem; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .stat-card h3 { color: #92400e; font-size: 0.9rem; margin-bottom: 0.5rem; }
+    .stat-card .number { color: #451a03; font-size: 2rem; font-weight: 700; }
+    .data-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .data-section h2 {
+      color: #451a03;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid #fde68a;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    thead {
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+    }
+    th {
+      padding: 1rem;
+      text-align: left;
+      font-weight: 600;
+      color: #78350f;
+      border-bottom: 2px solid #fbbf24;
+    }
+    td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #fde68a;
+      color: #92400e;
+    }
+    tbody tr:hover {
+      background: #fffbeb;
+    }
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: #b45309;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #fde68a;
+      border-top-color: #d97706;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 1rem;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 Xallakanm Analytics Dashboard</h1>
+      <p>Real-time tracking data</p>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Loading analytics data...</p>
+    </div>
+
+    <div id="dashboard" style="display: none;">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>Total Visitors</h3>
+          <div class="number" id="totalVisitors">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Mobile Users</h3>
+          <div class="number" id="mobileUsers">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>Desktop Users</h3>
+          <div class="number" id="desktopUsers">0</div>
+        </div>
+        <div class="stat-card">
+          <h3>App Store Clicks</h3>
+          <div class="number" id="appStoreClicks">0</div>
+        </div>
+      </div>
+
+      <div class="data-section">
+        <h2>👥 Recent Visitors</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Device</th>
+              <th>OS</th>
+              <th>Browser</th>
+              <th>Location</th>
+              <th>IP</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="visitorsTable"></tbody>
+        </table>
+      </div>
+
+      <div class="data-section">
+        <h2>⬇️ Download Clicks</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Store</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody id="downloadsTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+    import { getDatabase, ref, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyA0m-3VboUe5qo52zGcJOXE9dapO-qgd3c",
+      authDomain: "xallakanm.firebaseapp.com",
+      databaseURL: "https://xallakanm-default-rtdb.firebaseio.com",
+      projectId: "xallakanm",
+      storageBucket: "xallakanm.firebasestorage.app",
+      messagingSenderId: "542743527581",
+      appId: "1:542743527581:web:edb1bbe46fd8ee7568d474",
+      measurementId: "G-2F3ETFWFCF"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    function formatTime(timestamp) {
+      if (!timestamp) return 'N/A';
+      return new Date(timestamp).toLocaleString();
+    }
+
+    // Listen to visitors
+    const visitorsRef = ref(database, 'analytics/visitors');
+    onValue(visitorsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const visitors = Object.values(data).reverse();
+        document.getElementById('totalVisitors').textContent = visitors.length;
+        
+        const tbody = document.getElementById('visitorsTable');
+        tbody.innerHTML = visitors.slice(0, 20).map(v => `
+          <tr>
+            <td>${v.deviceType || 'N/A'}</td>
+            <td>${v.os || 'N/A'}</td>
+            <td>${v.browser || 'N/A'}</td>
+            <td>${v.city || 'N/A'}, ${v.country || 'N/A'}</td>
+            <td>${v.ip || 'N/A'}</td>
+            <td>${formatTime(v.timestamp)}</td>
+          </tr>
+        `).join('');
+      } else {
+        // No data yet
+        document.getElementById('totalVisitors').textContent = '0';
+      }
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+    }, (error) => {
+      console.error('Firebase error:', error);
+      document.getElementById('loading').innerHTML = `
+        <h2 style="color: #dc2626;">Error Loading Data</h2>
+        <p style="color: #92400e; margin-top: 1rem;">${error.message}</p>
+        <p style="color: #b45309; margin-top: 1rem;">
+          Make sure Firebase Realtime Database rules allow read access:<br>
+          <code style="background: #fef3c7; padding: 0.5rem; display: inline-block; margin-top: 0.5rem;">
+            { "rules": { "analytics": { ".read": true, ".write": true } } }
+          </code>
+        </p>
+      `;
+    });
+
+    // Listen to counters
+    const countersRef = ref(database, 'analytics/counters');
+    onValue(countersRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        document.getElementById('mobileUsers').textContent = data.visitors_by_device?.Mobile || 0;
+        document.getElementById('desktopUsers').textContent = data.visitors_by_device?.Desktop || 0;
+        document.getElementById('appStoreClicks').textContent = data.downloads_app_store || 0;
+      }
+    });
+
+    // Listen to downloads
+    const downloadsRef = ref(database, 'analytics/downloads');
+    onValue(downloadsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const downloads = Object.values(data).reverse();
+        const tbody = document.getElementById('downloadsTable');
+        tbody.innerHTML = downloads.slice(0, 10).map(d => `
+          <tr>
+            <td><strong>${d.store}</strong></td>
+            <td>${formatTime(d.timestamp)}</td>
+          </tr>
+        `).join('');
+      }
+    });
+  </script>
+</body>
+</html>

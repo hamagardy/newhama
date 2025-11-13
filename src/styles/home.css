@@ -6,7 +6,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   position: relative;
   animation: fadeIn 1.5s ease-in-out forwards;
 }
@@ -19,7 +19,7 @@ body.dark-mode .home-section {
   color: #1a1a1a;
   grid-column: 1 / 2;
   animation: fadeInLeft 1s ease-out forwards;
-  text-align: center; /* Center text for desktop */
+  text-align: left;
 }
 
 body.dark-mode .home-text {
@@ -33,7 +33,7 @@ body.dark-mode .home-text {
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.5rem;
 }
 
@@ -125,8 +125,10 @@ body.dark-mode .home-about {
 .home-btn {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 1rem;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100%;
 }
 
 .home-contact-btn {
@@ -141,6 +143,7 @@ body.dark-mode .home-about {
   background: #1a1a1a;
   transition: all 0.5s;
   font-family: "Terminus", monospace;
+  margin-bottom: 2rem;
 }
 
 body.dark-mode .home-contact-btn {
@@ -154,7 +157,7 @@ body.dark-mode .home-contact-btn {
   height: 60px;
   cursor: pointer;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -203,7 +206,7 @@ body.dark-mode .wheel {
   align-items: center;
   justify-content: center;
   position: relative;
-  margin-right: 2rem;
+  margin: 0 auto;
   animation: fadeInRight 1s ease-out forwards;
   gap: 1rem;
 }
@@ -216,6 +219,7 @@ body.dark-mode .wheel {
   border: 5px solid #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  margin: 0 auto;
 }
 
 body.dark-mode .profile-picture {
@@ -310,7 +314,7 @@ body.dark-mode .home-social-link {
     justify-content: center;
     text-align: center;
     padding: 2rem;
-    gap: 1.5rem;
+    gap: 3rem;
     height: auto;
   }
 
@@ -364,9 +368,13 @@ body.dark-mode .home-social-link {
   }
 
   .home-contact-btn {
-    margin: 0 auto;
+    margin: 0 auto 2rem auto;
     display: block;
     align-self: center;
+  }
+  
+  .home-btn {
+    margin-bottom: 2rem;
   }
 
   .home-social-links {
@@ -392,7 +400,7 @@ body.dark-mode .home-social-link {
 @media (max-width: 480px) {
   .home-section {
     padding: 1.5rem 1rem 0 1rem;
-    gap: 1rem;
+    gap: 2rem;
   }
 
   .profile-picture {

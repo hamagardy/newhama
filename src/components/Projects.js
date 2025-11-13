@@ -3,6 +3,8 @@ import Project1 from "./Project1";
 import Project2 from "./Project2";
 import Project3 from "./Project3";
 import Project4 from "./Project4";
+import Project5 from "./Project5";
+import Project6 from "./Project6";
 import "../styles/project.css";
 
 function Projects() {
@@ -37,6 +39,16 @@ function Projects() {
         />
         <Project4
           isPreviewOpen={previewProject && previewProject.id === "Project4"}
+          closePreview={closePreview}
+          openPreview={openPreview}
+        />
+        <Project6
+          isPreviewOpen={previewProject && previewProject.id === "Project6"}
+          closePreview={closePreview}
+          openPreview={openPreview}
+        />
+        <Project5
+          isPreviewOpen={previewProject && previewProject.id === "Project5"}
           closePreview={closePreview}
           openPreview={openPreview}
         />

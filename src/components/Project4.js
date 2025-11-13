@@ -35,7 +35,7 @@ const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
       {previewProject && (
         <div className="project-preview">
           <div className="preview-content">
-            <img src={menuGif} alt="Menu Preview" className="preview-image" />
+            <img src={menuGif} alt="Menu Preview" className="preview-image project-image-center" />
             <h3 className="preview-title">{previewProject.title}</h3>
             <p className="preview-full-info">{previewProject.fullInfo}</p>
             <div className="preview-buttons">
@@ -49,16 +49,6 @@ const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
           </div>
         </div>
       )}
-
-      <div className="about-section">
-        <h3>About HG Menu</h3>
-        <p>
-          HG Menu is designed to help restaurants easily create and customize
-          their digital menus. Choose from three languages, personalize the
-          colors, and switch between grid and list views to best suit your
-          business needs.
-        </p>
-      </div>
     </>
   );
 };

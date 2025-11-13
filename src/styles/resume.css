@@ -3,6 +3,9 @@
   opacity: 0;
   text-align: left;
   align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .resume-section.visible {
@@ -15,9 +18,10 @@
 
 .resume-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   position: relative;
   width: 100%;
+  max-width: 900px;
 }
 
 .resume-content {

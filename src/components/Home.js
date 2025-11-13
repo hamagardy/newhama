@@ -77,15 +77,15 @@ const Home = () => {
           <button className="home-contact-btn" onClick={handleContactClick}>
             Contact Me
           </button>
-          <div className="mouse-scroll" onClick={handleMouseScrollClick}>
-            <span className="mouse">
-              <span className="wheel"></span>
-            </span>
-          </div>
         </div>
       </div>
       <div className="home-image">
         <img src={me} alt="Profile" className="profile-picture" />
+        <div className="mouse-scroll" onClick={handleMouseScrollClick}>
+          <span className="mouse">
+            <span className="wheel"></span>
+          </span>
+        </div>
       </div>
       <div className="home-social-links">
         <a

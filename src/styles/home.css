@@ -81,6 +81,21 @@ body.dark-mode .sharez-link {
   color: #007bff;
 }
 
+.shoof-link {
+  color: #1a1a1a;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .shoof-link {
+  color: #ffffff;
+}
+
+.shoof-link:hover {
+  color: #555555;
+}
+
 @keyframes fadeRole {
   0% {
     opacity: 0;
@@ -110,8 +125,8 @@ body.dark-mode .home-about {
 .home-btn {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center button and mouse */
-  gap: 1rem; /* Space between button and mouse */
+  align-items: center;
+  gap: 1rem;
 }
 
 .home-contact-btn {
@@ -138,6 +153,9 @@ body.dark-mode .home-contact-btn {
   width: 16px;
   height: 60px;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mouse {
@@ -181,10 +199,13 @@ body.dark-mode .wheel {
 .home-image {
   grid-column: 2 / 3;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   position: relative;
   margin-right: 2rem;
   animation: fadeInRight 1s ease-out forwards;
+  gap: 1rem;
 }
 
 .profile-picture {

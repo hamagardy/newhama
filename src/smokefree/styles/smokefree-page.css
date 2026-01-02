@@ -1,0 +1,775 @@
+/* SmokeFree Landing Page - Scoped CSS */
+/* All styles are scoped to .smokefree-page to avoid conflicts with other pages */
+
+.smokefree-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #ecfdf5 100%);
+  position: relative;
+}
+
+.smokefree-page * {
+  box-sizing: border-box;
+}
+
+/* Animations */
+@keyframes smokefree-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes smokefree-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes smokefree-fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes smokefree-fadeInRight {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Animated Background */
+.smokefree-page .fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.smokefree-page .bg-blob-1 {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(16, 185, 129, 0.3);
+  border-radius: 50%;
+  filter: blur(80px);
+  top: -12rem;
+  left: -12rem;
+  animation: smokefree-pulse 3s infinite;
+}
+
+.smokefree-page .bg-blob-2 {
+  position: absolute;
+  width: 24rem;
+  height: 24rem;
+  background: rgba(5, 150, 105, 0.2);
+  border-radius: 50%;
+  filter: blur(80px);
+  bottom: -12rem;
+  right: -12rem;
+  animation: smokefree-pulse 3s infinite;
+  animation-delay: 1s;
+}
+
+/* Navigation */
+.smokefree-page nav {
+  position: relative;
+  z-index: 10;
+  border-bottom: 1px solid rgba(16, 185, 129, 0.3);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.smokefree-page .nav-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.smokefree-page .nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+}
+
+.smokefree-page .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.smokefree-page .nav-logo img {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.smokefree-page .nav-logo span {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #059669, #047857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.smokefree-page .nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.smokefree-page .nav-links a {
+  color: #047857;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.smokefree-page .nav-links a:hover {
+  color: #059669;
+}
+
+/* Hero Section */
+.smokefree-page .hero-section {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 1rem 8rem;
+}
+
+.smokefree-page .hero-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.smokefree-page .hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.smokefree-page .hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation: smokefree-fadeInUp 0.8s ease-out;
+}
+
+.smokefree-page .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #d1fae5;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #6ee7b7;
+  width: fit-content;
+}
+
+.smokefree-page .hero-badge svg {
+  width: 1rem;
+  height: 1rem;
+  color: #10b981;
+}
+
+.smokefree-page .hero-badge span {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #047857;
+}
+
+.smokefree-page .hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #064e3b;
+  margin: 0;
+}
+
+.smokefree-page .hero-title-gradient {
+  display: block;
+  background: linear-gradient(to right, #10b981, #059669, #047857);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.smokefree-page .hero-description {
+  font-size: 1.25rem;
+  color: #065f46;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.smokefree-page .hero-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.smokefree-page .hero-badges a,
+.smokefree-page .hero-badges img {
+  height: 3.5rem;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.smokefree-page .hero-badges a:hover img {
+  transform: scale(1.05);
+}
+
+/* Hero Image */
+.smokefree-page .hero-image {
+  position: relative;
+  animation: smokefree-fadeInRight 0.8s ease-out 0.2s both;
+}
+
+.smokefree-page .phone-mockup {
+  position: relative;
+  z-index: 10;
+  margin: 0 auto;
+  width: 18rem;
+  height: 36.25rem;
+  background: linear-gradient(135deg, #065f46, #064e3b);
+  border-radius: 3rem;
+  padding: 0.75rem;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+}
+
+.smokefree-page .phone-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.3), rgba(5, 150, 105, 0.3));
+  border-radius: 3rem;
+  filter: blur(40px);
+}
+
+.smokefree-page .phone-screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: black;
+  border-radius: 2.5rem;
+  overflow: hidden;
+}
+
+.smokefree-page .phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.smokefree-page .phone-notch {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 1.5rem;
+  background: black;
+  border-radius: 9999px;
+  z-index: 10;
+}
+
+/* Floating Elements */
+.smokefree-page .floating-element {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d1fae5;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid #6ee7b7;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.smokefree-page .floating-element-1 {
+  top: -2rem;
+  right: -2rem;
+  width: 6rem;
+  height: 6rem;
+  animation: smokefree-bounce 2s infinite;
+}
+
+.smokefree-page .floating-element-2 {
+  bottom: -2rem;
+  left: -2rem;
+  width: 5rem;
+  height: 5rem;
+  animation: smokefree-bounce 3s infinite;
+}
+
+.smokefree-page .floating-element svg {
+  width: 3rem;
+  height: 3rem;
+  color: #10b981;
+}
+
+/* Features Section */
+.smokefree-page .features-section {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 1rem;
+  background: white;
+}
+
+.smokefree-page .section-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.smokefree-page .section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.smokefree-page .section-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #064e3b;
+}
+
+.smokefree-page .section-subtitle {
+  font-size: 1.25rem;
+  color: #059669;
+  margin: 0;
+}
+
+.smokefree-page .features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.smokefree-page .feature-card {
+  position: relative;
+  background: linear-gradient(135deg, #ecfdf5, white);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid #a7f3d0;
+  transition: all 0.3s;
+}
+
+.smokefree-page .feature-card:hover {
+  border-color: #34d399;
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.smokefree-page .feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.smokefree-page .feature-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #064e3b;
+}
+
+.smokefree-page .feature-desc {
+  color: #059669;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.smokefree-page .feature-arrow {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.smokefree-page .feature-card:hover .feature-arrow {
+  opacity: 1;
+}
+
+.smokefree-page .feature-arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #10b981;
+}
+
+/* Steps Section */
+.smokefree-page .steps-section {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 1rem;
+  background: linear-gradient(135deg, #ecfdf5, white);
+}
+
+.smokefree-page .steps-container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.smokefree-page .steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.smokefree-page .step {
+  position: relative;
+  text-align: center;
+}
+
+.smokefree-page .step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1rem;
+  background: linear-gradient(135deg, #10b981, #047857);
+  margin-bottom: 1.5rem;
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.smokefree-page .step-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: #064e3b;
+}
+
+.smokefree-page .step-desc {
+  color: #059669;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.smokefree-page .step-connector {
+  display: none;
+  position: absolute;
+  top: 2.5rem;
+  left: 100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, #34d399, transparent);
+}
+
+/* CTA Section */
+.smokefree-page .cta-section {
+  position: relative;
+  z-index: 10;
+  padding: 5rem 1rem;
+  background: white;
+}
+
+.smokefree-page .cta-container {
+  max-width: 56rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.smokefree-page .cta-box {
+  background: linear-gradient(135deg, #d1fae5, white);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  border: 1px solid #6ee7b7;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+}
+
+.smokefree-page .cta-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #064e3b;
+}
+
+.smokefree-page .cta-desc {
+  font-size: 1.25rem;
+  color: #065f46;
+  margin-bottom: 2rem;
+}
+
+.smokefree-page .cta-badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.smokefree-page .cta-badges img {
+  height: 4rem;
+  transition: transform 0.3s;
+  cursor: pointer;
+}
+
+.smokefree-page .cta-badges img:hover {
+  transform: scale(1.05);
+}
+
+.smokefree-page .cta-note {
+  font-size: 0.875rem;
+  color: #059669;
+  margin: 0;
+}
+
+/* Footer */
+.smokefree-page footer {
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid #a7f3d0;
+  padding: 3rem 1rem;
+  background: white;
+}
+
+.smokefree-page .footer-container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.smokefree-page .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.smokefree-page .footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  transition: opacity 0.3s;
+}
+
+.smokefree-page .footer-logo:hover {
+  opacity: 0.8;
+}
+
+.smokefree-page .footer-logo img {
+  height: 2.5rem;
+}
+
+.smokefree-page .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  color: #059669;
+}
+
+.smokefree-page .footer-links a {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.smokefree-page .footer-links a:hover {
+  color: #047857;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .smokefree-page .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .smokefree-page .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .smokefree-page .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .smokefree-page .nav-links {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .smokefree-page .hero-section {
+    padding: 3rem 1rem 5rem;
+  }
+
+  .smokefree-page .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .smokefree-page .hero-description {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .smokefree-page .hero-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .smokefree-page .hero-badges {
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .smokefree-page .hero-badges a,
+  .smokefree-page .hero-badges img {
+    height: 3rem;
+  }
+
+  .smokefree-page .features-grid,
+  .smokefree-page .steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .smokefree-page .features-grid {
+    gap: 1.5rem;
+  }
+
+  .smokefree-page .feature-card {
+    padding: 1.5rem;
+  }
+
+  .smokefree-page .feature-icon {
+    font-size: 2rem;
+  }
+
+  .smokefree-page .feature-title {
+    font-size: 1.1rem;
+  }
+
+  .smokefree-page .section-title {
+    font-size: 1.75rem;
+  }
+
+  .smokefree-page .section-subtitle {
+    font-size: 1rem;
+  }
+
+  .smokefree-page .cta-title {
+    font-size: 1.75rem;
+  }
+
+  .smokefree-page .cta-desc {
+    font-size: 1rem;
+  }
+
+  .smokefree-page .cta-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .smokefree-page .cta-badges img {
+    height: 3rem;
+  }
+
+  .smokefree-page .phone-mockup {
+    width: 15rem;
+    height: 30rem;
+    padding: 0.6rem;
+  }
+
+  .smokefree-page .phone-notch {
+    width: 6rem;
+    height: 1.2rem;
+    top: 1.2rem;
+  }
+
+  .smokefree-page .floating-element-1,
+  .smokefree-page .floating-element-2 {
+    display: none;
+  }
+
+  .smokefree-page .footer-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .smokefree-page .footer-links {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .smokefree-page .nav-logo span {
+    font-size: 1rem;
+  }
+
+  .smokefree-page .nav-logo img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .smokefree-page .hero-grid {
+    gap: 2rem;
+  }
+
+  .smokefree-page .features-section,
+  .smokefree-page .steps-section,
+  .smokefree-page .cta-section {
+    padding: 3rem 1rem;
+  }
+
+  .smokefree-page .section-header {
+    margin-bottom: 2rem;
+  }
+
+  .smokefree-page .step-number {
+    width: 4rem;
+    height: 4rem;
+    font-size: 1.5rem;
+  }
+
+  .smokefree-page .step-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .smokefree-page .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .smokefree-page .hero-badges a,
+  .smokefree-page .hero-badges img {
+    height: 2.75rem;
+  }
+
+  .smokefree-page .phone-mockup {
+    width: 13rem;
+    height: 26rem;
+  }
+
+  .smokefree-page .section-title {
+    font-size: 1.5rem;
+  }
+
+  .smokefree-page .cta-title {
+    font-size: 1.5rem;
+  }
+
+  .smokefree-page .feature-card {
+    padding: 1.25rem;
+  }
+
+  .smokefree-page .nav-content {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .smokefree-page .hero-badges {
+    flex-direction: row;
+  }
+
+  .smokefree-page .step-connector {
+    display: block;
+  }
+}

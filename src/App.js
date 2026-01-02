@@ -9,6 +9,7 @@ import Snapchat from './components/Snapchat/Snapchat';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import XallaknmPage from './xallaknm/XallaknmPage';
+import SmokeFreePage from './smokefree/SmokeFreePage';
 import "./styles/global.css";
 import "./styles/navbar.css";
 import "./styles/home.css";
@@ -37,6 +38,7 @@ function App() {
           </div>
         } />
         <Route path="/xallaknm" element={<XallaknmPage />} />
+        <Route path="/smokefree" element={<SmokeFreePage />} />
         <Route path="/" element={<Navigate to="/portfolio" replace />} />
       </Routes>
     </Router>

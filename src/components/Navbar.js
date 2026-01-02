@@ -122,6 +122,11 @@ const Navbar = () => {
             Xallaknm App
           </a>
         </li>
+        <li>
+          <a href="/smokefree.html" onClick={() => setMenuOpen(false)}>
+            SmokeFree App
+          </a>
+        </li>
       </ul>
     </nav>
   );

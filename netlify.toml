@@ -1,0 +1,6 @@
+[[redirects]]
+  from = "/*"
+  to = "https://newhama.onrender.com/:splat"
+  status = 200
+  force = true
+  conditions = { Host = ["shop.hamagardy.com"] }

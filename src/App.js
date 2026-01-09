@@ -6,6 +6,7 @@ import About from './components/About';
 import Resume from './components/Resume';
 import Projects from './components/Projects';
 import Snapchat from './components/Snapchat/Snapchat';
+import Shop from './components/Shop';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import XallaknmPage from './xallaknm/XallaknmPage';
@@ -18,6 +19,7 @@ import "./styles/sections.css";
 import "./styles/animations.css";
 import "./styles/resume.css";
 import "./styles/project.css";
+import "./styles/shop.css";
 import "./styles/footer.css";
 import "./styles/xallaknm-landing.css";
 
@@ -33,6 +35,7 @@ function App() {
             <Resume />
             <Projects />
             <Snapchat />
+            <Shop />
             <Contact />
             <Footer />
           </div>

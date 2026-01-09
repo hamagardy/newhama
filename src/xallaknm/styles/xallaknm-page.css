@@ -131,6 +131,95 @@
   color: #b45309;
 }
 
+/* Nav Dropdown */
+.xallaknm-page .nav-dropdown {
+  position: relative;
+}
+
+.xallaknm-page .nav-get-button {
+  background: #007AFF;
+  color: white;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.xallaknm-page .nav-get-button:hover {
+  background: #0056b3;
+}
+
+.xallaknm-page .nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.75rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  min-width: 280px;
+  z-index: 100;
+}
+
+.xallaknm-page .ios-app-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.xallaknm-page .ios-app-link:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.xallaknm-page .ios-app-icon {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.xallaknm-page .ios-app-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.xallaknm-page .ios-app-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.xallaknm-page .ios-app-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000;
+}
+
+.xallaknm-page .ios-app-subtitle {
+  font-size: 0.8rem;
+  color: #8e8e93;
+}
+
+.xallaknm-page .ios-get-btn {
+  background: #007AFF;
+  color: white;
+  padding: 0.4rem 1.25rem;
+  border-radius: 1rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
 /* Hero Section */
 .xallaknm-page .hero-section {
   position: relative;

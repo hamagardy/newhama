@@ -13,6 +13,7 @@ const playStoreImg = 'https://www.jcml-tx.org/ebook/get-it-on-google-play-badge.
 
 export default function XallaknmPage() {
   const [isVisible, setIsVisible] = useState({});
+  const [showGetDropdown, setShowGetDropdown] = useState(false);
   const observerRef = useRef(null);
   const startTimeRef = useRef(null);
 
@@ -87,6 +88,34 @@ export default function XallaknmPage() {
               <a href="#features">Features</a>
               <a href="#games">Games</a>
               <a href="#how-it-works">How It Works</a>
+              <div className="nav-dropdown">
+                <button 
+                  className="nav-get-button"
+                  onClick={() => setShowGetDropdown(!showGetDropdown)}
+                >
+                  Get
+                </button>
+                {showGetDropdown && (
+                  <div className="nav-dropdown-menu">
+                    <a
+                      href="https://apps.apple.com/us/app/xallakanm/id6755054379"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={handleAppStoreClick}
+                      className="ios-app-link"
+                    >
+                      <div className="ios-app-icon">
+                        <img src={appIcon} alt="Xallakanm" />
+                      </div>
+                      <div className="ios-app-info">
+                        <span className="ios-app-name">Xallakanm</span>
+                        <span className="ios-app-subtitle">Score Tracker</span>
+                      </div>
+                      <span className="ios-get-btn">GET</span>
+                    </a>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>

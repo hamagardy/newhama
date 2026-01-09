@@ -118,6 +118,16 @@ const Navbar = () => {
           </a>
         </li>
         <li>
+          <a href={`/portfolio`} onClick={(e) => {
+            e.preventDefault();
+            navigate(`/portfolio`);
+            scrollToSection("shop");
+            setMenuOpen(false);
+          }}>
+            Shop
+          </a>
+        </li>
+        <li>
           <a href="/xallaknm" onClick={() => setMenuOpen(false)}>
             Xallaknm App
           </a>

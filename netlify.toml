@@ -1,6 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
 [[redirects]]
   from = "/*"
   to = "https://newhama.onrender.com/:splat"
   status = 200
   force = true
   conditions = { Host = ["shop.hamagardy.com"] }
+
+# SPA fallback for main site
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

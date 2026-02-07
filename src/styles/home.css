@@ -8,7 +8,8 @@
   align-items: center;
   gap: 4rem;
   position: relative;
-  animation: fadeIn 1.5s ease-in-out forwards;
+  animation: fadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transition: background-color 0.4s ease;
 }
 
 body.dark-mode .home-section {
@@ -18,8 +19,9 @@ body.dark-mode .home-section {
 .home-text {
   color: #1a1a1a;
   grid-column: 1 / 2;
-  animation: fadeInLeft 1s ease-out forwards;
+  animation: fadeInLeft 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   text-align: left;
+  transition: color 0.3s ease;
 }
 
 body.dark-mode .home-text {
@@ -35,12 +37,24 @@ body.dark-mode .home-text {
   align-items: center;
   justify-content: flex-start;
   gap: 0.5rem;
+  transition: all 0.3s ease;
 }
 
 .home-star {
   width: 2rem;
   height: 2rem;
   margin-top: -0.4rem;
+  animation: rotateStar 3s ease-in-out infinite;
+  transition: transform 0.3s ease;
+}
+
+@keyframes rotateStar {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
 }
 
 .home-role {
@@ -133,7 +147,7 @@ body.dark-mode .home-about {
 
 .home-contact-btn {
   display: inline-block;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border-radius: 0.5rem;
   cursor: pointer;
   color: #ffffff;
@@ -141,15 +155,53 @@ body.dark-mode .home-about {
   font-weight: 500;
   font-size: 12px;
   background: #1a1a1a;
-  transition: all 0.5s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   font-family: "Terminus", monospace;
   margin-bottom: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-contact-btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.home-contact-btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.home-contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.home-contact-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode .home-contact-btn {
   color: #1e1e1e;
   border: 1px solid #ffffff;
   background: #ffffff;
+}
+
+body.dark-mode .home-contact-btn::before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .home-contact-btn:hover {
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
 }
 
 .mouse-scroll {
@@ -207,7 +259,7 @@ body.dark-mode .wheel {
   justify-content: center;
   position: relative;
   margin: 0 auto;
-  animation: fadeInRight 1s ease-out forwards;
+  animation: fadeInRight 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   gap: 1rem;
 }
 
@@ -217,9 +269,19 @@ body.dark-mode .wheel {
   border-radius: 50%;
   object-fit: cover;
   border: 5px solid #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   margin: 0 auto;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 body.dark-mode .profile-picture {
@@ -227,7 +289,8 @@ body.dark-mode .profile-picture {
 }
 
 .profile-picture:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) translateY(-5px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
 }
 
 .home-social-links {
@@ -244,7 +307,8 @@ body.dark-mode .profile-picture {
 .home-social-link {
   font-size: 1.2rem;
   color: #1a1a1a;
-  transition: all 0.6s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-block;
 }
 
 body.dark-mode .home-social-link {
@@ -252,7 +316,12 @@ body.dark-mode .home-social-link {
 }
 
 .home-social-link:hover {
-  transform: rotate3d(0, 0, 1, 90deg);
+  transform: translateY(-3px) scale(1.2);
+  color: #555555;
+}
+
+body.dark-mode .home-social-link:hover {
+  color: #cccccc;
 }
 
 /* Animation keyframes */

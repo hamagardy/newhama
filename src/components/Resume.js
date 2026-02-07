@@ -221,7 +221,7 @@ function Resume() {
                 <div className="experience-content">
                   <h3 className="experience-title">
                     <FaDesktop className="experience-icon" />
-                    IT Assistant, Shoof Company
+                    IT Officer, Shoof Company
                     <span className="experience-duration">May 2025-Present</span>
                   </h3>
                   <p className="resume-about">
@@ -256,7 +256,7 @@ function Resume() {
                 <span className="skill-percentage">100%</span>
               </div>
               <div className="skill-item">
-                <span className="skill-name">Full-Stack Web Development</span>
+                <span className="skill-name">Web Development</span>
                 <div className="skill-bar">
                   <div
                     className="skill-progress"

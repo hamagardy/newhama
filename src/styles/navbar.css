@@ -1,5 +1,6 @@
 .navbar {
-  background-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   padding: 0.5rem 4rem;
   position: fixed;
   top: 0;
@@ -9,17 +10,25 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 body.dark-mode .navbar {
-  background-color: #1a1a1a;
+  background-color: rgba(26, 26, 26, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.05);
 }
 
 .logo {
   width: 50px;
   height: 50px;
-  transition: transform 0.1s linear; /* Smooth continuous rotation */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.logo:hover {
+  transform: rotate(360deg) scale(1.1);
 }
 
 .menu-toggle-container {
@@ -56,12 +65,23 @@ body.dark-mode .menu-button {
   font-size: 1.5rem;
   cursor: pointer;
   color: #000000;
-  transition: color 0.3s ease;
-  display: block; /* Always visible on both desktop and mobile */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  padding: 0.5rem;
+  border-radius: 50%;
+}
+
+.theme-toggle:hover {
+  transform: rotate(180deg) scale(1.1);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 body.dark-mode .theme-toggle {
   color: #ffffff;
+}
+
+body.dark-mode .theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .nav-links {
@@ -81,7 +101,20 @@ body.dark-mode .theme-toggle {
   font-weight: 600;
   font-size: 1rem;
   text-transform: uppercase;
-  transition: color 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  padding: 0.5rem 0;
+}
+
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #555555;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body.dark-mode .nav-links li a {
@@ -90,6 +123,15 @@ body.dark-mode .nav-links li a {
 
 .nav-links li a:hover {
   color: #555555;
+  transform: translateY(-2px);
+}
+
+.nav-links li a:hover::after {
+  width: 100%;
+}
+
+body.dark-mode .nav-links li a::after {
+  background-color: #cccccc;
 }
 
 body.dark-mode .nav-links li a:hover {

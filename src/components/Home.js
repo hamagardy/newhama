@@ -14,7 +14,7 @@ import "../styles/home.css";
 const Home = () => {
   const roles = [
     <span>
-      IT Assistant{" "}
+      IT Officer{" "}
       <a
         href="https://shoofco.com/"
         target="_blank"

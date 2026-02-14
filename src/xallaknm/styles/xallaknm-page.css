@@ -387,6 +387,48 @@
   transition: all 0.3s ease;
 }
 
+.xallaknm-page .badge-container {
+  position: relative;
+  display: inline-block;
+  animation: xallaknm-glow-pulse 2s ease-in-out infinite;
+}
+
+.xallaknm-page .new-badge-overlay {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #ff3b30 0%, #ff6b6b 100%);
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(255, 59, 48, 0.5);
+  animation: xallaknm-badge-bounce 1.5s ease-in-out infinite;
+  z-index: 10;
+  letter-spacing: 0.5px;
+}
+
+@keyframes xallaknm-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(61, 220, 132, 0.5);
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(61, 220, 132, 0.8);
+    filter: brightness(1.1);
+  }
+}
+
+@keyframes xallaknm-badge-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-3px) scale(1.05);
+  }
+}
+
 /* Hero Image */
 .xallaknm-page .hero-image {
   position: relative;
@@ -732,6 +774,16 @@
 .xallaknm-page .cta-badges .apk-download-button:hover {
   opacity: 0.8;
   transform: scale(1.05);
+}
+
+/* Responsive badge positioning */
+@media (max-width: 768px) {
+  .xallaknm-page .new-badge-overlay {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+    top: -6px;
+    right: -6px;
+  }
 }
 
 /* Footer */

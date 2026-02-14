@@ -163,11 +163,12 @@ export default function XallaknmPage() {
                 </a>
                 <a
                   href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
-                  className="apk-download-button"
+                  className="apk-download-button badge-container"
                   download="xallakanm.apk"
                   onClick={handlePlayStoreClick}
                 >
                   <img src={playStoreImg} alt="Get it on Google Play" />
+                  <span className="new-badge-overlay">NEW</span>
                 </a>
               </div>
             </div>
@@ -303,11 +304,12 @@ export default function XallaknmPage() {
               </a>
               <a
                 href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
-                className="apk-download-button"
+                className="apk-download-button badge-container"
                 download="xallakanm.apk"
                 onClick={handlePlayStoreClick}
               >
                 <img src={playStoreImg} alt="Get it on Google Play" />
+                <span className="new-badge-overlay">NEW</span>
               </a>
             </div>
           </div>

@@ -62,7 +62,6 @@ export default function XallaknmPage() {
 
   const handlePlayStoreClick = () => {
     trackDownloadClick('Google Play');
-    window.open('https://www.hamagardy.com/xallaknm/apk/xallakanm.apk', '_blank');
   };
 
   const handleHamaGardyClick = () => {
@@ -153,9 +152,9 @@ export default function XallaknmPage() {
                   <img src={appStoreImg} alt="Download on App Store" />
                 </a>
                 <a
-                  href="https://www.hamagardy.com/xallaknm/apk/xallakanm.apk"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
+                  className="apk-download-button"
+                  download="xallakanm.apk"
                   onClick={handlePlayStoreClick}
                 >
                   <img src={playStoreImg} alt="Get it on Google Play" />
@@ -293,9 +292,9 @@ export default function XallaknmPage() {
                 <img src={appStoreImg} alt="Download on App Store" />
               </a>
               <a
-                href="https://www.hamagardy.com/xallaknm/apk/xallakanm.apk"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
+                className="apk-download-button"
+                download="xallakanm.apk"
                 onClick={handlePlayStoreClick}
               >
                 <img src={playStoreImg} alt="Get it on Google Play" />

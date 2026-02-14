@@ -88,6 +88,16 @@ export default function XallaknmPage() {
               <a href="#features">Features</a>
               <a href="#games">Games</a>
               <a href="#how-it-works">How It Works</a>
+              <a 
+                href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
+                className="nav-android-link"
+                download="xallakanm.apk"
+                onClick={handlePlayStoreClick}
+              >
+                <span className="android-icon">🤖</span>
+                <span className="android-text">Android</span>
+                <span className="new-badge">NEW</span>
+              </a>
               <div className="nav-dropdown">
                 <button 
                   className="nav-get-button"

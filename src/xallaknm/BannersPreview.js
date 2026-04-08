@@ -1,21 +1,19 @@
 import React from 'react';
 import './styles/banners-preview.css';
 
-import X1 from './assets/X1.png';
-import X3 from './assets/X3.png';
-import X4 from './assets/X4.png';
-import X5 from './assets/X5.jpeg';
-import Dominos from './assets/Dominos.jpg';
-import Okey from './assets/Okey.jpg';
+import R1 from '../assets/R1.png';
+import R2 from '../assets/R2.png';
+import R5 from '../assets/R5.png';
+import R6 from '../assets/R6.png';
+import XGP from '../assets/XGP.png';
 
 export default function BannersPreview() {
   const banners = [
-    { id: 1, src: X1, name: 'Home Screen' },
-    { id: 2, src: X3, name: 'Banner 3' },
-    { id: 3, src: X4, name: 'Banner 4' },
-    { id: 4, src: X5, name: 'Banner 5' },
-    { id: 5, src: Dominos, name: 'Dominos Game' },
-    { id: 6, src: Okey, name: 'Okey Game' }
+    { id: 1, src: R1, name: 'Banner R1' },
+    { id: 2, src: R2, name: 'Banner R2' },
+    { id: 3, src: R5, name: 'Banner R5' },
+    { id: 4, src: R6, name: 'Banner R6' },
+    { id: 5, src: XGP, name: 'XGP Banner' }
   ];
 
   return (

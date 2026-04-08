@@ -10,6 +10,7 @@ import Shop from './components/Shop';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import XallaknmPage from './xallaknm/XallaknmPage';
+import BannersPreview from './xallaknm/BannersPreview';
 import SmokeFreePage from './smokefree/SmokeFreePage';
 import "./styles/global.css";
 import "./styles/navbar.css";

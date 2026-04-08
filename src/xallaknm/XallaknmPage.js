@@ -89,14 +89,15 @@ export default function XallaknmPage() {
               <a href="#games">Games</a>
               <a href="#how-it-works">How It Works</a>
               <a 
-                href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
+                href="https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="nav-android-link"
-                download="xallakanm.apk"
                 onClick={handlePlayStoreClick}
               >
                 <span className="android-icon">🤖</span>
                 <span className="android-text">Android</span>
-                <span className="new-badge">NEW</span>
+                <span className="new-badge">v1.1</span>
               </a>
               <div className="nav-dropdown">
                 <button 
@@ -162,13 +163,14 @@ export default function XallaknmPage() {
                   <img src={appStoreImg} alt="Download on App Store" />
                 </a>
                 <a
-                  href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
+                  href="https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="apk-download-button badge-container"
-                  download="xallakanm.apk"
                   onClick={handlePlayStoreClick}
                 >
                   <img src={playStoreImg} alt="Get it on Google Play" />
-                  <span className="new-badge-overlay">NEW</span>
+                  <span className="new-badge-overlay">v1.1</span>
                 </a>
               </div>
             </div>
@@ -303,13 +305,14 @@ export default function XallaknmPage() {
                 <img src={appStoreImg} alt="Download on App Store" />
               </a>
               <a
-                href="https://dl.dropboxusercontent.com/scl/fi/1wmn0rvxj669pf6krl5dp/xallakanm.apk?rlkey=mipk6iogf1tsebszyn2ik93lt&dl=1"
+                href="https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="apk-download-button badge-container"
-                download="xallakanm.apk"
                 onClick={handlePlayStoreClick}
               >
                 <img src={playStoreImg} alt="Get it on Google Play" />
-                <span className="new-badge-overlay">NEW</span>
+                <span className="new-badge-overlay">v1.1</span>
               </a>
             </div>
           </div>

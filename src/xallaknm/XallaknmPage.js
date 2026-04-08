@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { trackDownloadClick, trackPageView, trackTimeOnPage, trackExternalLink, trackVisitor } from './firebase';
 import './styles/xallaknm-page.css';
 
 import appScreenshot from './assets/X1.png';
@@ -15,13 +14,8 @@ export default function XallaknmPage() {
   const [isVisible, setIsVisible] = useState({});
   const [showGetDropdown, setShowGetDropdown] = useState(false);
   const observerRef = useRef(null);
-  const startTimeRef = useRef(null);
 
   useEffect(() => {
-    trackPageView('Xallaknm Landing Page');
-    trackVisitor(); // Track device and location
-    startTimeRef.current = Date.now();
-
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -37,36 +31,12 @@ export default function XallaknmPage() {
       observerRef.current.observe(el);
     });
 
-    const handleBeforeUnload = () => {
-      if (startTimeRef.current) {
-        const timeSpent = Math.floor((Date.now() - startTimeRef.current) / 1000);
-        trackTimeOnPage(timeSpent);
-      }
-    };
-
-    window.addEventListener('beforeunload', handleBeforeUnload);
-
     return () => {
       observerRef.current?.disconnect();
-      window.removeEventListener('beforeunload', handleBeforeUnload);
-      if (startTimeRef.current) {
-        const timeSpent = Math.floor((Date.now() - startTimeRef.current) / 1000);
-        trackTimeOnPage(timeSpent);
-      }
     };
   }, []);
 
-  const handleAppStoreClick = () => {
-    trackDownloadClick('App Store');
-  };
 
-  const handlePlayStoreClick = () => {
-    trackDownloadClick('Google Play');
-  };
-
-  const handleHamaGardyClick = () => {
-    trackExternalLink('Hama Gardy Website', 'https://hamagardy.com');
-  };
 
   return (
     <div className="xallaknm-page min-h-screen">
@@ -93,9 +63,10 @@ export default function XallaknmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="nav-android-link"
-                onClick={handlePlayStoreClick}
               >
-                <span className="android-icon">🤖</span>
+                <svg className="android-icon" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3435-4.1021-2.6892-7.5743-6.1185-9.4396"/>
+                </svg>
                 <span className="android-text">Android</span>
                 <span className="new-badge">v1.1</span>
               </a>
@@ -112,7 +83,6 @@ export default function XallaknmPage() {
                       href="https://apps.apple.com/us/app/xallakanm/id6755054379"
                       target="_blank"
                       rel="noopener noreferrer"
-                      onClick={handleAppStoreClick}
                       className="ios-app-link"
                     >
                       <div className="ios-app-icon">
@@ -167,7 +137,6 @@ export default function XallaknmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="apk-download-button badge-container"
-                  onClick={handlePlayStoreClick}
                 >
                   <img src={playStoreImg} alt="Get it on Google Play" />
                   <span className="new-badge-overlay">v1.1</span>
@@ -211,12 +180,36 @@ export default function XallaknmPage() {
 
           <div className="features-grid">
             {[
-              { icon: '⚡', title: 'Real-time Scoring', desc: 'Automatic calculations after each round' },
-              { icon: '🌙', title: 'Dark Mode', desc: 'Play comfortably at night' },
-              { icon: '📜', title: 'Game History', desc: 'Track all your matches' },
-              { icon: '🧮', title: 'Smart Calculator', desc: 'Automatic score tracking' },
-              { icon: '💾', title: 'Auto-Save', desc: 'Never lose your progress' },
-              { icon: '📱', title: 'Mobile First', desc: 'Optimized for your device' }
+              { 
+                icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>, 
+                title: 'Real-time Scoring', 
+                desc: 'Automatic calculations after each round' 
+              },
+              { 
+                icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>, 
+                title: 'Dark Mode', 
+                desc: 'Play comfortably at night' 
+              },
+              { 
+                icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>, 
+                title: 'Game History', 
+                desc: 'Track all your matches' 
+              },
+              { 
+                icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>, 
+                title: 'Smart Calculator', 
+                desc: 'Automatic score tracking' 
+              },
+              { 
+                icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4" /></svg>, 
+                title: 'Auto-Save', 
+                desc: 'Never lose your progress' 
+              },
+              { 
+                icon: <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>, 
+                title: 'Mobile First', 
+                desc: 'Optimized for your device' 
+              }
             ].map((feature, idx) => (
               <div key={idx} className="feature-card">
                 <div className="feature-icon">{feature.icon}</div>
@@ -300,7 +293,6 @@ export default function XallaknmPage() {
                 href="https://apps.apple.com/us/app/xallakanm/id6755054379"
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={handleAppStoreClick}
               >
                 <img src={appStoreImg} alt="Download on App Store" />
               </a>
@@ -309,7 +301,6 @@ export default function XallaknmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="apk-download-button badge-container"
-                onClick={handlePlayStoreClick}
               >
                 <img src={playStoreImg} alt="Get it on Google Play" />
                 <span className="new-badge-overlay">v1.1</span>
@@ -325,15 +316,13 @@ export default function XallaknmPage() {
           <div className="footer-content">
             <a 
               href="https://hamagardy.com" 
-              onClick={handleHamaGardyClick}
               className="footer-logo"
             >
               <img src={logo} alt="Hama Gardy" />
             </a>
             <div className="footer-links">
-              <span>© 2025 Hama Gardy</span>
+              <span>© 2026 Hama Gardy</span>
               <a href="mailto:admin@hamagardy.com">Contact</a>
-              <a href="/data">Analytics</a>
               <a href="/xallaknm-privacy-policy.html" target="_blank" rel="noopener noreferrer">
                 Privacy Policy
               </a>

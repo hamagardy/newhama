@@ -42,6 +42,8 @@ function App() {
           </div>
         } />
         <Route path="/xallaknm" element={<XallaknmPage />} />
+        <Route path="/xallaknm/banners" element={<BannersPreview />} />
+        <Route path="/xallaknm/banners-preview" element={<BannersPreview />} />
         <Route path="/smokefree" element={<SmokeFreePage />} />
         <Route path="/" element={<Navigate to="/portfolio" replace />} />
       </Routes>

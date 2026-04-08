@@ -128,7 +128,6 @@ export default function XallaknmPage() {
                   href="https://apps.apple.com/us/app/xallakanm/id6755054379"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={handleAppStoreClick}
                 >
                   <img src={appStoreImg} alt="Download on App Store" />
                 </a>

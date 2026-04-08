@@ -1,0 +1,102 @@
+.banners-preview-page {
+  min-height: 100vh;
+  background: #f5f1e8;
+  padding: 3rem 1rem;
+}
+
+.preview-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.preview-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #3d3d3d;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.preview-subtitle {
+  font-size: 1.1rem;
+  color: #6b6b6b;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.banners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.banner-box {
+  background: white;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.banner-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.banner-image-wrapper {
+  width: 100%;
+  aspect-ratio: 9/16;
+  border-radius: 1rem;
+  overflow: hidden;
+  background: #f0f0f0;
+  margin-bottom: 1rem;
+}
+
+.banner-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.banner-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3d3d3d;
+  text-align: center;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .preview-title {
+    font-size: 2rem;
+  }
+  
+  .preview-subtitle {
+    font-size: 1rem;
+  }
+  
+  .banners-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .banner-box {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .banners-preview-page {
+    padding: 2rem 0.5rem;
+  }
+  
+  .preview-title {
+    font-size: 1.5rem;
+  }
+  
+  .banners-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

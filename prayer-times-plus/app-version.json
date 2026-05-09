@@ -1,0 +1,89 @@
+{
+  "version": "1.0.0",
+  "minVersion": "1.0.0",
+  "latestVersion": "1.0.0",
+  "forceUpdate": false,
+  "updateMessage": {
+    "en": "A new version is available. Please update to get the latest features and improvements.",
+    "ku": "وەشانێکی نوێ بەردەستە. تکایە نوێبکەرەوە بۆ بەدەستهێنانی تایبەتمەندی و باشکردنەکانی نوێ."
+  },
+  "forceUpdateMessage": {
+    "en": "This version is no longer supported. Please update to continue using the app.",
+    "ku": "ئەم وەشانە چیتر پشتگیری ناکرێت. تکایە نوێبکەرەوە بۆ بەردەوامبوون لە بەکارهێنانی بەرنامە."
+  },
+  "ios": {
+    "appStoreUrl": "https://apps.apple.com/app/idYOUR_APP_ID",
+    "version": "1.0.0",
+    "minVersion": "1.0.0",
+    "forceUpdate": false
+  },
+  "android": {
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus",
+    "version": "1.0.0",
+    "minVersion": "1.0.0",
+    "forceUpdate": false
+  },
+  "features": [
+    {
+      "version": "1.0.0",
+      "date": "2026-05-10",
+      "changes": {
+        "en": [
+          "Initial release",
+          "Prayer times for all Kurdistan cities",
+          "Complete Quran with Kurdish translation",
+          "Qibla compass",
+          "Electronic and bead Tasbih",
+          "Daily Adhkar",
+          "AI Islamic Q&A",
+          "Zakat calculator",
+          "Ramadan tracker",
+          "Mosque finder",
+          "99 Names of Allah",
+          "Prayer tracking with streaks",
+          "iOS and Android widgets"
+        ],
+        "ku": [
+          "وەشانی یەکەم",
+          "کاتەکانی نوێژ بۆ هەموو شارەکانی کوردستان",
+          "قورئانی تەواو لەگەڵ وەرگێڕانی کوردی",
+          "قبلەنما",
+          "تەسبیحی ئەلیکترۆنی و تۆپی نوێژ",
+          "ئەزکاری ڕۆژانە",
+          "وەڵامی AI بۆ پرسیارە ئیسلامیەکان",
+          "ژمێریاری زەکات",
+          "شوێنکەوتنی ڕەمەزان",
+          "دۆزینەوەی مزگەوت",
+          "٩٩ ناوی خودا",
+          "شوێنکەوتنی نوێژ لەگەڵ ستریک",
+          "ویجێت بۆ iOS و Android"
+        ]
+      }
+    }
+  ],
+  "maintenance": {
+    "isActive": false,
+    "message": {
+      "en": "The app is currently under maintenance. Please try again later.",
+      "ku": "بەرنامەکە لە ژێر چاککردنەوەدایە. تکایە دواتر هەوڵ بدەرەوە."
+    },
+    "estimatedEndTime": null
+  },
+  "announcements": [
+    {
+      "id": "welcome",
+      "title": {
+        "en": "Welcome to Prayer Times Plus!",
+        "ku": "بەخێربێیت بۆ کاتەکانی بانگ پڵەس!"
+      },
+      "message": {
+        "en": "Thank you for downloading our app. May Allah accept your prayers.",
+        "ku": "سوپاس بۆ دابەزاندنی بەرنامەکەمان. خودا نوێژەکانتان قبووڵ بکات."
+      },
+      "type": "info",
+      "showOnce": true,
+      "priority": 1
+    }
+  ],
+  "lastUpdated": "2026-05-10T00:00:00Z"
+}

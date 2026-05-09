@@ -2,15 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import './prayer-times-page.css';
 import appScreenshot from './assets/images/appscreen.jpg';
 import appIcon from './assets/images/adaptive-icon.png';
-import prayIcon from './assets/images/pray.png';
-import quranIcon from './assets/images/quran.png';
-import kaaba from './assets/images/kaaba.png';
-import tasbeh from './assets/images/tasbeh.png';
-import adkhar from './assets/images/adkhar.png';
-import mosque from './assets/images/mosque.png';
 
-const appStoreImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png';
-const playStoreImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png';
+const appStoreImg = 'https://www.codepas.com.br/site/wp-content/uploads/2021/01/app-store-badge.png';
+const playStoreImg = 'https://www.gov.br/pt-br/imagens-de-servicos/googleplay.png';
 
 export default function PrayerTimesPage() {
   const [isVisible, setIsVisible] = useState({});
@@ -50,13 +44,13 @@ export default function PrayerTimesPage() {
         <div className="nav-container">
           <div className="nav-content">
             <div className="nav-logo">
-              <img src={appIcon} alt="کاتەکانی بانگ پڵەس" />
-              <span>کاتەکانی بانگ پڵەس</span>
+              <img src={appIcon} alt="Prayer Times Plus" />
+              <span>Prayer Times Plus</span>
             </div>
             <div className="nav-links">
-              <a href="#features">تایبەتمەندییەکان</a>
-              <a href="#how-it-works">چۆنیەتی کارکردن</a>
-              <a href="#download">داگرتن</a>
+              <a href="#features">Features</a>
+              <a href="#how-it-works">How It Works</a>
+              <a href="#download">Download</a>
             </div>
           </div>
         </div>
@@ -71,16 +65,16 @@ export default function PrayerTimesPage() {
                 <svg fill="currentColor" viewBox="0 0 20 20">
                   <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                 </svg>
-                <span>هاوڕێی ئیسلامیی تەواو</span>
+                <span>Complete Islamic Companion</span>
               </div>
 
               <h1 className="hero-title">
-                هیچ نوێژێک لەدەست مەدە
-                <span className="hero-title-gradient">بە ئامانج بژی</span>
+                Never Miss a Prayer
+                <span className="hero-title-gradient">Live with Purpose</span>
               </h1>
 
               <p className="hero-description">
-                کاتەکانی نوێژی وردبین، قورئانی تەواو، قیبلەنما، و زیاتر - ئەپی ئیسلامیی یەکگرتووت بۆ کوردستان
+                Accurate prayer times, complete Quran, Qibla compass, and more - your all-in-one Islamic app for Kurdistan.
               </p>
 
               <div className="hero-badges">
@@ -89,14 +83,14 @@ export default function PrayerTimesPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={appStoreImg} alt="داگرتن لە ئەپ ستۆر" />
+                  <img src={appStoreImg} alt="Download on App Store" />
                 </a>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={playStoreImg} alt="داگرتن لە گووگڵ پلەی" />
+                  <img src={playStoreImg} alt="Get it on Google Play" />
                 </a>
               </div>
             </div>
@@ -106,18 +100,22 @@ export default function PrayerTimesPage() {
                 <div className="phone-mockup">
                   <div className="phone-glow"></div>
                   <div className="phone-screen">
-                    <img src={appScreenshot} alt="پێشبینینی ئەپ" />
+                    <img src={appScreenshot} alt="App Preview" />
                   </div>
                   <div className="phone-notch"></div>
                 </div>
               </div>
 
               <div className="floating-element floating-element-1">
-                <img src={prayIcon} alt="نوێژ" />
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
 
               <div className="floating-element floating-element-2">
-                <img src={quranIcon} alt="قورئان" />
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
               </div>
             </div>
           </div>
@@ -128,49 +126,77 @@ export default function PrayerTimesPage() {
       <section id="features" className="features-section" data-animate="true">
         <div className="section-container">
           <div className="section-header">
-            <h2 className="section-title">هەموو ئەوەی پێویستە بۆ باوەڕەکەت</h2>
+            <h2 className="section-title">Everything You Need for Your Faith</h2>
             <p className="section-subtitle">
-              تایبەتمەندییە بەهێزەکان بۆ بەرزکردنەوەی گەشتی ڕۆحیت
+              Powerful features to enhance your spiritual journey
             </p>
           </div>
 
           <div className="features-grid">
             {[
               {
-                icon: prayIcon,
-                title: 'کاتەکانی نوێژی وردبین',
-                desc: 'کاتەکانی نوێژی وردبین بۆ هەموو شارەکانی کوردستان لەگەڵ ئاگادارکردنەوە'
+                icon: '🕌',
+                title: 'Accurate Prayer Times',
+                desc: 'Precise prayer times for all Kurdistan cities with notifications'
               },
               {
-                icon: quranIcon,
-                title: 'قورئانی تەواو',
-                desc: 'قورئانی تەواو لەگەڵ وەرگێڕانی کوردی و خوێندنەوەی دەنگی'
+                icon: '📖',
+                title: 'Complete Quran',
+                desc: 'Full Quran with Kurdish translation and audio recitation'
               },
               {
-                icon: kaaba,
-                title: 'قیبلەنما',
-                desc: 'دۆزینەوەی ئاراستەی قیبلەی وردبین لە هەر شوێنێکەوە بە GPS'
+                icon: '🧭',
+                title: 'Qibla Compass',
+                desc: 'Find accurate Qibla direction from anywhere using GPS'
               },
               {
-                icon: tasbeh,
-                title: 'تەسبێحی دیجیتاڵ',
-                desc: 'ژمێرەری ئەلیکترۆنی و تەسبێح بۆ زیکری ڕۆژانە'
+                icon: '📿',
+                title: 'Digital Tasbih',
+                desc: 'Electronic counter and prayer beads for daily dhikr'
               },
               {
-                icon: adkhar,
-                title: 'ئەزکاری ڕۆژانە',
-                desc: 'دوعاکانی بەیانی، ئێوارە و دوای نوێژ'
+                icon: '🤲',
+                title: 'Daily Adhkar',
+                desc: 'Morning, evening, and post-prayer supplications'
               },
               {
-                icon: mosque,
-                title: 'دۆزەرەوەی مزگەوت',
-                desc: 'دۆزینەوەی نزیکترین مزگەوتەکان بۆ شوێنی ئێستات'
+                icon: '💰',
+                title: 'Zakat Calculator',
+                desc: 'Calculate Zakat on gold and money with live rates'
+              },
+              {
+                icon: '🌙',
+                title: 'Ramadan Tracker',
+                desc: 'Track fasting, prayers, and worship during Ramadan'
+              },
+              {
+                icon: '📍',
+                title: 'Mosque Finder',
+                desc: 'Find nearest mosques to your current location'
+              },
+              {
+                icon: '✨',
+                title: '99 Names of Allah',
+                desc: 'Beautiful names with meanings and transliterations'
+              },
+              {
+                icon: '🤖',
+                title: 'AI Islamic Q&A',
+                desc: 'Ask Islamic questions and get instant answers'
+              },
+              {
+                icon: '📱',
+                title: 'Home Widgets',
+                desc: 'Prayer times widgets for iOS and Android'
+              },
+              {
+                icon: '✅',
+                title: 'Prayer Tracking',
+                desc: 'Track daily prayers and build prayer streaks'
               }
             ].map((feature, idx) => (
               <div key={idx} className="feature-card">
-                <div className="feature-icon">
-                  <img src={feature.icon} alt={feature.title} />
-                </div>
+                <div className="feature-icon">{feature.icon}</div>
                 <h3 className="feature-title">{feature.title}</h3>
                 <p className="feature-desc">{feature.desc}</p>
               </div>
@@ -183,26 +209,26 @@ export default function PrayerTimesPage() {
       <section id="how-it-works" className="steps-section" data-animate="true">
         <div className="steps-container">
           <div className="section-header">
-            <h2 className="section-title">چۆنیەتی کارکردن</h2>
-            <p className="section-subtitle">دەستپێکردنی گەشتی ڕۆحیت بە سێ هەنگاوی سادە</p>
+            <h2 className="section-title">How It Works</h2>
+            <p className="section-subtitle">Start your spiritual journey in three simple steps</p>
           </div>
 
           <div className="steps-grid">
             {[
               {
-                num: '٠١',
-                title: 'داگرتن و ڕێکخستن',
-                desc: 'ئەپەکە دابگرە و شارەکەت هەڵبژێرە بۆ کاتەکانی نوێژی وردبین'
+                num: '01',
+                title: 'Download & Setup',
+                desc: 'Download the app and select your city for accurate prayer times'
               },
               {
-                num: '٠٢',
-                title: 'چالاککردنی ئاگادارکردنەوە',
-                desc: 'بیرخستنەوە وەربگرە پێش هەر کاتێکی نوێژ و هیچ نوێژێک لەدەست مەدە'
+                num: '02',
+                title: 'Enable Notifications',
+                desc: 'Get reminded before each prayer time and never miss a prayer'
               },
               {
-                num: '٠٣',
-                title: 'شوێنکەوتن و گەشەکردن',
-                desc: 'شوێنی نوێژەکانت بکەوە، قورئان بخوێنەوە و باوەڕەکەت بەهێزتر بکە'
+                num: '03',
+                title: 'Track & Grow',
+                desc: 'Track your prayers, read Quran, and strengthen your faith daily'
               }
             ].map((step, idx) => (
               <div key={idx} className="step">
@@ -220,9 +246,9 @@ export default function PrayerTimesPage() {
       <section id="download" className="cta-section">
         <div className="cta-container">
           <div className="cta-box">
-            <h2 className="cta-title">ئامادەیت بۆ بەهێزکردنی باوەڕەکەت؟</h2>
+            <h2 className="cta-title">Ready to Strengthen Your Faith?</h2>
             <p className="cta-desc">
-              بەشداری بە بە هەزاران موسڵمان بکە کە کاتەکانی بانگ پڵەس بەکاردەهێنن بۆ عیبادەتی ڕۆژانەیان
+              Join thousands of Muslims using Prayer Times Plus for their daily worship
             </p>
 
             <div className="cta-badges">
@@ -231,18 +257,18 @@ export default function PrayerTimesPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={appStoreImg} alt="داگرتن لە ئەپ ستۆر" />
+                <img src={appStoreImg} alt="Download on App Store" />
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={playStoreImg} alt="داگرتن لە گووگڵ پلەی" />
+                <img src={playStoreImg} alt="Get it on Google Play" />
               </a>
             </div>
 
-            <p className="cta-note">بەخۆڕایی داگرتن • بێ ڕیکلام • گرنگیدان بە تایبەتێتی</p>
+            <p className="cta-note">Free to download • No ads • Privacy focused</p>
           </div>
         </div>
       </section>
@@ -252,14 +278,14 @@ export default function PrayerTimesPage() {
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src={appIcon} alt="کاتەکانی بانگ پڵەس" />
-              <span>کاتەکانی بانگ پڵەس</span>
+              <img src={appIcon} alt="Prayer Times Plus" />
+              <span>Prayer Times Plus</span>
             </div>
             <div className="footer-links">
-              <span>© ٢٠٢٦ هەماگەردی</span>
-              <a href="mailto:admin@hamagardy.com">پەیوەندی</a>
+              <span>© 2026 Hamagardy</span>
+              <a href="mailto:admin@hamagardy.com">Contact</a>
               <a href="/prayer-times-plus-privacy-policy.html" target="_blank" rel="noopener noreferrer">
-                سیاسەتی تایبەتێتی
+                Privacy Policy
               </a>
             </div>
           </div>

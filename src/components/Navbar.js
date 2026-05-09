@@ -133,6 +133,11 @@ const Navbar = () => {
           </a>
         </li>
         <li>
+          <a href="/prayer-times-plus" onClick={() => setMenuOpen(false)}>
+            Prayer Times Plus
+          </a>
+        </li>
+        <li>
           <a href="/smokefree.html" onClick={() => setMenuOpen(false)}>
             SmokeFree App
           </a>

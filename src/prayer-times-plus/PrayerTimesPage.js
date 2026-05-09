@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './prayer-times-page.css';
-import appScreenshot from '../assets/images/splash-icon.png';
-import appIcon from '../assets/images/icon.png';
+import appScreenshot from './assets/images/splash-icon.png';
+import appIcon from './assets/images/adaptive-icon.png';
 
 const appStoreImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png';
 const playStoreImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png';

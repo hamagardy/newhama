@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import XallaknmPage from './xallaknm/XallaknmPage';
 import BannersPreview from './xallaknm/BannersPreview';
 import SmokeFreePage from './smokefree/SmokeFreePage';
+import PrayerTimesPage from './prayer-times-plus/PrayerTimesPage';
 import "./styles/global.css";
 import "./styles/navbar.css";
 import "./styles/home.css";
@@ -45,6 +46,7 @@ function App() {
         <Route path="/xallaknm/banners" element={<BannersPreview />} />
         <Route path="/xallaknm/banners-preview" element={<BannersPreview />} />
         <Route path="/smokefree" element={<SmokeFreePage />} />
+        <Route path="/prayer-times-plus" element={<PrayerTimesPage />} />
         <Route path="/" element={<Navigate to="/portfolio" replace />} />
       </Routes>
     </Router>

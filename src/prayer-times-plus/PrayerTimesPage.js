@@ -44,8 +44,8 @@ export default function PrayerTimesPage() {
         <div className="nav-container">
           <div className="nav-content">
             <div className="nav-logo">
-              <img src={appIcon} alt="Prayer Times Plus" />
-              <span>Prayer Times Plus</span>
+              <img src={appIcon} alt="کاتەکانی بانگ Prayer Time +" />
+              <span>کاتەکانی بانگ Prayer Time +</span>
             </div>
             <div className="nav-links">
               <a href="#features">Features</a>
@@ -248,7 +248,7 @@ export default function PrayerTimesPage() {
           <div className="cta-box">
             <h2 className="cta-title">Ready to Strengthen Your Faith?</h2>
             <p className="cta-desc">
-              Join thousands of Muslims using Prayer Times Plus for their daily worship
+              Join thousands of Muslims using کاتەکانی بانگ Prayer Time + for their daily worship
             </p>
 
             <div className="cta-badges">
@@ -278,8 +278,8 @@ export default function PrayerTimesPage() {
         <div className="footer-container">
           <div className="footer-content">
             <div className="footer-logo">
-              <img src={appIcon} alt="Prayer Times Plus" />
-              <span>Prayer Times Plus</span>
+              <img src={appIcon} alt="کاتەکانی بانگ Prayer Time +" />
+              <span>کاتەکانی بانگ Prayer Time +</span>
             </div>
             <div className="footer-links">
               <span>© 2026 Hamagardy</span>

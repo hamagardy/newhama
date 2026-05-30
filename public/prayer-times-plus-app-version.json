@@ -62,7 +62,7 @@
     }
   ],
   "maintenance": {
-    "isActive": true,
+    "isActive": false,
     "message": {
       "en": "The app is currently under maintenance. Please try again later.",
       "ku": "بەرنامەکە لە ژێر چاککردنەوەدایە. تکایە دواتر هەوڵ بدەرەوە."

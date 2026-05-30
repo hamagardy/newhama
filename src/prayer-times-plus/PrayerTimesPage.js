@@ -79,7 +79,7 @@ export default function PrayerTimesPage() {
 
               <div className="hero-badges">
                 <a
-                  href="https://apps.apple.com/app/idYOUR_APP_ID"
+                  href="https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -253,7 +253,7 @@ export default function PrayerTimesPage() {
 
             <div className="cta-badges">
               <a
-                href="https://apps.apple.com/app/idYOUR_APP_ID"
+                href="https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496"
                 target="_blank"
                 rel="noopener noreferrer"
               >

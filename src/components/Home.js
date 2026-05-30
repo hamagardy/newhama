@@ -80,7 +80,13 @@ const Home = () => {
         </div>
       </div>
       <div className="home-image">
-        <img src={me} alt="Profile" className="profile-picture" />
+        <img 
+          src={me} 
+          alt="Profile" 
+          className="profile-picture" 
+          loading="lazy"
+          decoding="async"
+        />
         <div className="mouse-scroll" onClick={handleMouseScrollClick}>
           <span className="mouse">
             <span className="wheel"></span>

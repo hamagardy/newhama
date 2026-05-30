@@ -63,16 +63,15 @@ section {
     height: 1.25rem;
   }
   .menu-toggle-container {
-    position: absolute;
-    left: 70%;
-    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
   .menu-button {
     display: block;
   }
   .theme-toggle {
-    left: -75%;
-    position: absolute;
+    position: static;
     display: block;
   }
   .nav-links {

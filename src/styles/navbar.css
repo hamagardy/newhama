@@ -34,7 +34,7 @@ body.dark-mode .navbar {
 .menu-toggle-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 /* Hide menu button on desktop, show only on mobile */
@@ -45,7 +45,9 @@ body.dark-mode .navbar {
   cursor: pointer;
   color: #000000;
   transition: color 0.3s ease;
-  display: block; /* Hide by default */
+  display: none;
+  padding: 0.5rem;
+  z-index: 1001;
 }
 
 body.dark-mode .menu-button {
@@ -55,7 +57,11 @@ body.dark-mode .menu-button {
 /* Show menu button only on mobile */
 @media (max-width: 768px) {
   .menu-button {
-    display: block; /* Visible only on mobile */
+    display: block;
+  }
+  
+  .menu-toggle-container {
+    gap: 1rem;
   }
 }
 

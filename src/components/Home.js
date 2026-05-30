@@ -84,8 +84,9 @@ const Home = () => {
           src={me} 
           alt="Profile" 
           className="profile-picture" 
-          loading="lazy"
+          loading="eager"
           decoding="async"
+          fetchpriority="high"
         />
         <div className="mouse-scroll" onClick={handleMouseScrollClick}>
           <span className="mouse">

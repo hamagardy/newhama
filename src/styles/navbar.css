@@ -147,15 +147,25 @@ body.dark-mode .nav-links li a:hover {
 /* Mobile Adjustments */
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 2rem; /* Reduce padding for mobile */
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    margin-right: auto;
+  }
+  
+  .menu-toggle-container {
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .menu-button {
-    display: block; /* Already set above, no change needed */
+    display: block;
   }
 
   .theme-toggle {
-    position: static; /* Remove absolute positioning on mobile */
+    position: static;
   }
 
   .nav-links {

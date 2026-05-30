@@ -12,7 +12,7 @@
     "ku": "ئەم وەشانە چیتر پشتگیری ناکرێت. تکایە نوێبکەرەوە بۆ بەردەوامبوون لە بەکارهێنانی بەرنامە."
   },
   "ios": {
-    "appStoreUrl": "https://apps.apple.com/app/idYOUR_APP_ID",
+    "appStoreUrl": "https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496",
     "version": "1.0.0",
     "minVersion": "1.0.0",
     "forceUpdate": false
@@ -62,7 +62,7 @@
     }
   ],
   "maintenance": {
-    "isActive": false,
+    "isActive": true,
     "message": {
       "en": "The app is currently under maintenance. Please try again later.",
       "ku": "بەرنامەکە لە ژێر چاککردنەوەدایە. تکایە دواتر هەوڵ بدەرەوە."

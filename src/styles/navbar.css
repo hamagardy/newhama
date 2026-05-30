@@ -34,7 +34,7 @@ body.dark-mode .navbar {
 .menu-toggle-container {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.5rem;
 }
 
 /* Hide menu button on desktop, show only on mobile */
@@ -61,7 +61,7 @@ body.dark-mode .menu-button {
   }
   
   .menu-toggle-container {
-    gap: 1rem;
+    gap: 0.5rem;
   }
 }
 

@@ -1,8 +1,8 @@
 {
   "ios": {
     "enabled": true,
-    "latestVersion": "4.0.0",
-    "forceUpdate": false,
+    "latestVersion": "3.0.0",
+    "forceUpdate": true,
     "storeUrl": "https://apps.apple.com/us/app/xallakanm/id6755054379",
     "title": "نوێکردنەوەی پێویستە",
     "message": "وەشانێکی نوێی ئەپەکە بەردەستە..."

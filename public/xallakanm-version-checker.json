@@ -1,6 +1,6 @@
 {
   "ios": {
-    "enabled": true,
+    "enabled": false,
     "latestVersion": "3.0.0",
     "forceUpdate": true,
     "storeUrl": "https://apps.apple.com/us/app/xallakanm/id6755054379",
@@ -8,9 +8,9 @@
     "message": "وەشانێکی نوێی ئەپەکە بەردەستە..."
   },
   "android": {
-    "enabled": true,
+    "enabled": false,
     "latestVersion": "4.0.0",
-    "forceUpdate": true,
+    "forceUpdate": false,
     "storeUrl": "https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm",
     "title": "نوێکردنەوەی پێویستە",
     "message": "وەشانێکی نوێی ئەپەکە بەردەستە..."

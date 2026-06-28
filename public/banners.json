@@ -1,6 +1,18 @@
 [
   {
-    "image": "https://www.hamagardy.com/XGP.png",
+    "image": "https://www.hamagardy.com/shoof1.png",
+    "link": "https://shoofco.com",
+    "duration": 5000,
+    "type": "shoof"
+  },
+  {
+    "image": "https://www.hamagardy.com/shoof2.png",
+    "link": "https://shoofco.com",
+    "duration": 5000,
+    "type": "shoof"
+  },
+  {
+    "image": "https://www.hamagardy.com/shoofad.png",
     "link": "https://www.instagram.com/p/DZ7MgrmDG9m/",
     "duration": 10000,
     "type": "instagram"
@@ -10,11 +22,5 @@
     "link": "whatsapp://send?phone=9647508176768",
     "duration": 2000,
     "type": "whatsapp"
-  },
-  {
-    "image": "https://www.hamagardy.com/R5.png",
-    "link": "https://www.instagram.com/shoofco.iraq/",
-    "duration": 5000,
-    "type": "playstore"
   }
 ]

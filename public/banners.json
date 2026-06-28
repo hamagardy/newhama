@@ -1,0 +1,20 @@
+[
+  {
+    "image": "https://www.hamagardy.com/XGP.png",
+    "link": "https://www.instagram.com/p/DZ7MgrmDG9m/",
+    "duration": 10000,
+    "type": "instagram"
+  },
+  {
+    "image": "https://www.hamagardy.com/R1.png",
+    "link": "whatsapp://send?phone=9647508176768",
+    "duration": 2000,
+    "type": "whatsapp"
+  },
+  {
+    "image": "https://www.hamagardy.com/R5.png",
+    "link": "https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm",
+    "duration": 5000,
+    "type": "playstore"
+  }
+]

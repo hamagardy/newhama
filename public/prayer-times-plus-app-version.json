@@ -1,8 +1,8 @@
 {
-  "version": "1.0.0",
-  "minVersion": "1.0.0",
-  "latestVersion": "1.0.0",
-  "forceUpdate": false,
+  "version": "2.0.0",
+  "minVersion": "2.0.0",
+  "latestVersion": "2.0.0",
+  "forceUpdate": true,
   "updateMessage": {
     "en": "A new version is available. Please update to get the latest features and improvements.",
     "ku": "وەشانێکی نوێ بەردەستە. تکایە نوێبکەرەوە بۆ بەدەستهێنانی تایبەتمەندی و باشکردنەکانی نوێ."
@@ -13,9 +13,9 @@
   },
   "ios": {
     "appStoreUrl": "https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496",
-    "version": "1.0.0",
-    "minVersion": "1.0.0",
-    "forceUpdate": false
+    "version": "2.0.0",
+    "minVersion": "2.0.0",
+    "forceUpdate": true
   },
   "android": {
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus",

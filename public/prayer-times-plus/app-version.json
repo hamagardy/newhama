@@ -4,12 +4,12 @@
   "latestVersion": "2.0.0",
   "forceUpdate": true,
   "updateMessage": {
-    "en": "A new version is available. Please update to get the latest features and improvements.",
-    "ku": "وەشانێکی نوێ بەردەستە. تکایە نوێبکەرەوە بۆ بەدەستهێنانی تایبەتمەندی و باشکردنەکانی نوێ."
+    "en": "Version 2.0 is here! Apps Lock added and lock screen prayer times widget available.",
+    "ku": "وەشانی ٢.٠ هات! قوفڵی بەرنامەکان زیادکرا و ویجێتی کاتەکانی نوێژ لەسەر شاشەی قوفڵدا."
   },
   "forceUpdateMessage": {
-    "en": "This version is no longer supported. Please update to continue using the app.",
-    "ku": "ئەم وەشانە چیتر پشتگیری ناکرێت. تکایە نوێبکەرەوە بۆ بەردەوامبوون لە بەکارهێنانی بەرنامە."
+    "en": "Version 2.0 is required. Update now to get Apps Lock and lock screen prayer times widget.",
+    "ku": "وەشانی ٢.٠ پێویستە. ئێستا نوێبکەرەوە بۆ بەدەستهێنانی قوفڵی بەرنامەکان و ویجێتی کاتەکانی نوێژ."
   },
   "ios": {
     "appStoreUrl": "https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496",
@@ -19,11 +19,29 @@
   },
   "android": {
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus",
-    "version": "1.0.0",
-    "minVersion": "1.0.0",
-    "forceUpdate": false
+    "version": "2.0.0",
+    "minVersion": "2.0.0",
+    "forceUpdate": true
   },
   "features": [
+    {
+      "version": "2.0.0",
+      "date": "2026-07-20",
+      "changes": {
+        "en": [
+          "🔒 Apps Lock added - Secure your apps with password/biometric",
+          "📱 Lock screen widget - View prayer times on lock screen",
+          "⚡ Performance improvements",
+          "🐛 Bug fixes and stability enhancements"
+        ],
+        "ku": [
+          "🔒 قوفڵی بەرنامەکان زیادکرا - پارێزگاری لە بەرنامەکانت بە وشەی نهێنی/بایۆمێتریک",
+          "📱 ویجێتی شاشەی قوفڵ - بینینی کاتەکانی نوێژ لەسەر شاشەی قوفڵدا",
+          "⚡ باشکردنی کارایی",
+          "🐛 چارەسەرکردنی هەڵە و باشترکردنی جێگیری"
+        ]
+      }
+    },
     {
       "version": "1.0.0",
       "date": "2026-05-10",
@@ -71,6 +89,20 @@
   },
   "announcements": [
     {
+      "id": "version2",
+      "title": {
+        "en": "Version 2.0 Released! 🎉",
+        "ku": "وەشانی ٢.٠ بڵاوکرایەوە! 🎉"
+      },
+      "message": {
+        "en": "New features: Apps Lock to secure your apps, and lock screen widget to view prayer times instantly!",
+        "ku": "تایبەتمەندی نوێ: قوفڵی بەرنامەکان بۆ پارێزگاری لە بەرنامەکانت، و ویجێتی شاشەی قوفڵ بۆ بینینی کاتەکانی نوێژ بە خێرایی!"
+      },
+      "type": "info",
+      "showOnce": true,
+      "priority": 1
+    },
+    {
       "id": "welcome",
       "title": {
         "en": "Welcome to کاتەکانی بانگ Prayer Time +!",
@@ -82,8 +114,8 @@
       },
       "type": "info",
       "showOnce": true,
-      "priority": 1
+      "priority": 2
     }
   ],
-  "lastUpdated": "2026-05-10T00:00:00Z"
+  "lastUpdated": "2026-07-20T00:00:00Z"
 }

@@ -1,0 +1,16 @@
+{
+  "ios": {
+    "minVersion": "1.0.0",
+    "latestVersion": "1.0.0"
+  },
+  "android": {
+    "minVersion": "1.0.0",
+    "latestVersion": "1.0.0"
+  },
+  "message": {
+    "en": "A new version of SmokeFree is available with improvements and fixes.",
+    "ar": "يتوفر إصدار جديد من SmokeFree مع تحسينات وإصلاحات.",
+    "ku": "وەشانێکی نوێی SmokeFree بەردەستە لەگەڵ باشترکردن و چاککردنەوە.",
+    "tr": "SmokeFree'nin iyileştirmeler ve düzeltmeler içeren yeni bir sürümü mevcut."
+  }
+}

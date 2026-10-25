@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmokeFree Version Editor</title>
+<link rel="icon" type="image/png" href="favicon.png">
+<style>
+:root{--primary:#10B981;--primary-dark:#059669;--text:#1F2937;--muted:#6B7280;--bg:#F9FAFB;--card:#FFFFFF;--border:#E5E7EB;--danger:#DC2626;--warn:#D97706;--code-bg:#0F172A;--code-text:#D1FAE5}
+@media (prefers-color-scheme:dark){:root{--text:#F3F4F6;--muted:#9CA3AF;--bg:#0B1220;--card:#111827;--border:#1F2937;--code-bg:#020617}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;padding:24px 16px}
+.wrap{max-width:1100px;margin:0 auto}
+header{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+header img{width:44px;height:44px;border-radius:10px}
+h1{font-size:1.4rem}
+header p{color:var(--muted);font-size:.9rem;width:100%}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px;margin-bottom:20px}
+.card h2{font-size:1rem;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:.8rem;color:var(--muted);margin-bottom:4px;font-weight:600}
+.field{margin-bottom:12px}
+input,textarea{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:9px;background:var(--bg);color:var(--text);font:inherit;font-size:.95rem}
+textarea{min-height:64px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--primary);border-color:transparent}
+input.bad{border-color:var(--danger)}
+.bump{display:flex;gap:6px;margin-top:6px;flex-wrap:wrap}
+.bump button{font-size:.75rem;padding:3px 8px}
+button,.btn{background:var(--primary);color:#fff;border:0;border-radius:9px;padding:9px 14px;font:inherit;font-weight:600;cursor:pointer;font-size:.9rem}
+button:hover,.btn:hover{background:var(--primary-dark)}
+button.ghost{background:transparent;color:var(--primary);border:1px solid var(--primary)}
+button.ghost:hover{background:var(--primary);color:#fff}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+pre{background:var(--code-bg);color:var(--code-text);padding:14px;border-radius:10px;overflow:auto;font-size:.82rem;max-height:520px;white-space:pre-wrap;word-break:break-word}
+.msgs{font-size:.85rem;margin-bottom:10px}
+.msgs div{padding:6px 10px;border-radius:8px;margin-bottom:6px}
+.err{background:rgba(220,38,38,.12);color:var(--danger)}
+.warn{background:rgba(217,119,6,.12);color:var(--warn)}
+.ok{background:rgba(16,185,129,.12);color:var(--primary-dark)}
+.tag{font-size:.7rem;background:var(--bg);border:1px solid var(--border);padding:1px 7px;border-radius:20px;color:var(--muted);font-weight:500}
+.help{font-size:.8rem;color:var(--muted);margin-top:4px}
+.sticky{position:sticky;top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <img src="icon.png" alt="">
+  <h1>SmokeFree Version Editor</h1>
+  <p>Edit the fields, then save. The file keeps the same structure as <code>smokefree-version.json</code>. Upload it to your site and replace the old one.</p>
+</header>
+
+<div class="grid">
+<div>
+  <div class="card">
+    <h2>📂 Load existing file</h2>
+    <input type="file" id="fileIn" accept=".json,application/json">
+    <p class="help">Pick your current <code>smokefree-version.json</code> to start from it. Or just edit the template below.</p>
+  </div>
+
+  <div class="card">
+    <h2>🍎 iOS</h2>
+    <div class="row">
+      <div class="field"><label>Min version <span class="tag">force update</span></label><input id="ios_min" data-ver><div class="bump" data-for="ios_min"></div></div>
+      <div class="field"><label>Latest version <span class="tag">optional update</span></label><input id="ios_latest" data-ver><div class="bump" data-for="ios_latest"></div></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🤖 Android</h2>
+    <div class="row">
+      <div class="field"><label>Min version <span class="tag">force update</span></label><input id="android_min" data-ver><div class="bump" data-for="android_min"></div></div>
+      <div class="field"><label>Latest version <span class="tag">optional update</span></label><input id="android_latest" data-ver><div class="bump" data-for="android_latest"></div></div>
+    </div>
+    <button class="ghost" id="copyIos" type="button">Copy iOS versions to Android</button>
+  </div>
+
+  <div class="card">
+    <h2>💬 Update message</h2>
+    <div class="field"><label>English (en)</label><textarea id="msg_en"></textarea></div>
+    <div class="field"><label>Arabic (ar)</label><textarea id="msg_ar" dir="rtl"></textarea></div>
+    <div class="field"><label>Kurdish (ku)</label><textarea id="msg_ku" dir="rtl"></textarea></div>
+    <div class="field"><label>Turkish (tr)</label><textarea id="msg_tr"></textarea></div>
+  </div>
+</div>
+
+<div>
+  <div class="card sticky">
+    <h2>📄 smokefree-version.json</h2>
+    <div class="msgs" id="msgs"></div>
+    <div class="actions">
+      <button id="dl" type="button">⬇ Save JSON</button>
+      <button class="ghost" id="copy" type="button">Copy</button>
+      <button class="ghost" id="reset" type="button">Reset template</button>
+    </div>
+    <pre id="out"></pre>
+  </div>
+</div>
+</div>
+</div>
+
+<script>
+const TEMPLATE = {
+  ios: { minVersion: "1.0.0", latestVersion: "1.0.0" },
+  android: { minVersion: "1.0.0", latestVersion: "1.0.0" },
+  message: {
+    en: "A new version of SmokeFree is available with improvements and fixes.",
+    ar: "يتوفر إصدار جديد من SmokeFree مع تحسينات وإصلاحات.",
+    ku: "وەشانێکی نوێی SmokeFree بەردەستە لەگەڵ باشترکردن و چاککردنەوە.",
+    tr: "SmokeFree'nin iyileştirmeler ve düzeltmeler içeren yeni bir sürümü mevcut."
+  }
+};
+const $ = id => document.getElementById(id);
+const LANGS = ["en","ar","ku","tr"];
+const SEMVER = /^\d+\.\d+\.\d+$/;
+
+function fill(d){
+  $("ios_min").value = d.ios?.minVersion ?? "";
+  $("ios_latest").value = d.ios?.latestVersion ?? "";
+  $("android_min").value = d.android?.minVersion ?? "";
+  $("android_latest").value = d.android?.latestVersion ?? "";
+  LANGS.forEach(l => $("msg_"+l).value = d.message?.[l] ?? "");
+  render();
+}
+function build(){
+  return {
+    ios: { minVersion: $("ios_min").value.trim(), latestVersion: $("ios_latest").value.trim() },
+    android: { minVersion: $("android_min").value.trim(), latestVersion: $("android_latest").value.trim() },
+    message: Object.fromEntries(LANGS.map(l => [l, $("msg_"+l).value.trim()]))
+  };
+}
+function cmp(a,b){
+  const x=a.split(".").map(Number), y=b.split(".").map(Number);
+  for(let i=0;i<3;i++){ if(x[i]!==y[i]) return x[i]-y[i]; }
+  return 0;
+}
+function validate(d){
+  const errs=[], warns=[];
+  document.querySelectorAll("[data-ver]").forEach(i=>i.classList.toggle("bad", !SEMVER.test(i.value.trim())));
+  for(const p of ["ios","android"]){
+    const {minVersion:mn, latestVersion:lt} = d[p];
+    if(!SEMVER.test(mn)) errs.push(`${p}: min version must look like 1.2.3`);
+    if(!SEMVER.test(lt)) errs.push(`${p}: latest version must look like 1.2.3`);
+    if(SEMVER.test(mn)&&SEMVER.test(lt)&&cmp(mn,lt)>0) errs.push(`${p}: min version can't be higher than latest version`);
+  }
+  LANGS.forEach(l=>{ if(!d.message[l]) warns.push(`Message (${l}) is empty`); });
+  return {errs,warns};
+}
+function render(){
+  const d = build();
+  $("out").textContent = JSON.stringify(d,null,2);
+  const {errs,warns} = validate(d);
+  $("msgs").innerHTML =
+    errs.map(e=>`<div class="err">✖ ${e}</div>`).join("") +
+    warns.map(w=>`<div class="warn">⚠ ${w}</div>`).join("") +
+    (!errs.length && !warns.length ? `<div class="ok">✔ Ready to save</div>` : "");
+  $("dl").disabled = errs.length>0;
+  $("dl").style.opacity = errs.length ? .5 : 1;
+}
+function bump(id, part){
+  const v = $(id).value.trim();
+  let [a,b,c] = SEMVER.test(v) ? v.split(".").map(Number) : [1,0,0];
+  if(part==="major"){a++;b=0;c=0} else if(part==="minor"){b++;c=0} else c++;
+  $(id).value = `${a}.${b}.${c}`;
+  render();
+}
+document.querySelectorAll(".bump").forEach(box=>{
+  ["patch","minor","major"].forEach(p=>{
+    const b=document.createElement("button"); b.type="button"; b.className="ghost"; b.textContent="+"+p;
+    b.onclick=()=>bump(box.dataset.for,p); box.appendChild(b);
+  });
+});
+document.querySelectorAll("input:not([type=file]),textarea").forEach(e=>e.addEventListener("input",render));
+$("copyIos").onclick=()=>{ $("android_min").value=$("ios_min").value; $("android_latest").value=$("ios_latest").value; render(); };
+$("reset").onclick=()=>fill(TEMPLATE);
+$("copy").onclick=async()=>{
+  try{ await navigator.clipboard.writeText($("out").textContent); $("copy").textContent="Copied ✓"; }
+  catch{ $("copy").textContent="Copy failed"; }
+  setTimeout(()=>$("copy").textContent="Copy",1500);
+};
+$("dl").onclick=()=>{
+  const blob=new Blob([JSON.stringify(build(),null,2)+"\n"],{type:"application/json"});
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="smokefree-version.json";
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+};
+$("fileIn").onchange=e=>{
+  const f=e.target.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{ fill(JSON.parse(r.result)); } catch{ alert("That file isn't valid JSON."); } };
+  r.readAsText(f);
+};
+// Try loading the file next to this page (works when hosted); fall back to template
+fetch("smokefree-version.json",{cache:"no-store"}).then(r=>r.ok?r.json():Promise.reject()).then(fill).catch(()=>fill(TEMPLATE));
+</script>
+</body>
+</html>

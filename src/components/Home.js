@@ -7,8 +7,8 @@ import {
   faSnapchat,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import me from "../assets/me.png"; // Ensure this file exists in src/assets/
-import star from "../assets/star.png"; // Ensure this file exists in src/assets/
+import me from "../assets/me.webp";
+import star from "../assets/star.webp";
 import "../styles/home.css";
 
 const Home = () => {
@@ -62,7 +62,7 @@ const Home = () => {
         <h3 className="home-greeting">
           Hello I’m Hama Gardy
           <span style={{ display: "none" }}>👋</span>
-          <img src={star} alt="star" className="home-star" />
+          <img src={star} alt="star" className="home-star" width="32" height="32" decoding="async" />
         </h3>
         <p className="home-role">
           <span className="role-text" key={currentRoleIndex}>
@@ -81,12 +81,14 @@ const Home = () => {
       </div>
       <div className="home-image">
         <img 
-          src={me} 
-          alt="Profile" 
-          className="profile-picture" 
+          src={me}
+          alt="Profile"
+          className="profile-picture"
+          width="560"
+          height="591"
           loading="eager"
           decoding="async"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <div className="mouse-scroll" onClick={handleMouseScrollClick}>
           <span className="mouse">

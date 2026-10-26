@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './prayer-times-page.css';
 import appScreenshot from './assets/images/appscreen.jpg';
-import appIcon from './assets/images/adaptive-icon.png';
+import appIcon from './assets/images/adaptive-icon.webp';
+import { AppStoreBadge, GooglePlayBadge } from '../components/StoreBadges';
 
-const appStoreImg = 'https://www.codepas.com.br/site/wp-content/uploads/2021/01/app-store-badge.png';
-const playStoreImg = 'https://www.gov.br/pt-br/imagens-de-servicos/googleplay.png';
+
+
 
 export default function PrayerTimesPage() {
   const [isVisible, setIsVisible] = useState({});
@@ -83,14 +84,14 @@ export default function PrayerTimesPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={appStoreImg} alt="Download on App Store" />
+                  <AppStoreBadge className="store-badge" />
                 </a>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={playStoreImg} alt="Get it on Google Play" />
+                  <GooglePlayBadge className="store-badge" />
                 </a>
               </div>
             </div>
@@ -257,14 +258,14 @@ export default function PrayerTimesPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={appStoreImg} alt="Download on App Store" />
+                <AppStoreBadge className="store-badge" />
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={playStoreImg} alt="Get it on Google Play" />
+                <GooglePlayBadge className="store-badge" />
               </a>
             </div>
 

@@ -1,7 +1,7 @@
 import React from "react";
-import project1Img from "../assets/akocompany.png";
+import project1Img from "../assets/akocompany.webp";
 import logoPreview from "../assets/ac.png";
-import socialMediaPreview from "../assets/akogrid.png";
+import socialMediaPreview from "../assets/akogrid.webp";
 
 const Project1 = ({ isPreviewOpen, closePreview, openPreview }) => {
   const project = {
@@ -24,6 +24,8 @@ const Project1 = ({ isPreviewOpen, closePreview, openPreview }) => {
           src={project.image}
           alt={project.title}
           className="project-image"
+          loading="lazy"
+          decoding="async"
         />
         <div className="project-content">
           <h3 className="project-card-title">{project.title}</h3>

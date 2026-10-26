@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-import menuGif from "../assets/menu.gif";
+// The card shows a still poster; the 200-frame animation is only fetched
+// once the preview modal is actually opened.
+import menuPoster from "../assets/menu-poster.webp";
+import menuAnim from "../assets/menu-anim.webp";
 
 const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
   const [view, setView] = useState("grid");
@@ -22,7 +25,15 @@ const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
   return (
     <>
       <div className={`project-card ${view}`}>
-        <img src={menuGif} alt="Menu Preview" className="project-image" />
+        <img
+          src={menuPoster}
+          alt="Menu Preview"
+          className="project-image"
+          width="800"
+          height="451"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="project-content">
           <h3 className="project-card-title">{project.title}</h3>
           <p className="project-description">{project.description}</p>
@@ -35,7 +46,14 @@ const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
       {previewProject && (
         <div className="project-preview">
           <div className="preview-content">
-            <img src={menuGif} alt="Menu Preview" className="preview-image project-image-center" />
+            <img
+              src={menuAnim}
+              alt="Menu Preview"
+              className="preview-image project-image-center"
+              width="560"
+              height="316"
+              decoding="async"
+            />
             <h3 className="preview-title">{previewProject.title}</h3>
             <p className="preview-full-info">{previewProject.fullInfo}</p>
             <div className="preview-buttons">

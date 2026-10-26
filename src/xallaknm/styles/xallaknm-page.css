@@ -340,13 +340,16 @@
 }
 
 .xallaknm-page .hero-badges a,
-.xallaknm-page .hero-badges img {
+.xallaknm-page .hero-badges img,
+.xallaknm-page .hero-badges .store-badge {
   height: 3.5rem;
+  width: auto;
   transition: all 0.3s;
   cursor: pointer;
 }
 
-.xallaknm-page .hero-badges a:hover img {
+.xallaknm-page .hero-badges a:hover img,
+.xallaknm-page .hero-badges a:hover .store-badge {
   transform: scale(1.05);
 }
 
@@ -719,13 +722,16 @@
   flex-wrap: wrap;
 }
 
-.xallaknm-page .cta-badges img {
+.xallaknm-page .cta-badges img,
+.xallaknm-page .cta-badges .store-badge {
   height: 4rem;
+  width: auto;
   transition: transform 0.3s;
   cursor: pointer;
 }
 
-.xallaknm-page .cta-badges img:hover {
+.xallaknm-page .cta-badges img:hover,
+.xallaknm-page .cta-badges .store-badge:hover {
   transform: scale(1.05);
 }
 

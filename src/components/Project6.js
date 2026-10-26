@@ -1,6 +1,6 @@
 import React from "react";
-import xallakanmImg from "../xallaknm/assets/X1.png";
-import xallakanmIcon from "../xallaknm/assets/xallakanm.png.png";
+import xallakanmImg from "../xallaknm/assets/X1.webp";
+import xallakanmIcon from "../xallaknm/assets/app-icon.webp";
 
 const Project6 = ({ isPreviewOpen, closePreview, openPreview }) => {
   const project = {
@@ -20,10 +20,12 @@ const Project6 = ({ isPreviewOpen, closePreview, openPreview }) => {
       <div className="project-card">
         {project.image && (
           <img
-            src={project.image}
+          src={project.image}
             alt={project.title}
             className="project-image"
-          />
+          loading="lazy"
+          decoding="async"
+        />
         )}
         <div className="project-content">
           <h3 className="project-card-title">{project.title}</h3>

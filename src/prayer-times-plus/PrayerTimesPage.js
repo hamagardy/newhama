@@ -86,13 +86,13 @@ export default function PrayerTimesPage() {
                 >
                   <AppStoreBadge className="store-badge" />
                 </a>
-                <a
-                  href="https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <span
+                  className="badge-soon"
+                  aria-label="Get it on Google Play — coming soon"
                 >
                   <GooglePlayBadge className="store-badge" />
-                </a>
+                  <span className="badge-soon-label">Soon</span>
+                </span>
               </div>
             </div>
 
@@ -260,13 +260,13 @@ export default function PrayerTimesPage() {
               >
                 <AppStoreBadge className="store-badge" />
               </a>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus"
-                target="_blank"
-                rel="noopener noreferrer"
+              <span
+                className="badge-soon"
+                aria-label="Get it on Google Play — coming soon"
               >
                 <GooglePlayBadge className="store-badge" />
-              </a>
+                <span className="badge-soon-label">Soon</span>
+              </span>
             </div>
 
             <p className="cta-note">Free to download • No ads • Privacy focused</p>

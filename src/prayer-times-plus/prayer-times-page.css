@@ -904,3 +904,43 @@ footer {
     height: 400px;
   }
 }
+
+/* ============================================
+   GOOGLE PLAY — COMING SOON
+   The Android build isn't published yet, so the badge is shown
+   dimmed and non-clickable with a "Soon" ribbon instead of linking out.
+   ============================================ */
+
+.badge-soon {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+}
+
+.badge-soon .store-badge {
+  opacity: 0.45;
+  filter: grayscale(1);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.badge-soon:hover .store-badge {
+  opacity: 0.6;
+  filter: grayscale(0.7);
+}
+
+.badge-soon-label {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: linear-gradient(135deg, #7fb685 0%, #4f8a5c 100%);
+  color: #ffffff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(127, 182, 133, 0.45);
+  pointer-events: none;
+  z-index: 2;
+}

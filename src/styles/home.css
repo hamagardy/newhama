@@ -319,6 +319,117 @@ body.dark-mode .home-social-link:hover {
   color: #cccccc;
 }
 
+/* ---- App rail: my three apps, under the social icons ---- */
+
+.home-rail-divider {
+  width: 22px;
+  height: 1px;
+  margin: 4px 0 2px;
+  background: linear-gradient(90deg, rgba(26, 26, 26, 0.35), transparent);
+}
+
+body.dark-mode .home-rail-divider {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.home-app-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+  border-radius: 11px;
+  opacity: 0;
+  animation: appPopIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  animation-delay: calc(0.75s + var(--app-index) * 0.12s);
+}
+
+.home-app-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s ease;
+}
+
+body.dark-mode .home-app-icon {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.home-app-link:hover .home-app-icon,
+.home-app-link:focus-visible .home-app-icon {
+  transform: translateY(-3px) scale(1.14) rotate(-3deg);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+}
+
+.home-app-link:active .home-app-icon {
+  transform: translateY(-1px) scale(1.04);
+}
+
+/* Name slides out of the icon on hover */
+.home-app-name {
+  position: absolute;
+  left: 44px;
+  white-space: nowrap;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #1a1a1a;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  padding: 0.28rem 0.55rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  opacity: 0;
+  transform: translateX(-8px) scale(0.92);
+  transform-origin: left center;
+  pointer-events: none;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+body.dark-mode .home-app-name {
+  color: #f5f5f5;
+  background: rgba(38, 38, 38, 0.96);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-app-link:hover .home-app-name,
+.home-app-link:focus-visible .home-app-name {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+.home-app-link:focus-visible {
+  outline: 2px solid #8b6f47;
+  outline-offset: 3px;
+}
+
+@keyframes appPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-app-link {
+    opacity: 1;
+    animation: none;
+  }
+
+  .home-app-icon,
+  .home-app-name {
+    transition: none;
+  }
+}
+
 /* Animation keyframes */
 @keyframes fadeIn {
   0% {
@@ -450,6 +561,43 @@ body.dark-mode .home-social-link:hover {
     gap: 15px;
     margin-top: 1rem;
     width: 100%;
+    flex-wrap: wrap;
+  }
+
+  /* Full-width divider forces the apps onto their own centred row
+     instead of wrapping into the middle of the social icons. */
+  .home-rail-divider {
+    flex-basis: 100%;
+    width: 100%;
+    height: 1px;
+    margin: 0.35rem 0 0.1rem;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(26, 26, 26, 0.25),
+      transparent
+    );
+  }
+
+  body.dark-mode .home-rail-divider {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    );
+  }
+
+  .home-app-name {
+    left: 50%;
+    top: 44px;
+    transform: translateX(-50%) translateY(-6px) scale(0.92);
+    transform-origin: top center;
+  }
+
+  .home-app-link:hover .home-app-name,
+  .home-app-link:focus-visible .home-app-name {
+    transform: translateX(-50%) translateY(0) scale(1);
   }
 
   .mouse-scroll {

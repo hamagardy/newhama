@@ -1,1 +1,3 @@
-[]
+[
+  { "id": "off", "image": "https://www.hamagardy.com/blank.png", "link": "", "duration": 600000, "type": "other" }
+]

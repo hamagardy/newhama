@@ -154,20 +154,6 @@
       },
       "type": "info",
       "showOnce": true,
-      "priority": 2
-    },
-    {
-      "id": "welcome",
-      "title": {
-        "en": "Welcome to کاتەکانی بانگ Prayer Time +!",
-        "ku": "بەخێربێیت بۆ کاتەکانی بانگ!"
-      },
-      "message": {
-        "en": "Thank you for downloading our app. May Allah accept your prayers.",
-        "ku": "سوپاس بۆ دابەزاندنی بەرنامەکەمان. خودا نوێژەکانتان قبووڵ بکات."
-      },
-      "type": "info",
-      "showOnce": true,
       "priority": 3
     }
   ],

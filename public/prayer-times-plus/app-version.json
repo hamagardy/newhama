@@ -1,20 +1,20 @@
 {
-  "version": "2.0.0",
-  "minVersion": "2.0.0",
-  "latestVersion": "2.0.0",
+  "version": "3.0.0",
+  "minVersion": "3.0.0",
+  "latestVersion": "3.0.0",
   "forceUpdate": true,
   "updateMessage": {
-    "en": "Version 2.0 is here! Apps Lock added and lock screen prayer times widget available.",
-    "ku": "وەشانی ٢.٠ هات! قوفڵی بەرنامەکان زیادکرا و ویجێتی کاتەکانی نوێژ لەسەر شاشەی قوفڵدا."
+    "en": "Version 3.0 is here! Madina Mushaf, 21 new Adhan sounds, Live Zakat calculator, Monthly prayer schedule, and more!",
+    "ku": "وەشانی ٣.٠ هات! موسحەفی مەدینە، ٢١ دەنگی نوێی بانگ، ژمێریاری زەکاتی ڕاستەوخۆ، خشتەی مانگانە، و زیاتر!"
   },
   "forceUpdateMessage": {
-    "en": "Version 2.0 is required. Update now to get Apps Lock and lock screen prayer times widget.",
-    "ku": "وەشانی ٢.٠ پێویستە. ئێستا نوێبکەرەوە بۆ بەدەستهێنانی قوفڵی بەرنامەکان و ویجێتی کاتەکانی نوێژ."
+    "en": "Version 3.0 is required. Update now to get Madina Mushaf with word-by-word recitation, 21 new Adhan sounds, live Zakat calculator, and enhanced features!",
+    "ku": "وەشانی ٣.٠ پێویستە. ئێستا نوێبکەرەوە بۆ بەدەستهێنانی موسحەفی مەدینە لەگەڵ تلاوەتی وشە بە وشە، ٢١ دەنگی نوێی بانگ، ژمێریاری زەکاتی ڕاستەوخۆ و تایبەتمەندی باشتر!"
   },
   "ios": {
     "appStoreUrl": "https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496",
-    "version": "2.0.0",
-    "minVersion": "2.0.0",
+    "version": "3.0.0",
+    "minVersion": "3.0.0",
     "forceUpdate": true
   },
   "android": {
@@ -24,6 +24,32 @@
     "forceUpdate": true
   },
   "features": [
+    {
+      "version": "3.0.0",
+      "date": "2026-10-28",
+      "changes": {
+        "en": [
+          "📖 Madina Mushaf - Read Quran page by page as authentic print with word-by-word recitation and Kurdish translation",
+          "🔔 21 New Adhan Sounds - Added 21 beautiful new Adhan voices for notifications",
+          "💰 Live Zakat Calculator - Updated with real-time gold and dollar rates",
+          "📅 Monthly Prayer Schedule - Save monthly prayer times as image with quick mosque finder via Waze",
+          "⚡ Q&A Performance - Faster loading and response times",
+          "📍 New Locations - Added more cities and regions",
+          "🔔 Notification Fixes - Resolved notification timing issues",
+          "🌙 Dark Mode - Fixed dark mode display issues"
+        ],
+        "ku": [
+          "📖 موسحەفی مەدینە - خوێندنەوەی قورئان پەڕە بە پەڕە وەک چاپی ڕەسەن، لەگەڵ تلاوەتی وشە بە وشە و وەرگێڕانی کوردی",
+          "🔔 ٢١ دەنگی نوێی بانگ - زیادکردنی ٢١ دەنگی جوانی نوێی بانگ بۆ ئاگادارکردنەوەکان",
+          "💰 ژمێریاری زەکاتی ڕاستەوخۆ - نوێکردنەوەی بە نرخی ڕاستەوخۆی ئاڵتوون و دۆلار",
+          "📅 خشتەی مانگانەی نوێژ - خشتەی مانگانەی کاتەکانی نوێژ بە توانای پاشەکەوتکردن وەک وێنە، لەگەڵ دۆزەرەوەی خێرای مزگەوت بە ڕێنیشاندەری Waze",
+          "⚡ خێراکردنی پرسیار و وەڵام - بارکردن و وەڵامی خێراتر",
+          "📍 شوێنی نوێ - زیادکردنی شار و هەرێمی زیاتر",
+          "🔔 چارەسەرکردنی ئاگادارکردنەوە - چارەسەرسازکردنی کێشەکانی کاتی ئاگادارکردنەوە",
+          "🌙 دۆخی تاریک - چارەسەرکردنی کێشەکانی پیشاندانی دۆخی تاریک"
+        ]
+      }
+    },
     {
       "version": "2.0.0",
       "date": "2026-07-20",
@@ -89,6 +115,20 @@
   },
   "announcements": [
     {
+      "id": "version3",
+      "title": {
+        "en": "Version 3.0 Released! 🎉",
+        "ku": "وەشانی ٣.٠ بڵاوکرایەوە! 🎉"
+      },
+      "message": {
+        "en": "Major update: Madina Mushaf with word-by-word recitation, 21 new Adhan sounds, live Zakat calculator with real-time rates, monthly prayer schedule, and many improvements!",
+        "ku": "نوێکردنەوەی گەورە: موسحەفی مەدینە لەگەڵ تلاوەتی وشە بە وشە، ٢١ دەنگی نوێی بانگ، ژمێریاری زەکاتی ڕاستەوخۆ، خشتەی مانگانەی نوێژ، و باشترکردنی زۆر!"
+      },
+      "type": "info",
+      "showOnce": true,
+      "priority": 1
+    },
+    {
       "id": "version2",
       "title": {
         "en": "Version 2.0 Released! 🎉",
@@ -100,7 +140,7 @@
       },
       "type": "info",
       "showOnce": true,
-      "priority": 1
+      "priority": 2
     },
     {
       "id": "welcome",
@@ -115,7 +155,21 @@
       "type": "info",
       "showOnce": true,
       "priority": 2
+    },
+    {
+      "id": "welcome",
+      "title": {
+        "en": "Welcome to کاتەکانی بانگ Prayer Time +!",
+        "ku": "بەخێربێیت بۆ کاتەکانی بانگ!"
+      },
+      "message": {
+        "en": "Thank you for downloading our app. May Allah accept your prayers.",
+        "ku": "سوپاس بۆ دابەزاندنی بەرنامەکەمان. خودا نوێژەکانتان قبووڵ بکات."
+      },
+      "type": "info",
+      "showOnce": true,
+      "priority": 3
     }
   ],
-  "lastUpdated": "2026-07-20T00:00:00Z"
+  "lastUpdated": "2026-10-28T00:00:00Z"
 }

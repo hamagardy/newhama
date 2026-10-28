@@ -1,5 +1,5 @@
 import React from "react";
-import project3Img from "../assets/kurdbox.png";
+import project3Img from "../assets/kurdbox.webp";
 
 const Project3 = ({ isPreviewOpen, closePreview, openPreview }) => {
   const project = {
@@ -19,6 +19,8 @@ const Project3 = ({ isPreviewOpen, closePreview, openPreview }) => {
           src={project.image}
           alt={project.title}
           className="project-image"
+          loading="lazy"
+          decoding="async"
         />
         <div className="project-content">
           <h3 className="project-card-title">{project.title}</h3>

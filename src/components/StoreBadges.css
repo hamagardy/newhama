@@ -1,0 +1,41 @@
+/*
+ * Self-contained sizing for the inline SVG store badges.
+ *
+ * The badges used to be <img> tags, so every page sized them through rules
+ * like `.hero-badges img { height: 3.5rem }`. Those selectors don't match an
+ * <svg>, so the badges carry their own sizing here instead and work on any
+ * page without needing a rule added to that page's stylesheet.
+ */
+
+.store-badge {
+  display: block;
+  height: 3.5rem;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.cta-badges .store-badge {
+  height: 4rem;
+}
+
+a:hover > .store-badge,
+.store-badge:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .store-badge {
+    height: 3rem;
+  }
+
+  .cta-badges .store-badge {
+    height: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .store-badge,
+  .cta-badges .store-badge {
+    height: 2.75rem;
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSnapchat } from "@fortawesome/free-brands-svg-icons";
-import devBadge from "../../assets/dev.png"; // Adjust path based on your structure
+import devBadge from "../../assets/dev.webp";
 
 const SnapchatAbout = () => {
   return (
@@ -18,6 +18,8 @@ const SnapchatAbout = () => {
         src={devBadge}
         alt="Official Developer Badge"
         className="snapchat-dev-badge"
+        loading="lazy"
+        decoding="async"
       />
       <div className="snapchat-official">
         <FontAwesomeIcon icon={faSnapchat} className="snapchat-icon" />

@@ -1,5 +1,5 @@
 import React from "react";
-import smokeFreeImg from "../assets/smokefree-app.png";
+import smokeFreeImg from "../assets/smokefree-app.webp";
 
 const Project7 = ({ isPreviewOpen, closePreview, openPreview }) => {
   const project = {
@@ -18,10 +18,12 @@ const Project7 = ({ isPreviewOpen, closePreview, openPreview }) => {
       <div className="project-card">
         {project.image && (
           <img
-            src={project.image}
+          src={project.image}
             alt={project.title}
             className="project-image"
-          />
+          loading="lazy"
+          decoding="async"
+        />
         )}
         <div className="project-content">
           <h3 className="project-card-title">{project.title}</h3>

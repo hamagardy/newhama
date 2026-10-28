@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "../../styles/snapchat.css"; // Adjust path as needed
-import hdrImage from "../../assets/hdr.png";
+import hdrImage from "../../assets/hdr.webp";
 import st from "../../assets/st.png";
-import tl from "../../assets/tools.png";
-import rt from "../../assets/RotatonTracker.png";
+import tl from "../../assets/tools.webp";
+import rt from "../../assets/RotatonTracker.webp";
 
 const LensProjects = () => {
   const [showCode, setShowCode] = useState(false);
@@ -121,7 +121,7 @@ updateEvent.bind(onUpdateEvent);`,
                   Your browser does not support the video tag.
                 </video>
               ) : (
-                <img src={project.preview} alt={`${project.title} Preview`} />
+                <img src={project.preview} alt={`${project.title} Preview`} loading="lazy" decoding="async" />
               )}
             </div>
             <div className="LensProjects-content">

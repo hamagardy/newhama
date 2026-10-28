@@ -1,11 +1,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './styles/smokefree-page.css';
 
-import appScreenshot from './assets/appscreen.PNG';
-import appIcon from './assets/icon.png';
+import appScreenshot from './assets/appscreen.webp';
+import appIcon from './assets/icon.webp';
 import logo from '../assets/hg.png';
+import { AppStoreBadge } from '../components/StoreBadges';
 
-const appStoreImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png';
+
 
 export default function SmokeFreePage() {
   const [isVisible, setIsVisible] = useState({});
@@ -84,7 +85,7 @@ export default function SmokeFreePage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={appStoreImg} alt="Download on App Store" />
+                  <AppStoreBadge className="store-badge" />
                 </a>
               </div>
             </div>
@@ -184,7 +185,7 @@ export default function SmokeFreePage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={appStoreImg} alt="Download on App Store" />
+                <AppStoreBadge className="store-badge" />
               </a>
             </div>
             <p className="cta-note">Free to download • Premium features available</p>

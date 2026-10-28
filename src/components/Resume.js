@@ -8,7 +8,7 @@ import {
   FaDesktop,
   FaCircle,
 } from "react-icons/fa";
-import starIcon from "../assets/star.png";
+import starIcon from "../assets/star.webp";
 import "../styles/resume.css";
 
 function Resume() {

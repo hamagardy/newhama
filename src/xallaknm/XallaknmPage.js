@@ -1,41 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './styles/xallaknm-page.css';
 
-import appScreenshot from './assets/X1.png';
-import appIcon from './assets/xallakanm.png.png';
+import appScreenshot from './assets/X1.webp';
+import appIcon from './assets/app-icon.webp';
 import logo from './assets/hg.png';
-import dominoImage from './assets/Dominos.jpg';
-import okeyImage from './assets/Okey.jpg';
-
-const appStoreImg = 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png';
-const playStoreImg = 'https://www.jcml-tx.org/ebook/get-it-on-google-play-badge.png/@@images/image.png';
+import dominoImage from './assets/Dominos.webp';
+import okeyImage from './assets/Okey.webp';
+import { AppStoreBadge, GooglePlayBadge } from '../components/StoreBadges';
 
 export default function XallaknmPage() {
-  const [isVisible, setIsVisible] = useState({});
   const [showGetDropdown, setShowGetDropdown] = useState(false);
-  const observerRef = useRef(null);
-
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
-          }
-        });
-      },
-      { threshold: 0.1 }
-    );
-
-    document.querySelectorAll('[data-animate]').forEach((el) => {
-      observerRef.current.observe(el);
-    });
-
-    return () => {
-      observerRef.current?.disconnect();
-    };
-  }, []);
-
 
 
   return (
@@ -51,7 +25,7 @@ export default function XallaknmPage() {
         <div className="nav-container">
           <div className="nav-content">
             <div className="nav-logo">
-              <img src={appIcon} alt="Xallaknm" />
+              <img src={appIcon} alt="Xallaknm" width="40" height="40" decoding="async" />
               <span>Xallakanm</span>
             </div>
             <div className="nav-links">
@@ -68,7 +42,6 @@ export default function XallaknmPage() {
                   <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4483-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993.0001.5511-.4482.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4483.9993.9993 0 .5511-.4483.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.2439 13.8533 7.8508 12 7.8508s-3.5902.3931-5.1367 1.0989L4.841 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3435-4.1021-2.6892-7.5743-6.1185-9.4396"/>
                 </svg>
                 <span className="android-text">Android</span>
-                <span className="new-badge">v1.1</span>
               </a>
               <div className="nav-dropdown">
                 <button 
@@ -86,7 +59,7 @@ export default function XallaknmPage() {
                       className="ios-app-link"
                     >
                       <div className="ios-app-icon">
-                        <img src={appIcon} alt="Xallakanm" />
+                        <img src={appIcon} alt="Xallakanm" width="56" height="56" loading="lazy" decoding="async" />
                       </div>
                       <div className="ios-app-info">
                         <span className="ios-app-name">Xallakanm</span>
@@ -129,7 +102,7 @@ export default function XallaknmPage() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <img src={appStoreImg} alt="Download on App Store" />
+                  <AppStoreBadge className="store-badge" />
                 </a>
                 <a
                   href="https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm"
@@ -137,8 +110,7 @@ export default function XallaknmPage() {
                   rel="noopener noreferrer"
                   className="apk-download-button badge-container"
                 >
-                  <img src={playStoreImg} alt="Get it on Google Play" />
-                  <span className="new-badge-overlay">v1.1</span>
+                  <GooglePlayBadge className="store-badge" />
                 </a>
               </div>
             </div>
@@ -148,7 +120,14 @@ export default function XallaknmPage() {
                 <div className="phone-mockup">
                   <div className="phone-glow"></div>
                   <div className="phone-screen">
-                    <img src={appScreenshot} alt="App Preview" />
+                    <img
+                      src={appScreenshot}
+                      alt="App Preview"
+                      width="644"
+                      height="1280"
+                      decoding="async"
+                      fetchPriority="high"
+                    />
                   </div>
                   <div className="phone-notch"></div>
                 </div>
@@ -242,7 +221,14 @@ export default function XallaknmPage() {
                 <div className="phone-mockup">
                   <div className="phone-glow"></div>
                   <div className="phone-screen">
-                    <img src={game.img} alt={game.title} />
+                    <img
+                      src={game.img}
+                      alt={game.title}
+                      width="646"
+                      height="1280"
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="phone-notch"></div>
                 </div>
@@ -293,7 +279,7 @@ export default function XallaknmPage() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <img src={appStoreImg} alt="Download on App Store" />
+                <AppStoreBadge className="store-badge" />
               </a>
               <a
                 href="https://play.google.com/store/apps/details?id=com.hamaagardy.xallakanm"
@@ -301,8 +287,7 @@ export default function XallaknmPage() {
                 rel="noopener noreferrer"
                 className="apk-download-button badge-container"
               >
-                <img src={playStoreImg} alt="Get it on Google Play" />
-                <span className="new-badge-overlay">v1.1</span>
+                <GooglePlayBadge className="store-badge" />
               </a>
             </div>
           </div>
@@ -317,7 +302,7 @@ export default function XallaknmPage() {
               href="https://hamagardy.com" 
               className="footer-logo"
             >
-              <img src={logo} alt="Hama Gardy" />
+              <img src={logo} alt="Hama Gardy" width="40" height="40" loading="lazy" decoding="async" />
             </a>
             <div className="footer-links">
               <span>© 2026 Hama Gardy</span>

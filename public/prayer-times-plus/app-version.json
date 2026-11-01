@@ -13,9 +13,9 @@
   },
   "ios": {
     "appStoreUrl": "https://apps.apple.com/us/app/%DA%A9%D8%A7%D8%AA%DB%95%DA%A9%D8%A7%D9%86%DB%8C-%D8%A8%D8%A7%D9%86%DA%AF/id6762506496",
-    "version": "3.0.0",
+    "version": "3.2.0",
     "minVersion": "3.0.0",
-    "forceUpdate": true
+    "forceUpdate": false
   },
   "android": {
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.hamagardy.prayertimesplus",
@@ -24,6 +24,20 @@
     "forceUpdate": true
   },
   "features": [
+    {
+      "version": "3.2.0",
+      "date": "2026-11-01",
+      "changes": {
+        "en": [
+          "🔔 21 New Adhan Sounds - Added 21 beautiful new Adhan voices",
+          "🐛 Bug fixes and stability improvements"
+        ],
+        "ku": [
+          "🔔 ٢١ دەنگی نوێی بانگ - زیادکردنی ٢١ دەنگی جوانی نوێی بانگ",
+          "🐛 چارەسەرکردنی هەڵە و باشترکردنی جێگیری"
+        ]
+      }
+    },
     {
       "version": "3.0.0",
       "date": "2026-10-28",
@@ -115,6 +129,20 @@
   },
   "announcements": [
     {
+      "id": "version32",
+      "title": {
+        "en": "Version 3.2 Released! 🎉",
+        "ku": "وەشانی ٣.٢ بڵاوکرایەوە! 🎉"
+      },
+      "message": {
+        "en": "New update: 21 new Adhan sounds and bug fixes!",
+        "ku": "نوێکردنەوەی نوێ: ٢١ دەنگی نوێی بانگ و چارەسەرکردنی هەڵەکان!"
+      },
+      "type": "info",
+      "showOnce": true,
+      "priority": 1
+    },
+    {
       "id": "version3",
       "title": {
         "en": "Version 3.0 Released! 🎉",
@@ -126,7 +154,7 @@
       },
       "type": "info",
       "showOnce": true,
-      "priority": 1
+      "priority": 2
     },
     {
       "id": "version2",
@@ -140,7 +168,7 @@
       },
       "type": "info",
       "showOnce": true,
-      "priority": 2
+      "priority": 3
     },
     {
       "id": "welcome",
@@ -154,8 +182,8 @@
       },
       "type": "info",
       "showOnce": true,
-      "priority": 3
+      "priority": 4
     }
   ],
-  "lastUpdated": "2026-10-28T00:00:00Z"
+  "lastUpdated": "2026-11-01T00:00:00Z"
 }

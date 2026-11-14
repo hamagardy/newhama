@@ -1,3 +1,4 @@
+import { ProjectPreview, PreviewCloseButton } from "./ProjectPreview";
 import React from "react";
 import xallakanmImg from "../xallaknm/assets/X1.webp";
 import xallakanmIcon from "../xallaknm/assets/app-icon.webp";
@@ -40,8 +41,7 @@ const Project6 = ({ isPreviewOpen, closePreview, openPreview }) => {
       </div>
 
       {isPreviewOpen && (
-        <div className="project-preview">
-          <div className="preview-content">
+        <ProjectPreview title={project.title} onClose={closePreview}>
             {project.image && (
               <img
                 src={project.image}
@@ -69,12 +69,9 @@ const Project6 = ({ isPreviewOpen, closePreview, openPreview }) => {
               >
                 View on App Store
               </a>
-              <button className="preview-close-button" onClick={closePreview}>
-                Close
-              </button>
+              <PreviewCloseButton />
             </div>
-          </div>
-        </div>
+        </ProjectPreview>
       )}
     </>
   );

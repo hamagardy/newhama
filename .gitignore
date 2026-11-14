@@ -1,2 +1,12 @@
-node_modules
-src/xallaknm/XallaknmPage.js
+node_modules/
+build/
+dist/
+.vercel/
+.netlify/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*service-account*.json
+tools/local-dashboard/credentials/

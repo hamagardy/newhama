@@ -27,14 +27,14 @@ const Navbar = () => {
   const scrollToTop = () => {
     const homeSection = document.getElementById("home");
     if (homeSection) {
-      homeSection.scrollIntoView({ behavior: "smooth" });
+      homeSection.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     }
   };
 
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
     }
   };
 
@@ -48,11 +48,11 @@ const Navbar = () => {
       />
       <div className="menu-toggle-container">
         {/* Theme Toggle Button */}
-        <button className="theme-toggle" onClick={toggleTheme}>
+        <button className="theme-toggle" aria-label={darkMode ? "Use light theme" : "Use dark theme"} onClick={toggleTheme}>
           {darkMode ? <BsSun /> : <BsMoon />}
         </button>
         {/* Menu Button */}
-        <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+        <button className="menu-button" aria-label="Toggle navigation" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
       </div>

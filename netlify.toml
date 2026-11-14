@@ -2,6 +2,9 @@
   command = "npm run build"
   publish = "build"
 
+[build.environment]
+  NODE_VERSION = "22"
+
 [[redirects]]
   from = "/*"
   to = "https://newhama.onrender.com/:splat"
@@ -9,8 +12,194 @@
   force = true
   conditions = { Host = ["shop.hamagardy.com"] }
 
+[[redirects]]
+  from = "/data"
+  to = "/410.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/data.html"
+  to = "/410.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/xallaknm/data"
+  to = "/410.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/xallaknm/data.html"
+  to = "/410.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/xallaknm/data-standalone.html"
+  to = "/410.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/tools/*"
+  to = "/410.html"
+  status = 404
+  force = true
+
 # SPA fallback for main site
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/portfolio"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/portfolio/"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/xallaknm"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/xallaknm/*"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/smokefree"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/smokefree/"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/prayer-times-plus"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/prayer-times-plus/"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/410.html"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/p.html"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/prayer-times-plus-privacy-policy.html"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/smokefree-privacy-policy.html"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/smokefree.html"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"
+
+[[headers]]
+  for = "/xallaknm-privacy-policy.html"
+  [headers.values]
+    "Content-Security-Policy" = "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://static.woopra.com https://www.snapchat.com; script-src-attr 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.cdnfonts.com; font-src 'self' data: https://fonts.gstatic.com https://fonts.cdnfonts.com; img-src 'self' data: blob: https://*.google-analytics.com https://*.googletagmanager.com https://*.woopra.com https://*.snapchat.com; media-src 'self' https://hamagardy.github.io; connect-src 'self' https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com https://*.woopra.com https://www.snapchat.com; frame-src https://www.snapchat.com; object-src 'none'; base-uri 'none'; form-action 'self' https://formspree.io; frame-ancestors 'none'; upgrade-insecure-requests"
+    "X-Content-Type-Options" = "nosniff"
+    "X-Frame-Options" = "DENY"
+    "Referrer-Policy" = "strict-origin-when-cross-origin"
+    "Permissions-Policy" = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    "Strict-Transport-Security" = "max-age=63072000"

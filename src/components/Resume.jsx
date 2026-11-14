@@ -59,7 +59,7 @@ function Resume() {
   }, []);
 
   const handleSectionClick = (sectionId) => {
-    document.getElementById(sectionId).scrollIntoView({ behavior: "smooth" });
+    document.getElementById(sectionId).scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
   };
 
   return (

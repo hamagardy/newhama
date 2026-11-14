@@ -1,3 +1,4 @@
+import { ProjectPreview, PreviewCloseButton } from "./ProjectPreview";
 import React from "react";
 import project3Img from "../assets/kurdbox.webp";
 
@@ -35,8 +36,7 @@ const Project3 = ({ isPreviewOpen, closePreview, openPreview }) => {
       </div>
 
       {isPreviewOpen && (
-        <div className="project-preview">
-          <div className="preview-content">
+        <ProjectPreview title={project.title} onClose={closePreview}>
             <img
               src={project.image}
               alt={project.title}
@@ -45,12 +45,9 @@ const Project3 = ({ isPreviewOpen, closePreview, openPreview }) => {
             <h3 className="preview-title">{project.title}</h3>
             <p className="preview-full-info">{project.fullInfo}</p>
             <div className="preview-buttons">
-              <button className="preview-close-button" onClick={closePreview}>
-                Close
-              </button>
+              <PreviewCloseButton />
             </div>
-          </div>
-        </div>
+        </ProjectPreview>
       )}
     </>
   );

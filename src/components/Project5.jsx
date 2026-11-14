@@ -1,3 +1,4 @@
+import { ProjectPreview, PreviewCloseButton } from "./ProjectPreview";
 import React from "react";
 import dabanImg from "../assets/db.webp";
 
@@ -38,8 +39,7 @@ const Project5 = ({ isPreviewOpen, closePreview, openPreview }) => {
       </div>
 
       {isPreviewOpen && (
-        <div className="project-preview">
-          <div className="preview-content">
+        <ProjectPreview title={project.title} onClose={closePreview}>
             {project.image && (
               <img
                 src={project.image}
@@ -58,12 +58,9 @@ const Project5 = ({ isPreviewOpen, closePreview, openPreview }) => {
               >
                 Open Website
               </a>
-              <button className="preview-close-button" onClick={closePreview}>
-                Close
-              </button>
+              <PreviewCloseButton />
             </div>
-          </div>
-        </div>
+        </ProjectPreview>
       )}
     </>
   );

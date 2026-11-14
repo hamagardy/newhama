@@ -88,3 +88,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 });
+
+// Event listeners remain compatible with the script Content Security Policy.
+document.querySelectorAll('[data-coming-soon]').forEach(link => {
+    link.addEventListener('click', event => {
+        event.preventDefault();
+        alert('Coming Soon!');
+    });
+});

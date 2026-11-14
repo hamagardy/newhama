@@ -1,0 +1,7 @@
+tools/
+tests/
+.env
+.env.*
+*.pem
+*service-account*.json
+.DS_Store

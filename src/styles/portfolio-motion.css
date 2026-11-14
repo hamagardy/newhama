@@ -1,0 +1,147 @@
+/* Motion is confined to the portfolio; app landing pages keep their own styles. */
+.portfolio-motion, .motion-project-preview {
+  --motion-accent: #b84d18;
+  --motion-ease: cubic-bezier(.16, 1, .3, 1);
+}
+.portfolio-motion { isolation: isolate; overflow-x: clip; }
+body:has(.portfolio-motion) { animation: none !important; }
+.portfolio-motion section { opacity: 1 !important; animation: none !important; transform: none; will-change: auto; scroll-margin-top: 100px; }
+.portfolio-motion .portfolio-scroll-track { position: fixed; inset: 0 0 auto; height: 3px; z-index: 1100; pointer-events: none; }
+.portfolio-scroll-progress { height: 100%; background: linear-gradient(90deg, #d45b22, #ffb56b); transform: scaleX(0); transform-origin: left; }
+/* Each scene arrives from a different plane, rather than sharing a fade. */
+.portfolio-motion.motion-enabled .motion-reveal {
+  --scene-x: 0px;
+  --scene-y: 95px;
+  --scene-rx: 16deg;
+  --scene-ry: 0deg;
+  --scene-scale: .8;
+  opacity: 0;
+  translate: none;
+  transform: perspective(1100px) translate3d(var(--scene-x), var(--scene-y), -200px) rotateX(var(--scene-rx)) rotateY(var(--scene-ry)) scale(var(--scene-scale));
+  filter: blur(4px);
+  transform-origin: 50% 50%;
+  transition: transform 1.05s cubic-bezier(.16,1,.3,1) var(--scene-delay, 0ms), opacity .65s ease var(--scene-delay, 0ms), filter .85s ease var(--scene-delay, 0ms);
+}
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="home"] { --scene-x: -80px; --scene-y: 50px; --scene-ry: 18deg; }
+.portfolio-motion.motion-enabled .home-image.motion-reveal { --scene-x: 100px; --scene-ry: -24deg; --scene-scale: .65; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="about"] { --scene-x: -140px; --scene-y: 35px; --scene-rx: 0deg; --scene-ry: 25deg; transform-origin: left center; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="resume"] { --scene-y: 150px; --scene-rx: 28deg; --scene-ry: -8deg; --scene-scale: .72; }
+.portfolio-motion.motion-enabled .project-card.motion-reveal { --scene-y: 110px; --scene-rx: 20deg; --scene-ry: var(--card-fan, 0deg); --scene-scale: .68; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="snapchat"] { --scene-x: 140px; --scene-y: 45px; --scene-rx: -8deg; --scene-ry: -25deg; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="shop"] { --scene-y: 30px; --scene-rx: 0deg; --scene-ry: -28deg; --scene-scale: .65; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="contact"] { --scene-y: 140px; --scene-rx: 30deg; --scene-scale: .8; transform-origin: center bottom; }
+.portfolio-motion.motion-enabled .motion-reveal.motion-above:not(.motion-visible) {
+  transform: perspective(1100px) translate3d(0, -90px, -200px) rotateX(-16deg) scale(.82);
+  transition-delay: 0s;
+}
+.portfolio-motion.motion-enabled .motion-reveal.motion-visible,
+.portfolio-motion.motion-enabled .motion-reveal:focus-within { opacity: 1; translate: none; transform: none; filter: none; }
+.portfolio-motion section.motion-scene { position: relative; isolation: isolate; }
+.portfolio-motion section.motion-scene:not(#home)::before {
+  content: ''; position: absolute; top: 16px; left: 2rem; right: 2rem; height: 1px;
+  background: linear-gradient(90deg, transparent, #e07439a6, transparent);
+  box-shadow: 0 0 14px #e0743940; transform: scaleX(.15); opacity: 0;
+  transition: transform 1.2s cubic-bezier(.16,1,.3,1), opacity .6s;
+  pointer-events: none;
+}
+.portfolio-motion section.motion-section-active:not(#home)::before { transform: scaleX(1); opacity: 1; }
+.portfolio-motion section.motion-scene:not(#home)::after {
+  content: ''; position: absolute; inset: 0 0 auto; height: 80px; opacity: 0; z-index: -1;
+  background: linear-gradient(transparent, #e074390c, transparent); pointer-events: none;
+}
+.portfolio-motion.motion-enabled section.motion-section-active:not(#home)::after { animation: scene-scan 1.4s ease-out both; }
+@keyframes scene-scan { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(70vh); } }
+
+/* A staged introduction, with atmosphere kept behind the content. */
+.portfolio-motion #home {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.25fr) minmax(220px, .75fr);
+  max-width: 1200px;
+  min-height: 100svh;
+  height: auto;
+  padding: 9rem 5rem 5rem;
+  gap: 3rem;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.hero-atmosphere { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
+.hero-blob { position: absolute; display: block; width: 440px; height: 440px; border-radius: 48% 52% 60% 40%; background: radial-gradient(circle, #f5ae7640, #ffe6d218 55%, transparent 70%); animation: atmosphere-drift 18s ease-in-out infinite alternate; }
+.blob-one { top: 10%; right: -80px; }
+.blob-two { bottom: -160px; left: -150px; animation-delay: -9s; animation-duration: 23s; }
+.portfolio-motion .home-text { min-width: 0; animation: none; }
+.portfolio-motion .home-greeting { font-size: clamp(2rem, 3.6vw, 3.3rem); flex-wrap: wrap; column-gap: .3em; row-gap: 0; line-height: 1.22; }
+.hero-word { display: inline-block; }
+.portfolio-motion .home-role { white-space: normal; border-right: 0; overflow: visible; min-height: 3.2em; }
+.portfolio-motion .home-role, .portfolio-motion .home-about, .portfolio-motion .home-btn { animation: none; }
+.portfolio-motion .home-btn { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 12px; }
+.portfolio-motion .home-contact-btn { font-size: 13px; padding: 14px 20px; margin: 0; min-height: 48px; }
+.portfolio-motion .home-image, .portfolio-motion .home-social-links { animation: none; }
+.portrait-float { position: relative; animation: portrait-float 6s ease-in-out infinite; }
+.portfolio-motion .profile-picture { width: 240px; height: 240px; min-width: 0; min-height: 0; max-width: 100%; max-height: none; box-sizing: border-box; }
+.portfolio-motion button.mouse-scroll { background: none; border: 0; width: 48px; min-height: 60px; padding: 8px; justify-content: center; color: #1a1a1a; }
+body.dark-mode .portfolio-motion button.mouse-scroll { color: #fff; }
+.portfolio-motion .mouse { position: relative; width: 28px; height: 44px; box-sizing: border-box; border: 2px solid currentColor; border-radius: 16px; color: inherit; }
+.portfolio-motion .mouse::before { content: ''; position: absolute; top: 0; left: 50%; height: 15px; border-left: 1px solid currentColor; opacity: .35; }
+.portfolio-motion .mouse::after { content: ''; position: absolute; top: 15px; left: 0; right: 0; border-top: 1px solid currentColor; opacity: .2; }
+.portfolio-motion .wheel { position: absolute; top: 6px; left: calc(50% - 1.5px); width: 3px; height: 7px; margin: 0; border: 0; border-radius: 3px; background: currentColor; animation: portfolio-mouse-wheel 1.8s ease-out infinite; }
+.portfolio-motion .navbar .logo, .portfolio-motion .navbar .logo:hover { transform: rotate(var(--scroll-logo-angle, 0deg)); transition: none; }
+@keyframes portfolio-mouse-wheel { 0%, 25% { opacity: 1; transform: translateY(0); } 80%, 100% { opacity: 0; transform: translateY(7px); } }
+.portfolio-motion .home-social-links { left: 1rem; }
+.portfolio-motion :is(button, a):focus-visible, .motion-project-preview :is(button, a):focus-visible { outline: 3px solid var(--motion-accent); outline-offset: 4px; }
+
+/* Cards reveal in sequence; pointer tilt never runs on touch devices. */
+.portfolio-motion .project-card { border: 1px solid transparent; transition: border-color .25s, box-shadow .25s, transform .9s var(--motion-ease), opacity .65s ease, filter .85s ease; }
+.portfolio-motion.motion-enabled .project-card.motion-reveal { translate: none; }
+.portfolio-motion .project-card::before { background: radial-gradient(circle at var(--spot-x, 50%) var(--spot-y, 50%), #ef8d3e1c, transparent 65%); z-index: 1; }
+.portfolio-motion .project-content { position: relative; z-index: 2; }
+.portfolio-motion .project-button { min-height: 44px; }
+.portfolio-motion .projects-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-motion.motion-enabled .project-card:hover { transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-5px); border-color: #d57136a6; box-shadow: 0 18px 40px #6c3b1a1c; }
+  .portfolio-motion .project-card:hover .project-image { transform: scale(1.045); }
+  .portfolio-motion .home-social-link:hover { color: var(--motion-accent); }
+}
+
+/* Portaled dialogs stay above the navigation, outside tilted/revealed cards. */
+.motion-project-preview { z-index: 2200; box-sizing: border-box; padding: 24px; background: #17110bd9; backdrop-filter: blur(8px); }
+.motion-project-preview .preview-content { box-sizing: border-box; width: min(100%, 720px); max-width: 720px; max-height: 88svh; border-radius: 20px; padding: 48px 28px 28px; outline: none; overscroll-behavior: contain; }
+.motion-project-preview .preview-image { height: auto; max-height: 330px; object-fit: contain; }
+.motion-project-preview .preview-full-info { white-space: pre-line; line-height: 1.8; }
+.motion-project-preview .preview-additional-images { width: 100%; display: grid; gap: 16px; }
+.motion-project-preview .preview-additional-images img { height: auto; max-height: 250px; object-fit: contain; }
+.motion-dialog-close { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; border: 1px solid #bbb5af; border-radius: 50%; background: #fff; color: #33251c; font-size: 25px; cursor: pointer; }
+.motion-project-preview :is(.preview-open-button, .preview-close-button) { min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; padding: 10px 18px; border-radius: 8px; }
+.motion-project-preview .preview-open-button { background: var(--motion-accent); color: #fff; }
+.motion-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+
+@keyframes portrait-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+@keyframes atmosphere-drift { from { transform: translate3d(-15px, 0, 0) rotate(-12deg) scale(.9); } to { transform: translate3d(35px, -40px, 0) rotate(18deg) scale(1.12); } }
+
+@media (max-width: 768px) {
+  .portfolio-motion #home { display: flex !important; padding: 7rem 1.5rem 3rem; min-height: 100svh; gap: 1.6rem; }
+  .portfolio-motion .home-image { order: -1; gap: 4px; }
+  .portfolio-motion .profile-picture { width: 190px; height: 190px; }
+  .portfolio-motion.motion-enabled .motion-reveal { filter: blur(2px); }
+  .portfolio-motion.motion-enabled .motion-reveal.motion-visible, .portfolio-motion.motion-enabled .motion-reveal:focus-within { filter: none; }
+  .portfolio-motion .home-greeting { font-size: clamp(1.7rem, 6vw, 2.5rem); }
+  .portfolio-motion .home-btn { justify-content: center; margin-bottom: 0; }
+  .portfolio-motion .home-about { font-size: .95rem; }
+  .portfolio-motion .home-social-links { position: static; }
+  .portfolio-motion .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .portfolio-motion .project-card { min-width: 0; }
+  .portfolio-motion .project-content { padding: 12px; }
+  .portfolio-motion .project-card-title { overflow-wrap: anywhere; }
+  .portfolio-motion .experience-title { flex-wrap: wrap; gap: 6px; overflow-wrap: anywhere; }
+  .portfolio-motion .experience-duration { flex-basis: 100%; margin-left: 0; }
+  .motion-project-preview { padding: 12px; }
+  .motion-project-preview .preview-content { padding: 48px 18px 20px; max-width: 100%; max-height: 90svh; }
+  .motion-project-preview .preview-buttons { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html:has(.portfolio-motion) { scroll-behavior: auto !important; }
+  .portfolio-motion *, .portfolio-motion *::before, .portfolio-motion *::after,
+  .motion-project-preview *, .motion-project-preview *::before, .motion-project-preview *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .portfolio-motion .motion-reveal { opacity: 1 !important; translate: none !important; transform: none !important; filter: none !important; }
+  .portfolio-motion :is(.hero-word, .home-app-link, .home-role, .home-about, .home-btn, .home-image) { opacity: 1; transform: none; }
+  .portfolio-motion .project-card:hover, .portfolio-motion .project-card:hover .project-image { transform: none !important; }
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Local analytics · Hama Gardy</title>
+  <link rel="stylesheet" href="/dashboard.css">
+  <script defer src="/dashboard.js"></script>
+</head>
+<body>
+  <main>
+    <header><div><span class="eyebrow">HAMA GARDY / LOCAL WORKSPACE</span><h1>Xallakanm analytics</h1><p>A private view of your visitors and download activity.</p></div><span class="local-badge">127.0.0.1 · Read only</span></header>
+    <div class="toolbar"><button id="refresh" type="button">Refresh from Firebase</button><label class="file-button" for="import">Open JSON export<input id="import" type="file" accept="application/json,.json"></label><span id="updated">No data loaded</span></div>
+    <p id="status" role="status">Refresh using authenticated Google credentials, or open a Firebase JSON export. Imported files stay in your browser memory.</p>
+    <section class="metrics" aria-label="Summary">
+      <article><span>Recent visitors shown</span><strong id="visitors-count">—</strong></article>
+      <article><span>Mobile visitors</span><strong id="mobile-count">—</strong></article>
+      <article><span>Desktop visitors</span><strong id="desktop-count">—</strong></article>
+      <article><span>App Store clicks</span><strong id="downloads-count">—</strong></article>
+    </section>
+    <section><h2>Recent visitors</h2><div class="table-wrap"><table><thead><tr><th>Device</th><th>OS</th><th>Browser</th><th>City</th><th>Country</th><th>IP address</th><th>Time</th></tr></thead><tbody id="visitors"></tbody></table></div></section>
+    <section><h2>Download clicks</h2><div class="table-wrap"><table><thead><tr><th>Store</th><th>Time</th></tr></thead><tbody id="downloads"></tbody></table></div></section>
+    <section><h2>Page views</h2><div class="table-wrap"><table><thead><tr><th>Page</th><th>Time</th></tr></thead><tbody id="page-views"></tbody></table></div></section>
+    <section><h2>External links</h2><div class="table-wrap"><table><thead><tr><th>Link</th><th>Destination</th><th>Time</th></tr></thead><tbody id="external-links"></tbody></table></div></section>
+    <footer>Recent records are limited to 20 per collection. No analytics are saved by this dashboard.</footer>
+  </main>
+</body>
+</html>

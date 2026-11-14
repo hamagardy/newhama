@@ -1,3 +1,4 @@
+import { ProjectPreview, PreviewCloseButton } from "./ProjectPreview";
 import React from "react";
 import project1Img from "../assets/akocompany.webp";
 import logoPreview from "../assets/ac.png";
@@ -40,8 +41,7 @@ const Project1 = ({ isPreviewOpen, closePreview, openPreview }) => {
       </div>
 
       {isPreviewOpen && (
-        <div className="project-preview">
-          <div className="preview-content">
+        <ProjectPreview title={project.title} onClose={closePreview}>
             <img
               src={project.image}
               alt={project.title}
@@ -70,12 +70,9 @@ const Project1 = ({ isPreviewOpen, closePreview, openPreview }) => {
               >
                 Open Website
               </a>
-              <button className="preview-close-button" onClick={closePreview}>
-                Close
-              </button>
+              <PreviewCloseButton />
             </div>
-          </div>
-        </div>
+        </ProjectPreview>
       )}
     </>
   );

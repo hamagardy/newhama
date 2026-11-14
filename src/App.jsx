@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import PortfolioMotion from './components/PortfolioMotion';
 
 // Lazy load heavy components
 const About = lazy(() => import('./components/About'));
@@ -27,6 +28,7 @@ import "./styles/project.css";
 import "./styles/shop.css";
 import "./styles/footer.css";
 import "./styles/xallaknm-landing.css";
+import "./styles/portfolio-motion.css";
 
 // Loading component
 const LoadingFallback = () => (
@@ -47,7 +49,8 @@ function App() {
     <Router basename="/">
       <Routes>
         <Route path="/portfolio" element={
-          <div className="min-h-screen">
+          <div className="min-h-screen portfolio-motion">
+            <PortfolioMotion />
             <Navbar />
             <Home />
             <Suspense fallback={<LoadingFallback />}>

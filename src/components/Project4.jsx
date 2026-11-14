@@ -1,3 +1,4 @@
+import { ProjectPreview, PreviewCloseButton } from "./ProjectPreview";
 import React, { useState } from "react";
 // The card shows a still poster; the 200-frame animation is only fetched
 // once the preview modal is actually opened.
@@ -44,8 +45,7 @@ const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
       </div>
 
       {previewProject && (
-        <div className="project-preview">
-          <div className="preview-content">
+        <ProjectPreview title={project.title} onClose={() => setPreviewProject(null)}>
             <img
               src={menuAnim}
               alt="Menu Preview"
@@ -57,15 +57,9 @@ const HGMenu = ({ isPreviewOpen, closePreview, openPreview }) => {
             <h3 className="preview-title">{previewProject.title}</h3>
             <p className="preview-full-info">{previewProject.fullInfo}</p>
             <div className="preview-buttons">
-              <button
-                className="preview-close-button"
-                onClick={() => setPreviewProject(null)}
-              >
-                Close
-              </button>
+              <PreviewCloseButton />
             </div>
-          </div>
-        </div>
+        </ProjectPreview>
       )}
     </>
   );

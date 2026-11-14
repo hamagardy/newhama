@@ -33,16 +33,13 @@ const Home = () => {
         @ShoofCompany
       </a>
     </span>,
-    "Official Snap Lens Network Developer⠀", // 3 spaces for alignment
+    "Official Snap Lens Network Developer",
   ];
 
   const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
   useEffect(() => {
-    const homeSection = document.getElementById("home");
-    if (homeSection) {
-      homeSection.classList.add("fadeIn");
-    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const interval = setInterval(() => {
       setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
@@ -54,25 +51,25 @@ const Home = () => {
   const handleContactClick = () => {
     const contactSection = document.getElementById("contact");
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      contactSection.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     }
   };
 
   const handleMouseScrollClick = () => {
     const aboutSection = document.getElementById("about");
     if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: "smooth" });
+      aboutSection.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
     }
   };
 
   return (
     <section id="home" className="home-section">
+      <div className="hero-atmosphere" aria-hidden="true"><span className="hero-blob blob-one" /><span className="hero-blob blob-two" /></div>
       <div className="home-text">
-        <h3 className="home-greeting">
-          Hello I’m Hama Gardy
-          <span style={{ display: "none" }}>👋</span>
-          <img src={star} alt="star" className="home-star" width="32" height="32" decoding="async" />
-        </h3>
+        <h1 className="home-greeting" aria-label="Hello I’m Hama Gardy">
+          {['Hello', 'I’m', 'Hama', 'Gardy'].map(word => <span className="hero-word" aria-hidden="true" key={word}>{word}</span>)}
+          <img src={star} alt="" aria-hidden="true" className="home-star" width="32" height="32" />
+        </h1>
         <p className="home-role">
           <span className="role-text" key={currentRoleIndex}>
             {roles[currentRoleIndex]}
@@ -89,7 +86,7 @@ const Home = () => {
         </div>
       </div>
       <div className="home-image">
-        <img 
+        <div className="portrait-float"><img 
           src={me}
           alt="Profile"
           className="profile-picture"
@@ -99,11 +96,12 @@ const Home = () => {
           decoding="async"
           fetchPriority="high"
         />
-        <div className="mouse-scroll" onClick={handleMouseScrollClick}>
+        </div>
+        <button className="mouse-scroll" aria-label="Scroll to About Me" onClick={handleMouseScrollClick}>
           <span className="mouse">
             <span className="wheel"></span>
           </span>
-        </div>
+        </button>
       </div>
       <div className="home-social-links">
         <a
@@ -112,7 +110,7 @@ const Home = () => {
           rel="noopener noreferrer"
           className="home-social-link"
         >
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FontAwesomeIcon icon={faLinkedin} title="LinkedIn" />
         </a>
         <a
           href="https://x.com/Hamagardy_"
@@ -120,7 +118,7 @@ const Home = () => {
           rel="noopener noreferrer"
           className="home-social-link"
         >
-          <FontAwesomeIcon icon={faSquareXTwitter} />
+          <FontAwesomeIcon icon={faSquareXTwitter} title="X" />
         </a>
         <a
           href="https://www.instagram.com/_hama_gardy/"
@@ -128,7 +126,7 @@ const Home = () => {
           rel="noopener noreferrer"
           className="home-social-link"
         >
-          <FontAwesomeIcon icon={faInstagram} />
+          <FontAwesomeIcon icon={faInstagram} title="Instagram" />
         </a>
         <a
           href="https://snapchat.com/add/itzgardy"
@@ -136,7 +134,7 @@ const Home = () => {
           rel="noopener noreferrer"
           className="home-social-link"
         >
-          <FontAwesomeIcon icon={faSnapchat} />
+          <FontAwesomeIcon icon={faSnapchat} title="Snapchat" />
         </a>
         <a
           href="https://youtube.com/@hamagardy"
@@ -144,7 +142,7 @@ const Home = () => {
           rel="noopener noreferrer"
           className="home-social-link"
         >
-          <FontAwesomeIcon icon={faYoutube} />
+          <FontAwesomeIcon icon={faYoutube} title="YouTube" />
         </a>
 
         <span className="home-rail-divider" aria-hidden="true" />

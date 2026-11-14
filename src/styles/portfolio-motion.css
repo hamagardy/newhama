@@ -17,40 +17,62 @@ body:has(.portfolio-motion) { animation: none !important; }
   --scene-scale: .8;
   opacity: 0;
   translate: none;
-  transform: perspective(1100px) translate3d(var(--scene-x), var(--scene-y), -200px) rotateX(var(--scene-rx)) rotateY(var(--scene-ry)) scale(var(--scene-scale));
+  transform: perspective(950px) translate3d(var(--scene-x), var(--scene-y), -280px) rotateX(var(--scene-rx)) rotateY(var(--scene-ry)) scale(var(--scene-scale));
   filter: blur(4px);
   transform-origin: 50% 50%;
-  transition: transform 1.05s cubic-bezier(.16,1,.3,1) var(--scene-delay, 0ms), opacity .65s ease var(--scene-delay, 0ms), filter .85s ease var(--scene-delay, 0ms);
+  transition: transform 1.25s cubic-bezier(.12,.95,.2,1) var(--scene-delay, 0ms), opacity .65s ease var(--scene-delay, 0ms), filter .85s ease var(--scene-delay, 0ms);
 }
 .portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="home"] { --scene-x: -80px; --scene-y: 50px; --scene-ry: 18deg; }
 .portfolio-motion.motion-enabled .home-image.motion-reveal { --scene-x: 100px; --scene-ry: -24deg; --scene-scale: .65; }
-.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="about"] { --scene-x: -140px; --scene-y: 35px; --scene-rx: 0deg; --scene-ry: 25deg; transform-origin: left center; }
-.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="resume"] { --scene-y: 150px; --scene-rx: 28deg; --scene-ry: -8deg; --scene-scale: .72; }
-.portfolio-motion.motion-enabled .project-card.motion-reveal { --scene-y: 110px; --scene-rx: 20deg; --scene-ry: var(--card-fan, 0deg); --scene-scale: .68; }
-.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="snapchat"] { --scene-x: 140px; --scene-y: 45px; --scene-rx: -8deg; --scene-ry: -25deg; }
-.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="shop"] { --scene-y: 30px; --scene-rx: 0deg; --scene-ry: -28deg; --scene-scale: .65; }
-.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="contact"] { --scene-y: 140px; --scene-rx: 30deg; --scene-scale: .8; transform-origin: center bottom; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="about"] { --scene-x: -190px; --scene-y: 55px; --scene-rx: 0deg; --scene-ry: 35deg; transform-origin: left center; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="resume"] { --scene-y: 180px; --scene-rx: 35deg; --scene-ry: -12deg; --scene-scale: .65; }
+.portfolio-motion.motion-enabled .project-card.motion-reveal { --scene-y: 140px; --scene-rx: 28deg; --scene-ry: var(--card-fan, 0deg); --scene-scale: .6; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="snapchat"] { --scene-x: 190px; --scene-y: 60px; --scene-rx: -12deg; --scene-ry: -36deg; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="shop"] { --scene-y: 30px; --scene-rx: 0deg; --scene-ry: -34deg; --scene-scale: .58; }
+.portfolio-motion.motion-enabled .motion-reveal[data-motion-scene="contact"] { --scene-y: 180px; --scene-rx: 38deg; --scene-scale: .8; transform-origin: center bottom; }
 .portfolio-motion.motion-enabled .motion-reveal.motion-above:not(.motion-visible) {
-  transform: perspective(1100px) translate3d(0, -90px, -200px) rotateX(-16deg) scale(.82);
+  transform: perspective(1100px) translate3d(0, -120px, -280px) rotateX(-24deg) scale(.7);
   transition-delay: 0s;
 }
 .portfolio-motion.motion-enabled .motion-reveal.motion-visible,
 .portfolio-motion.motion-enabled .motion-reveal:focus-within { opacity: 1; translate: none; transform: none; filter: none; }
 .portfolio-motion section.motion-scene { position: relative; isolation: isolate; }
-.portfolio-motion section.motion-scene:not(#home)::before {
-  content: ''; position: absolute; top: 16px; left: 2rem; right: 2rem; height: 1px;
-  background: linear-gradient(90deg, transparent, #e07439a6, transparent);
-  box-shadow: 0 0 14px #e0743940; transform: scaleX(.15); opacity: 0;
-  transition: transform 1.2s cubic-bezier(.16,1,.3,1), opacity .6s;
-  pointer-events: none;
+/* Layered title, copy and card effects replay with their parent scene. */
+.portfolio-motion.motion-enabled .motion-visible > h2,
+.portfolio-motion.motion-enabled .motion-visible > h3,
+.portfolio-motion.motion-enabled h2.motion-visible,
+.portfolio-motion.motion-enabled .home-text.motion-visible .home-greeting,
+.portfolio-motion.motion-enabled .project-card.motion-visible .project-card-title {
+  animation: title-unfold .95s cubic-bezier(.16,1,.3,1) .12s both;
 }
-.portfolio-motion section.motion-section-active:not(#home)::before { transform: scaleX(1); opacity: 1; }
-.portfolio-motion section.motion-scene:not(#home)::after {
-  content: ''; position: absolute; inset: 0 0 auto; height: 80px; opacity: 0; z-index: -1;
-  background: linear-gradient(transparent, #e074390c, transparent); pointer-events: none;
+.portfolio-motion.motion-enabled .about-content.motion-visible > p,
+.portfolio-motion.motion-enabled .resume-category.motion-visible .resume-about,
+.portfolio-motion.motion-enabled .shop-content.motion-visible > p,
+.portfolio-motion.motion-enabled .project-card.motion-visible .project-description {
+  animation: copy-materialize 1s cubic-bezier(.16,1,.3,1) .22s both;
 }
-.portfolio-motion.motion-enabled section.motion-section-active:not(#home)::after { animation: scene-scan 1.4s ease-out both; }
-@keyframes scene-scan { 0% { opacity: 0; transform: translateY(0); } 25% { opacity: 1; } 100% { opacity: 0; transform: translateY(70vh); } }
+.portfolio-motion.motion-enabled .home-social-links.motion-visible > .home-social-link {
+  animation: rail-unfold .85s cubic-bezier(.16,1,.3,1) both;
+}
+.portfolio-motion .home-social-link:nth-child(2) { animation-delay: .08s !important; }
+.portfolio-motion .home-social-link:nth-child(3) { animation-delay: .16s !important; }
+.portfolio-motion .home-social-link:nth-child(4) { animation-delay: .24s !important; }
+.portfolio-motion .home-social-link:nth-child(5) { animation-delay: .32s !important; }
+.portfolio-motion .project-card::after {
+  content: ''; position: absolute; inset: 0; z-index: 3; pointer-events: none; opacity: 0;
+  background: linear-gradient(110deg, transparent 32%, #ffffff70 50%, transparent 68%);
+}
+.portfolio-motion.motion-enabled .project-card.motion-visible::after { animation: card-sheen 1.5s ease-out .25s both; }
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-motion .home-contact-btn:hover { transform: translateY(-4px) scale(1.03); box-shadow: 0 10px 30px #b84d1830; }
+}
+@keyframes title-unfold {
+  from { opacity: 0; clip-path: inset(0 100% 0 0); transform: perspective(800px) translateX(-35px) rotateY(28deg) skewX(-6deg); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); transform: none; }
+}
+@keyframes copy-materialize { from { opacity: 0; transform: translateY(24px); filter: blur(5px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes rail-unfold { from { opacity: 0; transform: perspective(500px) translateX(-30px) rotateY(-80deg); } to { opacity: 1; transform: none; } }
+@keyframes card-sheen { 0% { opacity: 0; transform: translateX(-120%); } 25% { opacity: .8; } 100% { opacity: 0; transform: translateX(120%); } }
 
 /* A staged introduction, with atmosphere kept behind the content. */
 .portfolio-motion #home {
@@ -64,10 +86,16 @@ body:has(.portfolio-motion) { animation: none !important; }
   box-sizing: border-box;
   background-color: transparent;
 }
-.hero-atmosphere { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-.hero-blob { position: absolute; display: block; width: 440px; height: 440px; border-radius: 48% 52% 60% 40%; background: radial-gradient(circle, #f5ae7640, #ffe6d218 55%, transparent 70%); animation: atmosphere-drift 18s ease-in-out infinite alternate; }
+.hero-atmosphere {
+  position: absolute; inset: -70px -50px -110px; z-index: -1; overflow: hidden; pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 25%, #000b 55%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, #000 25%, #000b 55%, transparent 78%);
+  transform: translate3d(var(--atmosphere-x, 0px), calc(var(--atmosphere-y, 0px) + var(--atmosphere-scroll-y, 0px)), 0);
+  transition: transform .6s ease-out;
+}
+.hero-blob { position: absolute; display: block; width: 440px; height: 440px; border-radius: 48% 52% 60% 40%; background: radial-gradient(closest-side, #f5ae7636, #f5ae761b 35%, #ffe6d20a 62%, transparent 100%); animation: atmosphere-drift 18s ease-in-out infinite alternate; }
 .blob-one { top: 10%; right: -80px; }
-.blob-two { bottom: -160px; left: -150px; animation-delay: -9s; animation-duration: 23s; }
+.blob-two { width: 540px; height: 540px; bottom: -30px; left: -160px; opacity: .8; animation-delay: -9s; animation-duration: 23s; }
 .portfolio-motion .home-text { min-width: 0; animation: none; }
 .portfolio-motion .home-greeting { font-size: clamp(2rem, 3.6vw, 3.3rem); flex-wrap: wrap; column-gap: .3em; row-gap: 0; line-height: 1.22; }
 .hero-word { display: inline-block; }
@@ -81,8 +109,6 @@ body:has(.portfolio-motion) { animation: none !important; }
 .portfolio-motion button.mouse-scroll { background: none; border: 0; width: 48px; min-height: 60px; padding: 8px; justify-content: center; color: #1a1a1a; }
 body.dark-mode .portfolio-motion button.mouse-scroll { color: #fff; }
 .portfolio-motion .mouse { position: relative; width: 28px; height: 44px; box-sizing: border-box; border: 2px solid currentColor; border-radius: 16px; color: inherit; }
-.portfolio-motion .mouse::before { content: ''; position: absolute; top: 0; left: 50%; height: 15px; border-left: 1px solid currentColor; opacity: .35; }
-.portfolio-motion .mouse::after { content: ''; position: absolute; top: 15px; left: 0; right: 0; border-top: 1px solid currentColor; opacity: .2; }
 .portfolio-motion .wheel { position: absolute; top: 6px; left: calc(50% - 1.5px); width: 3px; height: 7px; margin: 0; border: 0; border-radius: 3px; background: currentColor; animation: portfolio-mouse-wheel 1.8s ease-out infinite; }
 .portfolio-motion .navbar .logo, .portfolio-motion .navbar .logo:hover { transform: rotate(var(--scroll-logo-angle, 0deg)); transition: none; }
 @keyframes portfolio-mouse-wheel { 0%, 25% { opacity: 1; transform: translateY(0); } 80%, 100% { opacity: 0; transform: translateY(7px); } }

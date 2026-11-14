@@ -4,12 +4,14 @@ export default function PortfolioMotion() {
   const progress = useRef(null);
   useEffect(() => {
     const root = progress.current.closest('.portfolio-motion');
+    const atmosphere = root.querySelector('.hero-atmosphere');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
     const observed = new WeakSet();
     const scenes = new Set();
     let scrollFrame = 0;
     let tiltFrame = 0;
+    let atmosphereFrame = 0;
     let activeCard = null;
     const revealSelector = '.home-text, .home-image, .home-social-links, .about-content, .resume-category, .projects-title, .project-card, #snapchat > h2, #snapchat > div, .shop-content, .contact-form-container, #contact > h2';
 
@@ -67,22 +69,24 @@ export default function PortfolioMotion() {
         top -= scrollY;
         measurements.push({ element, top, bottom: top + element.offsetHeight });
       }
-      const activeSections = new Set();
       for (const { element, top, bottom } of measurements) {
         const visible = reduced.matches || (top < innerHeight * .92 && bottom > 64);
         element.classList.toggle('motion-above', !visible && bottom <= 64);
         element.classList.toggle('motion-visible', visible);
-        if (visible) activeSections.add(element.closest('section'));
       }
-      root.querySelectorAll('section.motion-scene').forEach(section => {
-        section.classList.toggle('motion-section-active', activeSections.has(section));
-      });
+      atmosphere?.style.setProperty('--atmosphere-scroll-y', `${reduced.matches ? 0 : -Math.min(75, scrollY * .08)}px`);
     }
     function scheduleProgress() {
       if (!scrollFrame) scrollFrame = requestAnimationFrame(updateProgress);
     }
     function move(event) {
       if (reduced.matches || !finePointer.matches) return;
+      const overHome = !!event.target.closest('#home');
+      cancelAnimationFrame(atmosphereFrame);
+      atmosphereFrame = requestAnimationFrame(() => {
+        atmosphere?.style.setProperty('--atmosphere-x', `${overHome ? (event.clientX / innerWidth - .5) * 30 : 0}px`);
+        atmosphere?.style.setProperty('--atmosphere-y', `${overHome ? (event.clientY / innerHeight - .5) * 22 : 0}px`);
+      });
       const card = event.target.closest('.project-card');
       if (!card) return resetTilt();
       if (activeCard !== card) { resetTilt(); activeCard = card; }
@@ -119,6 +123,7 @@ export default function PortfolioMotion() {
       mutations.disconnect();
       resize.disconnect();
       cancelAnimationFrame(scrollFrame);
+      cancelAnimationFrame(atmosphereFrame);
       resetTilt();
     };
   }, []);

@@ -1,3 +1,9 @@
 [
-  { "id": "off", "image": "https://www.hamagardy.com/blank.png", "link": "", "duration": 600000, "type": "other" }
+  {
+    "id": "whatsapp-advertising-1",
+    "image": "https://www.hamagardy.com/whatsapp-advertising-banner.png",
+    "link": "https://wa.me/9647508176768",
+    "duration": 5000,
+    "type": "whatsapp"
+  }
 ]

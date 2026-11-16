@@ -3,6 +3,13 @@ import react from '@vitejs/plugin-react';
 import { readFileSync } from 'node:fs';
 import { securityHeaders } from './security/headers.mjs';
 
+// Vite preview serves HTTP, including when opened from a phone on the LAN.
+// Keep production HTTPS enforcement in security/headers.mjs and hosting config.
+const previewHeaders = { ...securityHeaders };
+previewHeaders['Content-Security-Policy'] = securityHeaders['Content-Security-Policy']
+  .split('; ').filter(directive => directive !== 'upgrade-insecure-requests').join('; ');
+delete previewHeaders['Strict-Transport-Security'];
+
 const removedPage = readFileSync(new URL('./public/410.html', import.meta.url));
 const retiredPaths = new Set(['/data', '/data.html', '/xallaknm/data', '/xallaknm/data.html', '/xallaknm/data-standalone.html']);
 function retiredDashboard(request, response, next) {
@@ -31,5 +38,5 @@ export default defineConfig({
       deny: ['.env', '.env.*', '*.{crt,pem}', '**/.git/**', '**/tools/**', '**/security/**'],
     },
   },
-  preview: { host: '127.0.0.1', headers: securityHeaders },
+  preview: { host: '127.0.0.1', headers: previewHeaders },
 });

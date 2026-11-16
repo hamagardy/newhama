@@ -16,6 +16,7 @@ const XallaknmPage = lazy(() => import('./xallaknm/XallaknmPage'));
 const BannersPreview = lazy(() => import('./xallaknm/BannersPreview'));
 const SmokeFreePage = lazy(() => import('./smokefree/SmokeFreePage'));
 const PrayerTimesPage = lazy(() => import('./prayer-times-plus/PrayerTimesPage'));
+const SupportPage = lazy(() => import('./components/SupportPage'));
 
 import "./styles/global.css";
 import "./styles/navbar.css";
@@ -89,6 +90,7 @@ function App() {
             <PrayerTimesPage />
           </Suspense>
         } />
+        <Route path="/support" element={<Suspense fallback={<LoadingFallback />}><SupportPage /></Suspense>} />
         <Route path="/" element={<Navigate to="/portfolio" replace />} />
       </Routes>
     </Router>

@@ -1,0 +1,39 @@
+.support-page { --support-orange: #bd4b19; --support-ink: #29231e; --support-muted: #857c74; min-height: 100svh; background: #fbfaf8; color: var(--support-ink); font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; position: relative; isolation: isolate; box-sizing: border-box; padding: 0 28px; }
+.support-page *, .support-page *::before, .support-page *::after { box-sizing: border-box; }
+.support-glow { position: absolute; inset: 0; pointer-events: none; z-index: -1; overflow: hidden; background: radial-gradient(ellipse at 12% 35%, #f2c49e33, transparent 45%), radial-gradient(ellipse at 90% 70%, #f9e5d422, transparent 40%); }
+.support-header { max-width: 1100px; margin: 0 auto; min-height: 88px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+.support-brand { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 650; color: var(--support-ink); text-decoration: none; }
+.support-brand img { width: 30px; height: 30px; object-fit: contain; }
+.support-preview-badge { padding: 6px 10px; border: 1px solid #e7dfd5; border-radius: 6px; color: #8b6a50; font-size: 11px; font-weight: 600; background: #fffaf4; white-space: nowrap; }
+.support-layout { max-width: 1000px; margin: 44px auto 70px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 440px); gap: 88px; align-items: center; }
+.support-avatar { width: 88px; height: 88px; border-radius: 50%; padding: 4px; border: 1px solid #ead9cb; margin-bottom: 32px; }
+.support-avatar img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; object-position: 50% 35%; }
+.support-eyebrow { color: #a46a43; font-size: 10px; font-weight: 700; letter-spacing: .14em; line-height: 1.7; }
+.support-intro h1 { font-size: clamp(38px, 5vw, 58px); line-height: 1.1; letter-spacing: -.055em; font-weight: 650; margin: 18px 0 24px; max-width: 400px; }
+.support-intro h1 span { color: var(--support-orange); }
+.support-intro-copy { font-size: 15px; line-height: 1.85; color: #766c63; max-width: 360px; margin-bottom: 28px; }
+.support-person { display: flex; align-items: center; gap: 8px; color: #8f8277; font-size: 11px; }
+.support-card { background: #fff; border: 1px solid #e9e3dc; padding: 30px; border-radius: 16px; box-shadow: 0 12px 50px #46301a05; min-width: 0; animation: support-arrive .5s ease both; }
+.support-card-heading { display: flex; gap: 12px; align-items: center; margin-bottom: 28px; }
+.support-heart { display: grid; place-items: center; width: 40px; height: 40px; flex-shrink: 0; background: #fff4eb; color: var(--support-orange); border-radius: 12px; font-size: 19px; }
+.support-card-heading h2 { font-size: 17px; margin: 0 0 4px; letter-spacing: -.025em; }
+.support-card-heading p { color: var(--support-muted); font-size: 12px; margin: 0; }
+ .support-qr { display: block; width: min(100%, 240px); height: auto; margin: 0 auto 18px; image-rendering: pixelated; }
+.support-code-label { text-align: center; font-size: 11px; color: #766c63; margin: 0 0 8px; }
+.support-code-row { display: flex; align-items: center; justify-content: center; gap: 12px; }
+.support-code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: clamp(15px, 4vw, 20px); letter-spacing: .02em; user-select: all; }
+.support-copy { display: grid; place-items: center; flex-shrink: 0; width: 44px; min-height: 44px; color: var(--support-orange); background: #fff5ed; border: 1px solid #efd9c9; border-radius: 8px; cursor: pointer; font-size: 17px; }
+.support-copy-status { min-height: 16px; margin: 4px 0 14px; text-align: center; font-size: 11px; color: #766c63; }
+.support-link-note { font-size: 11px; line-height: 1.7; color: #766c63; margin: 12px 0 20px; }
+.support-instructions { padding-left: 20px; margin: 0; font-size: 12px; line-height: 1.8; color: #645a51; }
+.support-instructions li + li { margin-top: 6px; }
+.support-payment-note { border-top: 1px solid #eee8e1; padding-top: 16px; margin: 20px 0 0; font-size: 11px; line-height: 1.7; color: #766c63; }
+.support-primary { display: flex; justify-content: center; align-items: center; width: 100%; min-height: 49px; background: var(--support-orange); color: #fff; border: 1px solid var(--support-orange); border-radius: 8px; font: inherit; font-size: 12px; font-weight: 600; padding: 12px 14px; cursor: pointer; text-decoration: none; transition: background .2s; }
+.support-primary:hover { background: #a93e13; }
+.support-page :is(button, a):focus-visible { outline: 2px solid #bb5a28; outline-offset: 3px; }
+.support-footer { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; padding: 20px 0 28px; color: #a79a8e; font-size: 10px; border-top: 1px solid #eee8e1; }
+.support-footer span { letter-spacing: .06em; }
+@keyframes support-arrive { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@media (max-width: 800px) { .support-layout { gap: 40px; grid-template-columns: minmax(0, 1fr) minmax(0, 390px); } .support-intro h1 { font-size: 42px; } }
+@media (max-width: 650px) { .support-page { padding: 0 18px; } .support-header { min-height: 72px; } .support-layout { display: flex; flex-direction: column; gap: 28px; margin: 22px auto 35px; max-width: 430px; } .support-intro { text-align: center; } .support-avatar { width: 70px; height: 70px; margin: 0 auto 20px; } .support-intro h1 { font-size: 36px; margin: 12px 0 16px; max-width: none; } .support-eyebrow { font-size: 9px; } .support-intro-copy { font-size: 13px; margin: 0 auto 16px; max-width: 320px; } .support-person { justify-content: center; font-size: 10px; } .support-card { width: 100%; padding: 22px 18px; border-radius: 12px; } .support-card-heading h2 { font-size: 16px; } .support-card-heading p { font-size: 11px; } .support-card-heading { margin-bottom: 24px; } .support-primary { min-height: 50px; } .support-footer { font-size: 9px; } }
+@media (prefers-reduced-motion: reduce) { .support-page *, .support-page *::before, .support-page *::after { animation: none !important; transition: none !important; } }
